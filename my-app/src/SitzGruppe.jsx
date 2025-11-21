@@ -1,6 +1,6 @@
 import SitzReihe from './SitzReihe.jsx'
 
-export default function SitzGruppe({Gruppenname, ReihenLängen}) {
+export default function SitzGruppe({ReihenLängen}) {
 
   return (
     <div className={Gruppenname}>
