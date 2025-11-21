@@ -21,13 +21,27 @@ body {
   min-height: 100vh;
 }
 
+.Kamel{
+  margin: 20px;
+}
+
+.Bahnhof{
+  margin: 20px;
+}
+
 .Kamel td.frei{
   border: 5px solid rgba(214, 191, 10, 0.74);
   border-radius: 5px;
   padding: 20px;
 }
+.Bahnhof td.frei{
+  border: 5px solid grey;
+  border-radius: 5px;
+  padding: 20px;  
+}
 
-.Bahnhof td.besetzt{
+
+td.besetzt{
   border: 5px solid blue;
   border-radius: 5px;
   padding: 20px;
