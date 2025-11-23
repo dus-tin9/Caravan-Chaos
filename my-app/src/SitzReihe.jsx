@@ -1,6 +1,6 @@
 import Sitz from './Sitz.jsx'
 
-export default function Sitz_reihe({ ReihenNummer, AnzPlätze, BesetztePl}) {
+export default function Sitz_reihe({ Gruppe, ReihenNummer, AnzPlätze, BesetztePl}) {
     const Plätze =  [...Array(AnzPlätze)]
 
     return (
@@ -12,8 +12,9 @@ export default function Sitz_reihe({ ReihenNummer, AnzPlätze, BesetztePl}) {
          Reihe={ReihenNummer} 
          Platz={i}
          BesetztePl={BesetztePl}
+         Gruppe={Gruppe}
         />
-    ))    
+    ))
     }
     </tr>
     </>

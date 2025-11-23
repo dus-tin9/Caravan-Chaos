@@ -13,37 +13,76 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+/* body {
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-}
+} */
 
-.Kamel{
-  margin: 20px;
-}
-
-.Bahnhof{
-  margin: 20px;
-}
-
-.Kamel td.frei{
-  border: 5px solid rgba(214, 191, 10, 0.74);
-  border-radius: 5px;
-  padding: 20px;
-}
-.Bahnhof td.frei{
-  border: 5px solid grey;
-  border-radius: 5px;
-  padding: 20px;  
-}
-
+/* Eigener CSS-Code */
 
 td.besetzt{
   border: 5px solid blue;
   border-radius: 5px;
   padding: 20px;
 } 
+
+.Seite{
+  display: flex;
+}
+
+.Titel{
+  font-size: 3rem;
+  flex-wrap: wrap;
+  border: 5px solid green;
+  flex-grow: 1;
+}
+
+.Container{
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  border: 10px solid red;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.Kamel1{
+  border: 10px solid grey;
+  align-self: flex-start;
+  margin-top: 2rem;
+  margin-left: 9rem;
+  width: auto;
+}
+
+.Kamel2{
+  border: 10px solid grey;
+  margin-top: 23rem;
+  margin-left: 30rem;
+  width: auto;
+}
+
+.Bahnhof{
+  border: 10px solid grey; 
+  margin-top: 6rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+}
+
+
+td.frei{
+  border: 5px solid rgba(214, 191, 10, 0.74);
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.Bahnhof td.frei{
+  border: 5px solid grey;
+  border-radius: 5px;
+  padding: 20px;  
+}
+
 

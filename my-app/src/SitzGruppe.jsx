@@ -7,10 +7,11 @@ export default function SitzGruppe({Gruppe, ReihenLängen,}) {
 
 
   return (
-    <div>
-      <table className={Gruppe}>
+    <div className={Gruppe}>
+      <table>
         {ReihenLängen.map((x,i) => (<SitzReihe key= {i} ReihenNummer={i} 
-                                  AnzPlätze={x} BesetztePl={BesetztePl} />))
+                                     AnzPlätze={x} BesetztePl={BesetztePl} 
+                                     Gruppe={Gruppe}/>))
         }
       </table>
     </div>
