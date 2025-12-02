@@ -1,0 +1,18 @@
+// OHNE Factory (umständlich jedes Mal):
+const camel1: Camel = {
+  id: 'camel-1',
+  name: 'Sandy',
+  size: [2, 3],
+  seats: [  // ⚠️ Muss jedes Mal komplett von Hand gebaut werden!
+    [
+      { id: 'seat-0-0', row: 0, position: 0, type: 'window', passenger: null },
+      { id: 'seat-0-1', row: 0, position: 1, type: 'middle', passenger: null },
+      { id: 'seat-0-2', row: 0, position: 2, type: 'window', passenger: null }
+    ],
+    // ... zweite Reihe auch komplett
+  ]
+};
+
+// MIT Factory (einfach):
+const camel1 = createCamel('camel-1', 'Sandy', [2, 3]);
+// Die Factory baut automatisch alle 6 Sitze!
