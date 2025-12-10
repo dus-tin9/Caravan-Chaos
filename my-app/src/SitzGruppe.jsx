@@ -1,19 +1,20 @@
-import SitzReihe from './SitzReihe.jsx'
 
-export default function SitzGruppe({Gruppe, ReihenLängen,}) {
+import { SortableContext, rectSortingStrategy } from "@dnd-kit/sortable";
+import Sitz from './Sitz.jsx'
 
-  // Hier Zugriff auf Datenbank mit Personen implementieren
-  const BesetztePl = [[0,2], [1,0],[2,4]]; 
 
+export default function SitzGruppe({GruppenId, Plätze}) {
+
+
+  const items = Plätze.filter((person) => person !== null);       // Personen aus Sitzordnung raus
 
   return (
-    <div className={Gruppe}>
-      <table>
-        {ReihenLängen.map((x,i) => (<SitzReihe key= {i} ReihenNummer={i} 
-                                     AnzPlätze={x} BesetztePl={BesetztePl} 
-                                     Gruppe={Gruppe}/>))
-        }
-      </table>
-    </div>
+    <SortableContext items={items} strategy={rectSortingStrategy}>
+      <div className={GruppenId}>
+        {Plätze.map((Person, index) => 
+        (  <Sitz key={"${GruppenId}-Sitz-${index}"} PlatzId={"${GruppenId}-Sitz-${index}"} PersonId={Person}/>  )
+        )}
+      </div>
+    </SortableContext>
   );
 }

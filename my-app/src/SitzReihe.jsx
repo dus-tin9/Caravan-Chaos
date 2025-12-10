@@ -5,18 +5,16 @@ export default function Sitz_reihe({ Gruppe, ReihenNummer, AnzPlätze, BesetzteP
 
     return (
     <>
-    <tr>
-    {Plätze.map((_,i) => (
+    {Plätze.map((value,index) => (
         <Sitz
-         key={i}
+         key={index}
          Reihe={ReihenNummer} 
-         Platz={i}
+         Platz={index}
          BesetztePl={BesetztePl}
          Gruppe={Gruppe}
         />
     ))
     }
-    </tr>
     </>
     );
 }
