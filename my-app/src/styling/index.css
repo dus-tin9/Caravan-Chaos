@@ -1,0 +1,109 @@
+
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+} */
+
+.Level{ 
+  width: 100rem;
+  height: 50rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.SeatGroup{
+  display: grid;
+  gap: 10px;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 8px;
+}
+
+
+.SeatGroup.Camel1{
+  width: 40em;
+  height: 15em;
+  grid-template-columns: repeat(5, 1fr);
+  background: orange;
+}
+
+
+.SeatGroup.Camel2{
+  width: 40em;
+  height: 15em;
+  grid-template-columns: repeat(5, 1fr);
+  background: orange;
+}
+
+.SeatGroup.Station{
+  width: 35em;
+  height: 20em;
+  grid-template-columns: repeat(5, 1fr);
+  background: grey;
+  align-self: flex-end;
+  
+}
+
+.Seat{
+  width: 80px;
+  height: 80px;
+  border: 2px solid;
+  border-radius: 8px;
+  background-color: beige;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.2s;
+}
+
+.Seat.taken{
+  border-color: blue;
+}
+
+.Seat.taken{
+  border-color: lightcoral;
+}
+
+
+.Seat.free{
+  border-color: green;
+}
+
+.Person{
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  background-color: red;
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: grab;
+  user-select: none;
+}
+
+.Person.moving{
+  opacity: 0.5;
+}
