@@ -8,14 +8,14 @@ export default function Level() {
 
   // Initialisiere State mit Sitzverteilung die zum Start des Levels vorgesehen ist; null für unbesetzte Plätze
   const [groups, setGroups] = useState({  
+    Station:[ null,    "Jan",     null,      null,  "Dustin",
+              null,     null, "Jeremy","Mariella",      null,],
+
     Camel1: [ null,     null,     null,      null,     null,
               null,     null,     null,      null,     null, ],
 
     Camel2: [ null,     null,     null,      null,     null,
               null,     null,     null,      null,     null, ],
-
-    Station:[ null,    "Jan",     null,      null,  "Dustin",
-              null,     null, "Jeremy","Mariella",      null, ],
   });
 
   // Person bewegen

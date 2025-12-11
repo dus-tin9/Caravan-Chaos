@@ -24,13 +24,14 @@
 } */
 
 .Level{ 
-  width: 100rem;
-  height: 50rem;
+  width: 95%;
+  height: 32em;
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
   gap: 2rem;
   padding: 2rem;
+  border: 2px solid violet;
 }
 
 .SeatGroup{
@@ -43,67 +44,66 @@
 
 
 .SeatGroup.Camel1{
-  width: 40em;
-  height: 15em;
+  width: 20%;
+  height: 20%;
   grid-template-columns: repeat(5, 1fr);
   background: orange;
 }
 
 
 .SeatGroup.Camel2{
-  width: 40em;
-  height: 15em;
+  width: 20%;
+  height: 20%;
   grid-template-columns: repeat(5, 1fr);
   background: orange;
+  align-self: center; 
 }
 
 .SeatGroup.Station{
-  width: 35em;
-  height: 20em;
+  width: 20%;
+  height: 20%;
   grid-template-columns: repeat(5, 1fr);
   background: grey;
   align-self: flex-end;
-  
+  justify-self: flex-start;
 }
 
 .Seat{
-  width: 80px;
-  height: 80px;
+  width: 30px;
+  height: 30px;
   border: 2px solid;
   border-radius: 8px;
   background-color: beige;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background 0.2s;
+}
+
+.Seat.free{
+  border-color: green;
 }
 
 .Seat.taken{
   border-color: blue;
 }
 
-.Seat.taken{
-  border-color: lightcoral;
-}
-
-
-.Seat.free{
-  border-color: green;
-}
-
-.Person{
-  width: 60px;
-  height: 60px;
-  border-radius: 8px;
+.Person.seated{
+  width: 20px;
+  height: 20px;
+  border: 2px solid grey;
+  border-radius: 5px;
   background-color: red;
   opacity: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: grab;
-  user-select: none;
+  cursor: crosshair;
 }
 
 .Person.moving{
+  width: 20px;
+  height: 20px;
+  border: 2px solid grey;
+  border-radius: 5px;
+  background-color: lightgreen;
   opacity: 0.5;
+  cursor: grab;
+  user-select: none;
 }

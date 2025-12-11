@@ -14,7 +14,7 @@ export default function Sitz({ groupId, seatIndex, person, movePerson }) {
 
     return(
         <div ref={drop} className={`Seat ${ person ? "taken" : isOver ? "hovered" : "free" }`}>
-          {person && <Person id={person} />}
+          {person && <Person id={person}/>}
         </div>
     );
 }

@@ -13,7 +13,7 @@ export default function Person({ id }){
   }));
 
   return(
-    <div ref={drag} className={`Person ${isDragging ? "moving" : ""}`}>
+    <div ref={drag} className={`Person ${isDragging ? "moving" : "seated"}`}>
       { id }
     </div>
   );
