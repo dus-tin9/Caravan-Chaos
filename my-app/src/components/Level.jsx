@@ -47,12 +47,13 @@ export default function Level() {
           {Object.entries(groups).map(([groupId, seats]) => (      
             <SeatGroup
                 key={groupId} 
-                groupId={groupId} 
-                seats={seats} 
+                groupId={groupId}
+                seats={seats}
                 movePerson={movePerson}
             />
           ))}
         </DndProvider>
+
     </div>
   );
 

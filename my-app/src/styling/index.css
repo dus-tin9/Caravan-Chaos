@@ -54,7 +54,7 @@ body {
 
 .SeatGroup.Camel2{
   grid-template-columns: repeat(5, 1fr);
-  background: orange;
+  background: red;
   align-self: center;
 }
 
