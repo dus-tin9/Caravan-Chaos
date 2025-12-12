@@ -1,7 +1,7 @@
 import Seat from './Seat.jsx'
 
 
-export default function SeatGroup({groupId, seats, movePerson}) {
+export default function SeatGroup({groupId, seats, activePersonSeat, setActivePersonSeat, setGroups}) {
 
   return (
       <div className={ `SeatGroup ${groupId}`}>
@@ -11,7 +11,9 @@ export default function SeatGroup({groupId, seats, movePerson}) {
             groupId={groupId}
             seatIndex={index}
             person={person}
-            movePerson={movePerson}
+            activePersonSeat={activePersonSeat}
+            setActivePersonSeat={setActivePersonSeat}
+            setGroups={setGroups}
           />  
         ))}
       </div>
