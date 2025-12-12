@@ -1,0 +1,109 @@
+
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.Level{ 
+  width: 95vw;
+  height: 95vh;
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  border: 2px solid violet;
+}
+
+.SeatGroup{
+  width: 20vw;
+  height: 14vh;
+  padding: 2vh;
+  margin: 2vh;
+  border: 2px solid black;
+  border-radius: 8px;
+
+  display: grid;
+  gap: 1vw;
+}
+
+
+.SeatGroup.Camel1{
+  grid-template-columns: repeat(5, 1fr);
+  background: orange;
+}
+
+
+.SeatGroup.Camel2{
+  grid-template-columns: repeat(5, 1fr);
+  background: red;
+  align-self: center;
+}
+
+.SeatGroup.Station{
+  grid-template-columns: repeat(5, 1fr);
+  background: grey;
+  align-self: flex-end;
+}
+
+.Seat{
+  width: 2.5vw;
+  height: 5.2vh;
+  border: 2px solid;
+  border-radius: 15px;
+  background-color: beige;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Seat.free{
+  border-color: green;
+}
+
+.Seat.taken{
+  border-color: blue;
+}
+
+.Seat.hovered{
+  border-color: hotpink;
+}
+
+.Person{
+  width: 1.2vw;
+  height: 3vh;
+  border: 2px solid grey;
+  border-radius: 7px;
+  background-color: lightsalmon;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Person.moving{
+  width: 1.2vw;
+  height: 3vh;
+  border: 2px solid grey;
+  border-radius: 7px;
+  background-color: lightgreen;
+  opacity: 0;
+  cursor: grab;
+}
