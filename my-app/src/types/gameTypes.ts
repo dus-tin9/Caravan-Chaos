@@ -23,6 +23,15 @@ export type Passenger = {
   needs: Need[]; // passenger können verschieden viele needs haben
   // mood: 'happy' | 'neutral' | 'unhappy';    // Personen könnten jeweils 3 verschiedene pixelarts bekommen um zu indizieren wie gut das gelaufen ist
   satisfaction: number; // Summe aller Bedürfnisse
+  // Für Drag & Drop
+  type: 'passenger';
+}
+
+  // Für DnD Context
+export type DraggableItem = Passenger | null;
+export type DropZone = {
+  type: 'seat' | 'platform';
+  id: string;
 }
 
 // -- Sitze --
