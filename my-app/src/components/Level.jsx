@@ -7,7 +7,7 @@ import SeatGroup from './SeatGroup.jsx'
 export default function Level() {
 
   // Initialisiere State mit Sitzverteilung die zum Start des Levels vorgesehen ist; null für unbesetzte Plätze
-  const [groups, setGroups] = useState({  
+  const [groups, setGroups] = useState({
     Station:[ null,      "J",     null,      null,      "D",
               null,     null,      "G",       "M",      null,],
 
@@ -18,42 +18,18 @@ export default function Level() {
               null,     null,     null,      null,     null, ],
   });
 
-  // Person bewegen
-  function movePerson(personId, targetGridId, targetSeatIndex) {
-    
-    setGroups((prevGroups) => {
-    
-      const newGroups = structuredClone(prevGroups);
-
-      // Sitz der Person suchen und leeren
-      Object.entries(newGroups).forEach( ([gridId, seats]) => { 
-        seats.forEach( ( seat, seatIndex) => {
-          if(seat === personId) {
-            newGroups[gridId][seatIndex] = null;
-          }
-        })
-      });
-
-      // Person an neuem Sitz eintragen
-      newGroups[targetGridId][targetSeatIndex] = personId;
-
-      return newGroups;
-    })
-  }
-    
     return(    
     <div className='Level'>
         <DndProvider backend={HTML5Backend}>
           {Object.entries(groups).map(([groupId, seats]) => (      
             <SeatGroup
                 key={groupId} 
-                groupId={groupId}
-                seats={seats}
-                movePerson={movePerson}
+                groupId={groupId} 
+                seats={seats} 
+                setGroups={setGroups}
             />
           ))}
         </DndProvider>
-
     </div>
   );
 
