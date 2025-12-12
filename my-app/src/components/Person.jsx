@@ -1,8 +1,6 @@
 import { useDrag } from "react-dnd";
 
 
-
-
 export default function Person({ id }){
   const [{ isDragging }, drag] = useDrag(() => ({
     type: "PERSON",

@@ -5,7 +5,9 @@ export default function Sitz({ groupId, seatIndex, person, movePerson }) {
 
   const [{ isOver, canDrop }, drop] = useDrop(() => ({
     accept: "PERSON",
-    drop: (item) => movePerson(item.id, groupId, seatIndex),
+    drop: (item) =>{
+      movePerson(item.id, groupId, seatIndex);
+    },
     collect: (monitor) => ({
       isOver: monitor.isOver(),
       canDrop: monitor.canDrop(),

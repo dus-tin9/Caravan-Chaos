@@ -8,8 +8,8 @@ export default function Level() {
 
   // Initialisiere State mit Sitzverteilung die zum Start des Levels vorgesehen ist; null für unbesetzte Plätze
   const [groups, setGroups] = useState({  
-    Station:[ null,    "Jan",     null,      null,  "Dustin",
-              null,     null, "Jeremy","Mariella",      null,],
+    Station:[ null,      "J",     null,      null,      "D",
+              null,     null,      "G",       "M",      null,],
 
     Camel1: [ null,     null,     null,      null,     null,
               null,     null,     null,      null,     null, ],
@@ -20,23 +20,25 @@ export default function Level() {
 
   // Person bewegen
   function movePerson(personId, targetGridId, targetSeatIndex) {
-    const newGroups = [...groups];
+    
+    setGroups((prevGroups) => {
+    
+      const newGroups = structuredClone(prevGroups);
 
-    // Sitz der Person suchen und leeren
-    Object.entries(newGroups).forEach( ([gridId, seats]) => { 
-      seats.forEach( ( seat, seatIndex) => {
-        if(seat === personId) {
-          newGroups[gridId][seatIndex] = null;
+      // Sitz der Person suchen und leeren
+      Object.entries(newGroups).forEach( ([gridId, seats]) => { 
+        seats.forEach( ( seat, seatIndex) => {
+          if(seat === personId) {
+            newGroups[gridId][seatIndex] = null;
           }
-        }
-      )
-    });
+        })
+      });
 
-    // Person an neuem Sitz eintragen
-    newGroups[targetGridId][targetSeatIndex] = personId;
+      // Person an neuem Sitz eintragen
+      newGroups[targetGridId][targetSeatIndex] = personId;
 
-    // State mit neuer Sitzordnung aktualisieren
-    setGroups(newGroups);
+      return newGroups;
+    })
   }
     
     return(    

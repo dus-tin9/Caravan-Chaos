@@ -10,7 +10,7 @@ export default function SeatGroup({groupId, seats, movePerson}) {
             key={`${groupId}-Seat-${index}`}
             groupId={groupId}
             seatIndex={index}
-            personId={person}
+            person={person}
             movePerson={movePerson}
           />  
         ))}

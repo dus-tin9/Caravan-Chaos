@@ -15,64 +15,60 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* body {
+body {
   margin: 0;
   display: flex;
-  place-items: center;
+  align-items: center;
+  justify-content: center;
   min-width: 320px;
   min-height: 100vh;
-} */
+}
 
 .Level{ 
-  width: 95%;
-  height: 32em;
+  width: 95vw;
+  height: 95vh;
   display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+  justify-content: space-around;
   gap: 2rem;
-  padding: 2rem;
   border: 2px solid violet;
 }
 
 .SeatGroup{
-  display: grid;
-  gap: 10px;
-  padding: 10px;
+  width: 20vw;
+  height: 14vh;
+  padding: 2vh;
+  margin: 2vh;
   border: 2px solid black;
   border-radius: 8px;
+
+  display: grid;
+  gap: 1vw;
 }
 
 
 .SeatGroup.Camel1{
-  width: 20%;
-  height: 20%;
   grid-template-columns: repeat(5, 1fr);
   background: orange;
 }
 
 
 .SeatGroup.Camel2{
-  width: 20%;
-  height: 20%;
   grid-template-columns: repeat(5, 1fr);
   background: orange;
-  align-self: center; 
+  align-self: center;
 }
 
 .SeatGroup.Station{
-  width: 20%;
-  height: 20%;
   grid-template-columns: repeat(5, 1fr);
   background: grey;
   align-self: flex-end;
-  justify-self: flex-start;
 }
 
 .Seat{
-  width: 30px;
-  height: 30px;
+  width: 2.5vw;
+  height: 5.2vh;
   border: 2px solid;
-  border-radius: 8px;
+  border-radius: 15px;
   background-color: beige;
   display: flex;
   justify-content: center;
@@ -87,23 +83,27 @@
   border-color: blue;
 }
 
-.Person.seated{
-  width: 20px;
-  height: 20px;
+.Seat.hovered{
+  border-color: hotpink;
+}
+
+.Person{
+  width: 1.2vw;
+  height: 3vh;
   border: 2px solid grey;
-  border-radius: 5px;
-  background-color: red;
-  opacity: 1;
-  cursor: crosshair;
+  border-radius: 7px;
+  background-color: lightsalmon;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .Person.moving{
-  width: 20px;
-  height: 20px;
+  width: 1.2vw;
+  height: 3vh;
   border: 2px solid grey;
-  border-radius: 5px;
+  border-radius: 7px;
   background-color: lightgreen;
-  opacity: 0.5;
+  opacity: 0;
   cursor: grab;
-  user-select: none;
 }
