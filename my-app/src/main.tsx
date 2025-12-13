@@ -3,8 +3,10 @@ import { createRoot } from 'react-dom/client'
 
 
 function Car () {
+  const x = "myClass"
+
   return (
-    <h1 className='myClass'>Hello World!</h1>
+    <h1 className={x}>Hello World!</h1>
   );
 }
 
