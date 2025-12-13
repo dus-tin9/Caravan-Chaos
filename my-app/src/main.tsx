@@ -11,6 +11,7 @@ function Car () {
     <>
       <button onClick={myfunc} disabled>Click Me</button>
       <button onClick={myfunc} disabled = {true}>Click Me</button>
+      <button onClick={myfunc} disabled = {false}>Click Me</button>
     </>
   );
 }
