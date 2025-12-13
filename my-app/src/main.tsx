@@ -1,11 +1,6 @@
 import { createRoot } from 'react-dom/client'
 
-const myElement = (
-  <>
-    <p>I am a paragraph</p>
-    <p>I am a paragraph, too</p>
-  </>
-);
+const myElement = <h1 className='myclass'>Hello World</h1>;
 
 createRoot(document.getElementById('root')!).render(
   myElement
