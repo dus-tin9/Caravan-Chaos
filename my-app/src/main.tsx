@@ -3,13 +3,8 @@ import { createRoot } from 'react-dom/client'
 
 
 function Car () {
-  const myObj = {
-    name: "Fiat",
-    model: "500",
-    color: "white"
-  }
   return (
-    <p>My Car is a {myObj.color} {myObj.name} {myObj.model}</p>
+    <h1 className='myClass'>Hello World!</h1>
   );
 }
 
