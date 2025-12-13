@@ -1,11 +1,10 @@
 import { createRoot } from 'react-dom/client'
 
 const myElement = (
-  <ul>
-    <li>Apple</li>
-    <li>Bananas</li>
-    <li>Cherries</li>
-  </ul>
+  <div>
+    <p>I am a paragraph</p>
+    <p>I am a paragraph, too</p>
+  </div>
 );
 
 createRoot(document.getElementById('root')!).render(
