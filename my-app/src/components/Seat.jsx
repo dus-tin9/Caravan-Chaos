@@ -1,7 +1,7 @@
 import { useDrop } from "react-dnd"
 import Person from "./Person.jsx"
 
-export default function Seat({ groupId, seatIndex, person, setGroups }) {
+export default function Seat({ groupId, rowIndex, seatIndex, personId, setGroups }) {
 
   const [{ isOver, canDrop }, drop] = useDrop(() => ({
     accept: "PERSON",
@@ -9,8 +9,8 @@ export default function Seat({ groupId, seatIndex, person, setGroups }) {
       setGroups((prevGroups) => {
         const newGroups = structuredClone(prevGroups);
 
-        newGroups[item.fromGroupId][item.fromSeatIndex] = null;
-        newGroups[groupId][seatIndex] = item.id;
+        newGroups[item.fromGroupId][item.fromRowIndex][item.fromSeatIndex] = null;
+        newGroups[groupId][rowIndex][seatIndex] = item.id;
 
         return newGroups;
       });
@@ -22,12 +22,13 @@ export default function Seat({ groupId, seatIndex, person, setGroups }) {
   })); 
 
     return(
-        <div ref={drop} className={`Seat ${ person ? "taken" : isOver ? "hovered" : "free" }`}>
-          {person && <Person 
-                      id={person} 
-                      groupId={groupId} 
-                      seatIndex={seatIndex}
-                      />
+        <div ref={drop} className={`Seat ${ personId ? "taken" : isOver ? "hovered" : "free" }`}>
+          {personId && <Person 
+                        id={personId} 
+                        groupId={groupId}
+                        rowIndex={rowIndex}
+                        seatIndex={seatIndex}
+                        />
           }
         </div>
     );

@@ -41,27 +41,33 @@ body {
   border: 2px solid black;
   border-radius: 8px;
 
-  display: grid;
-  gap: 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: space-evenly;
 }
 
 
 .SeatGroup.Camel1{
-  grid-template-columns: repeat(5, 1fr);
   background: orange;
 }
 
 
 .SeatGroup.Camel2{
-  grid-template-columns: repeat(5, 1fr);
   background: red;
   align-self: center;
 }
 
 .SeatGroup.Station{
-  grid-template-columns: repeat(5, 1fr);
   background: grey;
   align-self: flex-end;
+}
+
+.SeatRow{
+  width: 21vw;
+  height: 6vh;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
 }
 
 .Seat{

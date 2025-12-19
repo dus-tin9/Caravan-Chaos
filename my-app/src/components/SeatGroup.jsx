@@ -1,18 +1,16 @@
-import Seat from './Seat.jsx'
+import SeatRow from './SeatRow.jsx'
 
 
-export default function SeatGroup({groupId, seats, activePersonSeat, setActivePersonSeat, setGroups}) {
+export default function SeatGroup({groupId, seats, setGroups}) {
 
   return (
       <div className={ `SeatGroup ${groupId}`}>
-        {seats.map((person, index) => ( 
-          <Seat 
-            key={`${groupId}-Seat-${index}`}
+        {seats.map((row, index) => ( 
+          <SeatRow 
+            key={`${groupId}-Row-${index}`}
             groupId={groupId}
-            seatIndex={index}
-            person={person}
-            activePersonSeat={activePersonSeat}
-            setActivePersonSeat={setActivePersonSeat}
+            rowSeats={row}
+            rowIndex={index}
             setGroups={setGroups}
           />  
         ))}

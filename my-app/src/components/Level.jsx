@@ -8,15 +8,23 @@ export default function Level() {
 
   // Initialisiere State mit Sitzverteilung die zum Start des Levels vorgesehen ist; null für unbesetzte Plätze
   const [groups, setGroups] = useState({
-    Station:[ null,      "J",     null,      null,      "D",
-              null,     null,      "G",       "M",      null,],
+    Station:[ [null,      "J",     null,      null,      "D"  ],
+              [null,     null,      "G",       "M",      null ] ],
 
-    Camel1: [ null,     null,     null,      null,     null,
-              null,     null,     null,      null,     null, ],
+    Camel1: [ [null,     null,     null,      null,     null  ],
+              [null,     null,     null,      null,     null  ] ],
 
-    Camel2: [ null,     null,     null,      null,     null,
-              null,     null,     null,      null,     null, ],
+    Camel2: [ [null,     null,     null,      null,     null  ],
+              [null,     null,     null,      null,     null  ] ]
   });
+
+  function Person( id, name, needs, imageSource){
+    this.id = id;
+    this.name = name;
+    this.needs = needs;
+    this.imageSource = imageSource;
+    this.satisfaction = 0;
+  }
 
     return(    
     <div className='Level'>
