@@ -42,8 +42,6 @@ export default function Spielfeld({selectedPerson, setSelectedPerson, seats, set
             prevPeople.filter((person) => person.id !== selectedPerson.id)
         );
         
-        // Person als Ausgewählte Person entfernen
-        setSelectedPerson(null);
     }
 
     // Wenn auf besetzten Sitz gedrückt wird
