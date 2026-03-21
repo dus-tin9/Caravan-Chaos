@@ -63,6 +63,39 @@ h2{
   gap: 1vw;
 }
 
+.Infofeld{
+  width: 20vw;
+  height: 90vh;
+  padding: 2vh;
+  margin: 2vh;
+  border: 2px solid green;
+  border-radius: 8px;
+
+  display: grid;
+  gap: 1vw;
+}
+
+.Personenliste{
+
+  display: grid;
+  grid-template-columns: repeat( auto-fit, 80px);
+  grid-template-rows: repeat( auto-fit, 80px);
+  align-items: center;
+  justify-items: center;
+  gap: 20px;
+}
+
+.Bahnperson{
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+  border: 2px solid aqua;
+  margin: 3vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .Level .Sitze{
   width: 40vw;
   height: 60vh;
@@ -77,8 +110,8 @@ h2{
 
 
 .Sitz{
-  width: 5vw;
-  height: 10vh;
+  width: 80px;
+  height: 80px;
   border-radius: 5px;
   border: 2px solid aqua;
   margin: 3vh;
@@ -89,30 +122,6 @@ h2{
 
 .Sitz.besetzt{
   border-color: orange;
-}
-
-
-.Infofeld{
-  width: 20vw;
-  height: 90vh;
-  padding: 2vh;
-  margin: 2vh;
-  border: 2px solid green;
-  border-radius: 8px;
-
-  display: grid;
-  gap: 1vw;
-}
-
-.Seat{
-  width: 2.5vw;
-  height: 5.2vh;
-  border: 2px solid;
-  border-radius: 15px;
-  background-color: beige;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 
