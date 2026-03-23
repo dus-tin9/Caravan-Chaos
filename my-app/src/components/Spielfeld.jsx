@@ -1,5 +1,5 @@
 
-import Sitz from './Sitz.jsx'
+import Kamel from './Kamel.jsx'
 
 export default function Spielfeld({selectedPerson, setSelectedPerson, seats, setSeats, setPeople}){
 
@@ -51,41 +51,11 @@ export default function Spielfeld({selectedPerson, setSelectedPerson, seats, set
 
     return(
       <div className="Spielfeld">
-        <h2>Kamel</h2>
-            <div className="Sitze">
-                {seats.map((row, rowIndex) => (
-                    <div key={rowIndex}>
-
-                        {row.map((seat, colIndex) => (
-                            <div
-                            key={seat.id}
-                            onClick={() => handleSeatClick(rowIndex, colIndex)}
-                            >
-
-                                {seat.occupant ? (
-                                    <div
-                                        onClick={ (e) => {
-                                         // handleSeatClick abbrechen und ersetzen falls Person auf 
-                                            e.stopPropagation();
-                                            handleSeatPersonClick(seat.occupant);
-                                        }}
-                                    >
-                                    <Sitz
-                                        occupant={seat.occupant}
-                                    />
-                                    </div>
-                                    ) : (
-                                    <Sitz
-                                        occupant={null}
-                                    />)
-                                }
-
-                            </div>
-                        ))}
-                
-                    </div>
-                ))}
-            </div>
+        <Kamel 
+            seats={seats} 
+            onSeatClick={handleSeatClick} 
+            onSeatPersonClick={handleSeatPersonClick} 
+        />
       </div>
 
     );
