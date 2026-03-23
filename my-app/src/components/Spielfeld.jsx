@@ -54,13 +54,12 @@ export default function Spielfeld({selectedPerson, setSelectedPerson, seats, set
         <h2>Kamel</h2>
             <div className="Sitze">
                 {seats.map((row, rowIndex) => (
-                    <div key={rowIndex} className={`Row-${rowIndex}`}>
+                    <div key={rowIndex}>
 
                         {row.map((seat, colIndex) => (
                             <div
                             key={seat.id}
                             onClick={() => handleSeatClick(rowIndex, colIndex)}
-                            className={`Row-${rowIndex}-Seat-${colIndex}`}
                             >
 
                                 {seat.occupant ? (
