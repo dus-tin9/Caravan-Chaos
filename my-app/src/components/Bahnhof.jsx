@@ -10,7 +10,7 @@ return(
     <div className="Bahnhof">
         <h2>Bahnhof</h2>
             <div className="Personenliste">
-            {// Die Intitialen Personen af dem Bahnhof rendern; können ausgewählt werden
+            {// Die Intitialen Personen auf dem Bahnhof rendern; können ausgewählt werden
                 people.map((person) => (
                     <div
                     key={person.id}

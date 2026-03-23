@@ -14,7 +14,6 @@ return(
                     )}
                     </ul>
                 </p>
-                <p>Status: Ausgewählt</p>
             </div>
         ) : 
         ( <p>Keine Person ausgewählt</p>)

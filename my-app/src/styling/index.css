@@ -30,11 +30,8 @@ h2{
 }
 
 .Level{ 
-  width: 98vw;
-  height: 98vh;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
   border: 2px solid violet;
 }
 
