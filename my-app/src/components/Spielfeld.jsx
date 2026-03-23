@@ -74,9 +74,10 @@ export default function Spielfeld({selectedPerson, setSelectedPerson, seats, set
                                         occupant={seat.occupant}
                                     />
                                     </div>
-                                    ):  <Sitz
-                                            occupant={null}
-                                        />
+                                    ) : (
+                                    <Sitz
+                                        occupant={null}
+                                    />)
                                 }
 
                             </div>
