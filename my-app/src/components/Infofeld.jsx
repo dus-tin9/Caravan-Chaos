@@ -7,13 +7,12 @@ return(
     {selectedPerson ? (
             <div>
                 <p><strong>Name:</strong> {selectedPerson.name}</p>
-                <p><strong>Needs:</strong> 
+                <p><strong>Needs:</strong></p>
                     <ul>
                     {selectedPerson.needs.map((need, index) => 
                     <li key={index}> {need}</li>
                     )}
-                    </ul>
-                </p>
+                    </ul>              
             </div>
         ) : 
         ( <p>Keine Person ausgewählt</p>)
