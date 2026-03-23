@@ -1,0 +1,5 @@
+{
+    "name" : "gesellig",
+    "description" : "fühlt sich wohl, wenn mindestens *Anzahl* Nachbarn hat",
+    "anzahl" : null
+}
