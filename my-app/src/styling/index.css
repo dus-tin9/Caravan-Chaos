@@ -33,7 +33,7 @@ h2{
   justify-self: center;
 }
 
-.Level {
+.Level{
   height: 100svh;
   width: 100vw;
 
@@ -52,7 +52,6 @@ h2{
   border-radius: 8px;
 
   display: grid;
-  gap: 1vw;
 }
 
 .Spielfeld{
@@ -75,24 +74,48 @@ h2{
 }
 
 .Personenliste{
+  align-self: center;
+  justify-self: center;
+  /* display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  justify-content: space-evenly; */
+
 
   display: grid;
-  grid-template-columns: repeat( auto-fit, 80px);
-  grid-template-rows: repeat( auto-fit, 80px);
+  grid-template-columns: repeat( 1, 1fr);
+  grid-template-rows: repeat( var(--personenAnz), 170px);
   align-items: center;
   justify-items: center;
-  gap: 20px;
+  gap: 1vh;
 }
 
-.Bahnperson{
-  width: 80px;
-  height: 80px;
+.DisplayKarte{
+  height: 175px;
   border-radius: 5px;
   border: 2px solid aqua;
-  margin: 3vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+  display: grid;
+  grid-template-areas: 
+    'Bild Name'
+    'Bild Infos';
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 4fr;
+}
+
+.DisplayKarte .Bild{
+  grid-area: Bild;
+  align-self: center;
+}
+
+.DisplayKarte .Name{
+  grid-area: Name;
+  justify-self: center;
+}
+
+.DisplayKarte .Infos{
+  grid-area: Infos;
+  justify-self: center;
 }
 
 .Level .Sitze{

@@ -5,12 +5,12 @@ import Infofeld from './Infofeld.jsx'
 
 // Liste von Leuten am Bahnhof
 const initialPeople = [
-  { id: 1, name: "Person 1", needs: [ "wants to sleep", "window seat"]},
+  { id: 1, name: "Person 1", needs: [ "sleepy", "window"]},
   { id: 2, name: "Person 2", needs: [ "talkative" ] },
   { id: 3, name: "Person 3", needs: [] },
   { id: 4, name: "Person 4", needs: [ "stinky" ] },
-  { id: 5, name: "Person 5", needs: [ "wants to sleep", "stinky" ] },
-  { id: 6, name: "Person 6", needs: [ "talkative",  "window seat" ] },
+  { id: 5, name: "Person 5", needs: [ "sleepy", "stinky" ] },
+  { id: 6, name: "Person 6", needs: [ "talkative",  "window" ] },
   ];
 
 // Sitzgruppe als grid erzeugen
