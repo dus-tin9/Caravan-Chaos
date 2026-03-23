@@ -26,20 +26,20 @@ const createSeatGrid = (rows, cols) =>
 export default function Level() {
 
   // Initialisiere States für Personen am Bahnhof
-    const [people, setPeople] = useState(initialPeople);
+  const [people, setPeople] = useState(initialPeople);
   // Sitzgruppe in der Mitte
-    const [seats, setSeats] = useState(createSeatGrid(4, 3));
+  const [seats, setSeats] = useState(createSeatGrid(4, 3));
   // und Ausgewählte Person
-    const [selectedPerson, setSelectedPerson] = useState(null);
+  const [selectedPerson, setSelectedPerson] = useState(null);
 
 
-    return(    
+  return(    
     <div className="Level">
       <Bahnhof
         setSelectedPerson={setSelectedPerson}
         people={people}
         setPeople={setPeople}
-        />
+      />
 
       <Spielfeld
         selectedPerson={selectedPerson}
@@ -47,11 +47,11 @@ export default function Level() {
         seats={seats}
         setSeats={setSeats}
         setPeople={setPeople}
-        />
+      />
 
       <Infofeld
         selectedPerson={selectedPerson}
-        />
+      />
     </div>
   );
 
