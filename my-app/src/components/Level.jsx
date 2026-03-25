@@ -2,31 +2,32 @@ import { useState } from "react";
 import Bahnhof from './Bahnhof.jsx'
 import Spielfeld from './Spielfeld.jsx'
 import Infofeld from './Infofeld.jsx'
+import Buttons from './Buttons.jsx'
 
 // Liste von Leuten am Bahnhof
 const initialPeople = [
-  { id: 1, name: "Person 1", needs: [ "sleepy", "window"]},
-  { id: 2, name: "Person 2", needs: [ "talkative" ] },
-  { id: 3, name: "Person 3", needs: [] },
-  { id: 4, name: "Person 4", needs: [ "stinky" ] },
-  { id: 5, name: "Person 5", needs: [ "sleepy", "stinky" ] },
-  { id: 6, name: "Person 6", needs: [ "talkative",  "window" ] },
+  { id: 1, name: "Person 1", seated: false , needs: [ "sleepy", "window"]},
+  { id: 2, name: "Person 2", seated: false, needs: [ "talkative" ] },
+  { id: 3, name: "Person 3", seated: false, needs: [] },
+  { id: 4, name: "Person 4", seated: false, needs: [ "stinky" ] },
+  { id: 5, name: "Person 5", seated: false, needs: [ "sleepy", "stinky" ] },
+  { id: 6, name: "Person 6", seated: false, needs: [ "talkative",  "window" ] },
   ];
 
 // Sitzgruppe als grid erzeugen
 const createSeatGrid = (rows, cols) =>
-  Array.from({ length: rows }, (_, rowIndex) =>
-    Array.from({ length: cols }, (_, colIndex) => ({
-      
-      // Sitz besteht aus ID und Person auf Sitz
-      id: `${rowIndex}-${colIndex}`,
-      occupant: null,
+    Array.from({ length: rows }, (_, rowIndex) =>
+        Array.from({ length: cols }, (_, colIndex) => ({
 
-    }))
-  );
+            // Sitz besteht aus ID und Person auf Sitz
+            id: `${rowIndex}-${colIndex}`,
+            occupant: null,
+
+        }))
+    );
 
 
-export default function Level() {
+export default function Level({setSiteState}) {
 
   // Initialisiere States für Personen am Bahnhof
   const [people, setPeople] = useState(initialPeople);
@@ -38,22 +39,27 @@ export default function Level() {
 
   return(    
     <div className="Level">
-      <Bahnhof
+        <Bahnhof
         setSelectedPerson={setSelectedPerson}
         people={people}
         />
 
-      <Spielfeld
+        <Buttons
+        setSiteState={setSiteState}
+        people={people}
+        />
+
+        <Spielfeld
         selectedPerson={selectedPerson}
         setSelectedPerson={setSelectedPerson}
         seats={seats}
         setSeats={setSeats}
         setPeople={setPeople}
-      />
+        />
 
-      <Infofeld
+        <Infofeld
         selectedPerson={selectedPerson}
-      />
+        />
     </div>
   );
 
