@@ -1,4 +1,5 @@
 import Bahnhof_Display from "./Bahnhof_Display";
+import { ScrollPanel } from 'primereact/scrollpanel';     
 
 export default function Bahnhof({setSelectedPerson, people}) {
 
@@ -11,8 +12,9 @@ return(
 
     <div className="Bahnhof">
         <h2>Bahnhof</h2>
+        <ScrollPanel className="ScrollBarBahnhof" >
             <div className="Personenliste"
-                 style={{'--personenAnz': people.length}}>
+                    style={{'--personenAnz': people.filter((person) => !person.seated).length}}>
             {// Die Intitialen Personen auf dem Bahnhof rendern; können ausgewählt werden
                 people.filter((person) => (!person.seated)).map((person) => (
                     <div
@@ -23,6 +25,7 @@ return(
                     </div>
             ))}
             </div>
+        </ScrollPanel>
     </div>
 
 );

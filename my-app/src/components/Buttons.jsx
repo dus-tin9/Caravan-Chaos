@@ -1,4 +1,4 @@
-export default function Buttons({ setSiteState, people}){
+export default function Buttons({ setSiteState, people, setPeople, seats, setSeats}){
 
     function handleEndLevel(){
         let unseated = people.filter( (person) => {return(!person.seated)});
@@ -9,7 +9,7 @@ export default function Buttons({ setSiteState, people}){
     function handleMainMenu(){
         setSiteState("MainMenu");
     }
-
+    
     return(
     <div className="Buttons">
         <button onClick={handleMainMenu}>

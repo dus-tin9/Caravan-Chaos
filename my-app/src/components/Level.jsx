@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { PrimeReactProvider } from 'primereact/api';
+import { Splitter, SplitterPanel } from 'primereact/splitter';
 import Bahnhof from './Bahnhof.jsx'
 import Spielfeld from './Spielfeld.jsx'
 import Infofeld from './Infofeld.jsx'
@@ -6,7 +8,7 @@ import Buttons from './Buttons.jsx'
 
 // Liste von Leuten am Bahnhof
 const initialPeople = [
-  { id: 1, name: "Person 1", seated: false , needs: [ "sleepy", "window"]},
+  { id: 1, name: "Person 1", seated: false, needs: [ "sleepy", "window"]},
   { id: 2, name: "Person 2", seated: false, needs: [ "talkative" ] },
   { id: 3, name: "Person 3", seated: false, needs: [] },
   { id: 4, name: "Person 4", seated: false, needs: [ "stinky" ] },
@@ -38,28 +40,40 @@ export default function Level({setSiteState}) {
 
 
   return(    
-    <div className="Level">
-        <Bahnhof
-        setSelectedPerson={setSelectedPerson}
-        people={people}
-        />
+      <div className="Level">
+        <PrimeReactProvider>
+            <Splitter className="Splitter">
+                <SplitterPanel size={25} minSize={7}>
+                    <Bahnhof
+                    setSelectedPerson={setSelectedPerson}
+                    people={people}
+                    />
+                </SplitterPanel>
 
-        <Buttons
-        setSiteState={setSiteState}
-        people={people}
-        />
+                <SplitterPanel size={75} minSize={70} className="Mittelteil">
+                    <Buttons
+                    setSiteState={setSiteState}
+                    people={people}
+                    setPeople={setPeople}
+                    seats={seats}
+                    setSeats={setSeats}
+                    />
 
-        <Spielfeld
-        selectedPerson={selectedPerson}
-        setSelectedPerson={setSelectedPerson}
-        seats={seats}
-        setSeats={setSeats}
-        setPeople={setPeople}
-        />
+                    <Spielfeld
+                    selectedPerson={selectedPerson}
+                    setSelectedPerson={setSelectedPerson}
+                    seats={seats}
+                    setSeats={setSeats}
+                    setPeople={setPeople}
+                    />
+                </SplitterPanel>
+            </Splitter>
 
-        <Infofeld
-        selectedPerson={selectedPerson}
-        />
+            <Infofeld
+            selectedPerson={selectedPerson}
+            />
+
+        </PrimeReactProvider>
     </div>
   );
 
