@@ -54,6 +54,17 @@ h2{
   display: grid;
 }
 
+.Buttons{
+  grid-area: buttons;
+
+  border: 2px solid blue;
+  border-radius: 8px;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 .Spielfeld{
   grid-area: spielfeld;
   border: 2px solid green;

@@ -37,10 +37,14 @@ export default function Spielfeld({selectedPerson, setSelectedPerson, seats, set
             )
         });
 
-        // Person aus Bahnhofliste entfernen
+        // Person als seated markieren
         setPeople((prevPeople) =>
-            prevPeople.filter((person) => person.id !== selectedPerson.id)
-        );
+            prevPeople.map((person) =>
+                person.id === selectedPerson.id
+                    ? { ...person, seated: true }
+                    : person
+            )
+);
         
     }
 

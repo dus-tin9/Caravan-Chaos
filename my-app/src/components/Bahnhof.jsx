@@ -14,7 +14,7 @@ return(
             <div className="Personenliste"
                  style={{'--personenAnz': people.length}}>
             {// Die Intitialen Personen auf dem Bahnhof rendern; können ausgewählt werden
-                people.map((person) => (
+                people.filter((person) => (!person.seated)).map((person) => (
                     <div
                     key={person.id}
                     onClick={() => handleSelectPerson(person)}
