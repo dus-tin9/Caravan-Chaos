@@ -13,9 +13,10 @@ return(
     <div className="Bahnhof">
         <h2>Bahnhof</h2>
         <ScrollPanel className="ScrollBarBahnhof" >
-            <div className="Personenliste"
+            <div    className="Personenliste"
                     style={{'--personenAnz': people.filter((person) => !person.seated).length}}>
-            {// Die Intitialen Personen auf dem Bahnhof rendern; können ausgewählt werden
+
+            {// Die Unseated Personen auf dem Bahnhof rendern; können ausgewählt werden
                 people.filter((person) => (!person.seated)).map((person) => (
                     <div
                     key={person.id}
