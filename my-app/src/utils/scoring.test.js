@@ -213,3 +213,64 @@ describe('scoreRegular', () => {
     expect(scoreRegular({ camel: 1, row: 1, column: 1 }, undefined, {})).toBe(0)
   })
 })
+
+import { buildContext, scoreLevel } from './scoring.js'
+
+describe('buildContext', () => {
+  it('maps person names to their placement', () => {
+    const c = makeCamel(1, 2, 2, [
+      { row: 0, col: 1, person: { id: 1, name: 'Max', needs: [] } },
+    ])
+    const context = buildContext([c])
+    expect(context.placements.get('Max')).toEqual({ camelId: 1, rowIndex: 0, colIndex: 1 })
+  })
+
+  it('stores the grid under the camel id', () => {
+    const c = makeCamel(1, 2, 2)
+    const context = buildContext([c])
+    expect(context.grids.get(1)).toBe(c.grid)
+  })
+})
+
+describe('scoreLevel', () => {
+  it('gives 100 to a person with no needs', () => {
+    const c = makeCamel(1, 2, 2, [
+      { row: 0, col: 0, person: { id: 1, name: 'Max', needs: [] } },
+    ])
+    const people = [{ id: 1, name: 'Max', needs: [] }]
+    const results = scoreLevel(people, [c])
+    expect(results.find(r => r.name === 'Max').score).toBe(100)
+  })
+
+  it('gives 100 when a single need is fully satisfied (schläfrig at row 0)', () => {
+    const c = makeCamel(1, 3, 2, [
+      { row: 0, col: 0, person: { id: 2, name: 'Sleeper', needs: [{ name: 'schläfrig' }] } },
+    ])
+    const people = [{ id: 2, name: 'Sleeper', needs: [{ name: 'schläfrig' }] }]
+    const results = scoreLevel(people, [c])
+    expect(results.find(r => r.name === 'Sleeper').score).toBe(100)
+  })
+
+  it('gives 0 when a single need is not satisfied (schläfrig not at row 0)', () => {
+    const c = makeCamel(1, 3, 2, [
+      { row: 2, col: 0, person: { id: 3, name: 'Sleeper2', needs: [{ name: 'schläfrig' }] } },
+    ])
+    const people = [{ id: 3, name: 'Sleeper2', needs: [{ name: 'schläfrig' }] }]
+    const results = scoreLevel(people, [c])
+    expect(results.find(r => r.name === 'Sleeper2').score).toBe(0)
+  })
+
+  it('splits 100 evenly across two needs', () => {
+    // schläfrig satisfied (row 0), einsam not satisfied (has neighbor)
+    const c = makeCamel(1, 3, 2, [
+      { row: 0, col: 0, person: { id: 4, name: 'Mixed', needs: [{ name: 'schläfrig' }, { name: 'einsam' }] } },
+      { row: 0, col: 1, person: { id: 5, name: 'Other', needs: [] } },
+    ])
+    const people = [
+      { id: 4, name: 'Mixed', needs: [{ name: 'schläfrig' }, { name: 'einsam' }] },
+      { id: 5, name: 'Other', needs: [] },
+    ]
+    const results = scoreLevel(people, [c])
+    expect(results.find(r => r.name === 'Mixed').score).toBe(50)
+  })
+})
