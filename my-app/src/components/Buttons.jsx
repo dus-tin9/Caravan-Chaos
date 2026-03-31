@@ -1,24 +1,27 @@
-export default function Buttons({ setSiteState, people}){
+import { scoreLevel } from '../utils/scoring.js'
 
-    function handleEndLevel(){
-        let unseated = people.filter( (person) => {return(!person.seated)});
-        if (unseated.length > 0) return;
-        else setSiteState("LevelRecap");
-    }
+export default function Buttons({ setSiteState, setScores, people, camels }) {
 
-    function handleMainMenu(){
-        setSiteState("MainMenu");
-    }
+  function handleEndLevel() {
+    const unseated = people.filter(person => !person.seated)
+    if (unseated.length > 0) return
+    const results = scoreLevel(people, camels)
+    setScores(results)
+    setSiteState("LevelRecap")
+  }
 
-    return(
+  function handleMainMenu() {
+    setSiteState("MainMenu")
+  }
+
+  return (
     <div className="Buttons">
-        <button onClick={handleMainMenu}>
-            Main Menu
-        </button>
-        <button onClick={handleEndLevel}>
-            End Level
-        </button>
+      <button onClick={handleMainMenu}>
+        Main Menu
+      </button>
+      <button onClick={handleEndLevel}>
+        End Level
+      </button>
     </div>
-    )
-
+  )
 }
