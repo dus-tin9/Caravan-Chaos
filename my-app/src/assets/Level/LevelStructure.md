@@ -14,7 +14,7 @@ Each level is defined as a JSON file in this directory.
 ## Camels
 
 Each camel defines a seating grid. Seats are addressed by row and column (1-indexed),
-where row 1 is the front and the last row is the back.
+where row 1 is the back (the camel walks to the right, so the first row is furthest from the front).
 
 ```json
 { "id": 1, "rows": 2, "columns": 5 }

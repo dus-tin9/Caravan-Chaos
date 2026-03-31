@@ -11,9 +11,9 @@ export default function Bahnhof_Display({person}){
 
             <h4 className="Name">{person.name}</h4>
             <ul className="Infos">
-                {person.needs.map((need, index) => 
-                    <li key={index}> {need}</li>
-                    )}
+                {person.needs.map((need, index) =>
+                    <li key={index}>{need.name}</li>
+                )}
             </ul>                    
         </div>
     );

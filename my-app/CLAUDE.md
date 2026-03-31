@@ -26,12 +26,23 @@ src/
         people/     # SVG files for people
     components/     # React UI components
     utils/          # Core game logic (pure JS functions, no React)
+        needScoring/    # One scorer file per need type, each returns a satisfaction fraction (0–1)
+        scoring.js      # Central dispatcher: scoreLevel(people, camels) → [{id, name, score}]
     
 ## Code Style
 - Separate game logic from React components (utils/ is pure JS)
 - Use ES modules (import/export), never require()
 
+## Scoring Rules
+- Each person scores 0–100. A person with 0 needs always scores 100.
+- Score = sum of (100 / numberOfNeeds) per satisfied need.
+- `gesellig` gives partial credit: `min(actualNeighbors / anzahl, 1) × share`.
+- All other needs are binary (fully met or 0).
+- Neighbors = orthogonal only (up/down/left/right, same camel only).
+- Scoring is calculated once when "End Level" is pressed, not live.
+
 ## Important Notes
-- Level data format is documented in src/assets/level/LevelStructure.md
-- need data format is documented in src/assets/needs/Needs.md
+- Level data format is documented in src/assets/Level/LevelStructure.md
+- Need data format is documented in src/assets/needs/Needs.md
+- Scoring engine design spec: docs/superpowers/specs/2026-03-31-scoring-engine-design.md
 - Never commit .env files
