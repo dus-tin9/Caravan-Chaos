@@ -44,3 +44,21 @@ describe('getNeighborOccupants', () => {
     expect(result.map(o => o.name)).not.toContain('Center')
   })
 })
+
+import scoreSchläfrig from './needScoring/schläfrig.js'
+
+describe('scoreSchläfrig', () => {
+  it('returns 1 when person is in row 0 (back of camel)', () => {
+    const placement = { camelId: 1, rowIndex: 0, colIndex: 2 }
+    expect(scoreSchläfrig({}, placement, {})).toBe(1)
+  })
+
+  it('returns 0 when person is not in row 0', () => {
+    const placement = { camelId: 1, rowIndex: 2, colIndex: 0 }
+    expect(scoreSchläfrig({}, placement, {})).toBe(0)
+  })
+
+  it('returns 0 when person is not placed', () => {
+    expect(scoreSchläfrig({}, undefined, {})).toBe(0)
+  })
+})
