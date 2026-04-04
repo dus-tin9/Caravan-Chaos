@@ -27,7 +27,7 @@ const createSeatGrid = (rows, cols) =>
     );
 
 
-export default function Level({setSiteState}) {
+export default function Level({ levelId }) {
 
   // Initialisiere States für Personen am Bahnhof
   const [people, setPeople] = useState(initialPeople);
@@ -45,7 +45,7 @@ export default function Level({setSiteState}) {
         />
 
         <Buttons
-        setSiteState={setSiteState}
+        levelId={levelId}
         people={people}
         />
 
