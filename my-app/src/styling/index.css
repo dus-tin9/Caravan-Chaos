@@ -55,94 +55,145 @@
 
 body {
   margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-width: 320px;
   min-height: 100vh;
 }
 
-#root {
-  min-height: 100vh;
+* {
+  box-sizing: border-box;
 }
 
-.Level{ 
-  width: 95vw;
-  height: 95vh;
+h2{
+  height: 4vh;
+  justify-self: center;
+}
+
+.Level{
+  height: 100svh;
+  width: 100vw;
+
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 4fr;
+  grid-template-areas: 
+      'bahnhof buttons info'
+      'bahnhof spielfeld info';
+}
+
+.Bahnhof{
+  grid-area: bahnhof;
+
+  border: 2px solid red;
+  border-radius: 8px;
+
+  display: grid;
+}
+
+.Buttons{
+  grid-area: buttons;
+
+  border: 2px solid blue;
+  border-radius: 8px;
+
   display: flex;
-  justify-content: space-around;
-  gap: 2rem;
-  border: 2px solid violet;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-.SeatGroup{
-  width: 20vw;
-  height: 14vh;
-  padding: 2vh;
-  margin: 2vh;
-  border: 2px solid black;
+.Spielfeld{
+  grid-area: spielfeld;
+  border: 2px solid green;
+  border-radius: 8px;
+
+
+  display: grid;
+  gap: 1vw;
+}
+
+.Infofeld{
+  grid-area: info;
+  border: 2px solid yellow;
   border-radius: 8px;
 
   display: grid;
   gap: 1vw;
 }
 
-.SeatGroup.Camel1{
-  grid-template-columns: repeat(5, 1fr);
-  background: orange;
+.Personenliste{
+  align-self: center;
+  justify-self: center;
+  /* display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  justify-content: space-evenly; */
+
+
+  display: grid;
+  grid-template-columns: repeat( 1, 1fr);
+  grid-template-rows: repeat( var(--personenAnz), 170px);
+  align-items: center;
+  justify-items: center;
+  gap: 1vh;
 }
 
-.SeatGroup.Camel2{
-  grid-template-columns: repeat(5, 1fr);
-  background: red;
+.DisplayKarte{
+  height: 175px;
+  border-radius: 5px;
+  border: 2px solid aqua;
+
+  display: grid;
+  grid-template-areas: 
+    'Bild Name'
+    'Bild Infos';
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 4fr;
+}
+
+.DisplayKarte .Bild{
+  grid-area: Bild;
   align-self: center;
 }
 
-.SeatGroup.Station{
-  grid-template-columns: repeat(5, 1fr);
-  background: grey;
-  align-self: flex-end;
+.DisplayKarte .Name{
+  grid-area: Name;
+  justify-self: center;
 }
 
-.Seat{
-  width: 2.5vw;
-  height: 5.2vh;
-  border: 2px solid;
-  border-radius: 15px;
-  background-color: beige;
+.DisplayKarte .Infos{
+  grid-area: Infos;
+  justify-self: center;
+}
+
+.Level .Sitze{
+  width: 40vw;
+  height: 60vh;
+  align-self: center;
+  justify-self: center;
+
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: space-around;
+  align-content: space-around;
+}
+
+
+.Sitz{
+  width: 80px;
+  height: 80px;
+  border-radius: 5px;
+  border: 2px solid aqua;
+  margin: 3vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.Seat.free{
-  border-color: green;
-}
-
-.Seat.taken{
-  border-color: blue;
-}
-
-.Seat.hovered{
-  border-color: hotpink;
-}
-
-.Person{
-  width: 1.2vw;
-  height: 3vh;
-  border: 2px solid grey;
-  border-radius: 7px;
-  background-color: lightsalmon;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.Person.moving{
-  width: 1.2vw;
-  height: 3vh;
-  border: 2px solid grey;
-  border-radius: 7px;
-  background-color: lightgreen;
-  opacity: 0;
-  cursor: grab;
+.Sitz.besetzt{
+  border-color: orange;
 }
 
 @theme inline {

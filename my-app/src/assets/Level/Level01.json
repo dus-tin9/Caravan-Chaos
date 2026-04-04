@@ -1,0 +1,104 @@
+{
+    "id" : 1,
+    "name" : "Reise nach Jerusalem",
+    "camels" : [
+        {
+            "id": 1,
+            "rows" : 2,
+            "columns" : 5
+        },
+        {
+            "id": 2,
+            "rows" : 3,
+            "columns" : 4
+        }
+    ],
+    "people" : [
+        {
+            "id" : 1,
+            "name" : "Max"
+        },
+        {
+            "id" : 2,
+            "name" : "Jeremy"
+        },
+        {
+            "id" : 3,
+            "name" : "Mariella"
+        },
+        {
+            "id" : 4,
+            "name" : "Dustin"
+        },
+        {
+            "id" : 5,
+            "name" : "Sleeper",
+            "needs" : [
+                {
+                    "name" : "schläfrig"
+                }
+            ]
+        },
+        {
+            "id" : 6,
+            "name" : "Loner",
+            "needs" : [
+                {
+                    "name" : "einsam"
+                }
+            ]
+        },
+        {
+            "id" : 7,
+            "name" : "Social",
+            "needs" : [
+                {
+                    "name" : "gesellig",
+                    "anzahl" : 2
+                }
+            ]
+        },
+        {
+            "id" : 8,
+            "name" : "Bestie1",
+            "needs" : [
+                {
+                    "name" : "bestie",
+                    "bestie" : "Bestie2"
+                }
+            ]
+        },
+        {
+            "id" : 9,
+            "name" : "Bestie2",
+            "needs" : [
+                {
+                    "name" : "bestie",
+                    "bestie" : "Bestie1"
+                }
+            ]
+        },
+        {
+            "id" : 10,
+            "name" : "Jan",
+            "needs" : [
+                {
+                    "name" : "hater",
+                    "hated" : "Jeremy"
+                }
+            ]
+        },
+        {
+            "id" : 11,
+            "name" : "Regular",
+            "needs" : [
+                {
+                    "name" : "regular",
+                    "camel" : 1,
+                    "row" : 1,
+                    "column" : 1
+                }
+            ]
+        }
+    ]
+}
