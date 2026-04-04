@@ -1,7 +1,18 @@
 
+import { TentTree } from 'lucide-react'
+
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { cn } from '@/lib/utils'
 import Kamel from './Kamel.jsx'
 
-export default function Spielfeld({selectedPerson, setSelectedPerson, seats, setSeats, setPeople}){
+export default function Spielfeld({
+    className,
+    selectedPerson,
+    setSelectedPerson,
+    seats,
+    setSeats,
+    setPeople,
+}){
 
     // Person die bereits auf Sitz sitzt entfernen um sie neu zu platzieren
     const removePersonFromSeats = (grid, personId) => {
@@ -54,13 +65,26 @@ export default function Spielfeld({selectedPerson, setSelectedPerson, seats, set
     };
 
     return(
-      <div className="Spielfeld">
-        <Kamel 
-            seats={seats} 
-            onSeatClick={handleSeatClick} 
-            onSeatPersonClick={handleSeatPersonClick} 
-        />
-      </div>
+            <Card className={cn('border-border/70 bg-card/70 backdrop-blur md:h-full', className)}>
+                <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-lg">
+                        <TentTree className="size-5" />
+                        Kamel
+                    </CardTitle>
+                    <CardDescription>
+                        {selectedPerson
+                            ? `${selectedPerson.name} ist ausgewaehlt. Klicke auf einen freien Sitz.`
+                            : 'Waehle zuerst eine Person am Bahnhof und klicke dann auf einen freien Sitz.'}
+                    </CardDescription>
+                </CardHeader>
+                <CardContent className="pb-4">
+                    <Kamel
+                            seats={seats}
+                            onSeatClick={handleSeatClick}
+                            onSeatPersonClick={handleSeatPersonClick}
+                    />
+                </CardContent>
+            </Card>
 
     );
 }

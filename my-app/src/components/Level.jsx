@@ -38,29 +38,44 @@ export default function Level({ levelId }) {
 
 
   return(    
-    <div className="Level">
+    <main
+      className="relative min-h-screen w-full overflow-hidden px-4 py-4 md:px-6 md:py-6"
+      style={{
+        background:
+          'radial-gradient(circle at top, var(--background) 0%, var(--card) 45%, var(--secondary) 100%)',
+      }}
+    >
+      <div className="pointer-events-none absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/20 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-8 left-8 h-44 w-44 rounded-full bg-accent/20 blur-2xl" />
+
+      <div className="relative z-10 mx-auto grid w-full max-w-[1440px] gap-4 md:grid-cols-[minmax(260px,1fr)_minmax(560px,2fr)_minmax(260px,1fr)] md:grid-rows-[auto_1fr]">
         <Bahnhof
-        setSelectedPerson={setSelectedPerson}
-        people={people}
+          className="md:col-start-1 md:row-span-2"
+          setSelectedPerson={setSelectedPerson}
+          people={people}
         />
 
         <Buttons
-        levelId={levelId}
-        people={people}
+          className="md:col-start-2 md:row-start-1"
+          levelId={levelId}
+          people={people}
         />
 
         <Spielfeld
-        selectedPerson={selectedPerson}
-        setSelectedPerson={setSelectedPerson}
-        seats={seats}
-        setSeats={setSeats}
-        setPeople={setPeople}
+          className="md:col-start-2 md:row-start-2"
+          selectedPerson={selectedPerson}
+          setSelectedPerson={setSelectedPerson}
+          seats={seats}
+          setSeats={setSeats}
+          setPeople={setPeople}
         />
 
         <Infofeld
-        selectedPerson={selectedPerson}
+          className="md:col-start-3 md:row-span-2"
+          selectedPerson={selectedPerson}
         />
-    </div>
+      </div>
+    </main>
   );
 
 }
