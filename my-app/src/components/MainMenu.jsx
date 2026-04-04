@@ -43,7 +43,7 @@ function MainMenu() {
                         onClick={() => navigate(routes.levelById(DEFAULT_LEVEL_ID))}
                     >
                         <Compass className='size-4' />
-                        Start Journey
+                        Starte Reise
                     </Button>
 
                     <Button
@@ -53,7 +53,7 @@ function MainMenu() {
                         onClick={() => navigate(routes.settings)}
                     >
                         <Settings className='size-4' />
-                        Settings
+                        Einstellungen
                     </Button>
                 </CardContent>
             </Card>
