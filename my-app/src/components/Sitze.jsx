@@ -1,8 +1,7 @@
 import Sitz from './Sitz.jsx';
 
-export default function Sitze({ seats, onSeatClick, onSeatPersonClick }) {
+export default function Sitze({ camelId, seats, onSeatClick, onSeatPersonClick }) {
 
-    
     return (
         <div className="Sitze">
             {seats.map((row, rowIndex) => (
@@ -15,7 +14,7 @@ export default function Sitze({ seats, onSeatClick, onSeatPersonClick }) {
                                     e.stopPropagation();
                                     onSeatPersonClick(seat.occupant);
                                 } else {
-                                    onSeatClick(rowIndex, colIndex);
+                                    onSeatClick(camelId, rowIndex, colIndex);
                                 }
                             }}
                         >

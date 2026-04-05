@@ -1,29 +1,27 @@
-import { useNavigate } from 'react-router-dom'
+import { scoreLevel } from '../utils/scoring.js'
 
-import { routes } from '@/lib/routes'
+export default function Buttons({ setSiteState, setScores, people, camels }) {
 
-export default function Buttons({ levelId, people }) {
-    const navigate = useNavigate()
+  function handleEndLevel() {
+    const unseated = people.filter(person => !person.seated)
+    if (unseated.length > 0) return
+    const results = scoreLevel(people, camels)
+    setScores(results)
+    setSiteState("LevelRecap")
+  }
 
-    function handleEndLevel(){
-        let unseated = people.filter( (person) => {return(!person.seated)});
-        if (unseated.length > 0) return;
-        else navigate(routes.levelById(levelId + 1));
-    }
+  function handleMainMenu() {
+    setSiteState("MainMenu")
+  }
 
-    function handleMainMenu(){
-        navigate(routes.main)
-    }
-
-    return(
+  return (
     <div className="Buttons">
-        <button onClick={handleMainMenu}>
-            Main Menu
-        </button>
-        <button onClick={handleEndLevel}>
-            End Level
-        </button>
+      <button onClick={handleMainMenu}>
+        Main Menu
+      </button>
+      <button onClick={handleEndLevel}>
+        End Level
+      </button>
     </div>
-    )
-
+  )
 }
