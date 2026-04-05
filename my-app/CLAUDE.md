@@ -8,9 +8,12 @@ by Ending the Level (with a Button) the Player will be shown a score and a overv
 Every person in the Game shall have a max score of 100 dependent by how well their needs are met
 
 ## Tech Stack
-- React 18 (Vite)
+- React 19 (Vite)
 - JavaScript (JSX)
-- CSS for styling
+- Tailwind CSS v4 (via `@tailwindcss/vite` plugin — no config file needed)
+- shadcn/ui components (in `src/components/ui/`)
+- React Router DOM v7 (routing)
+- CSS for non-Tailwind styling (`src/styling/index.css`)
 
 ## Commands
 - `npm run dev`   — Start dev server (port 5173)
@@ -25,13 +28,24 @@ src/
         needs/      # Need-type definitions (JSON files)
         people/     # SVG files for people
     components/     # React UI components
+        ui/         # shadcn/ui primitives (Button, Card, etc.)
+    lib/            # Shared helpers
+        routes.js   # Centralised route constants and helpers — use these for all navigation
+        utils.js    # cn() helper (clsx + tailwind-merge) — use for conditional Tailwind classes
     utils/          # Core game logic (pure JS functions, no React)
         needScoring/    # One scorer file per need type, each returns a satisfaction fraction (0–1)
         scoring.js      # Central dispatcher: scoreLevel(people, camels) → [{id, name, score}]
-    
+
+## Routing
+- React Router DOM v7 — `BrowserRouter` wraps the app in `main.jsx`
+- Routes defined in `src/lib/routes.js`: `routes.main`, `routes.levelRoot`, `routes.levelById(id)`
+- Navigate with `useNavigate()` from react-router-dom, not with state variables
+- Import alias `@/` maps to `src/` (configured in `vite.config.js` and `jsconfig.json`)
+
 ## Code Style
 - Separate game logic from React components (utils/ is pure JS)
 - Use ES modules (import/export), never require()
+- Use `cn()` from `@/lib/utils` when combining Tailwind classes conditionally
 
 ## Scoring Rules
 - Each person scores 0–100. A person with 0 needs always scores 100.

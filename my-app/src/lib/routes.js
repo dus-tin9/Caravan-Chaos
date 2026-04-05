@@ -4,4 +4,5 @@ export const routes = {
   main: '/main',
   levelRoot: '/level',
   levelById: (levelId) => `/level/${levelId}`,
+  levelRecap: (levelId) => `/level/${levelId}/recap`,
 };

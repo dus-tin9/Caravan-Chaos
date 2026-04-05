@@ -2,6 +2,7 @@ import { Navigate, Route, Routes, useParams } from 'react-router-dom'
 
 import { DEFAULT_LEVEL_ID, routes } from '@/lib/routes'
 import Level from './components/Level'
+import LevelRecap from './components/LevelRecap'
 import MainMenu from './components/MainMenu'
 
 function LevelRoute() {
@@ -26,6 +27,7 @@ export default function App() {
         element={<Navigate to={routes.levelById(DEFAULT_LEVEL_ID)} replace />}
       />
       <Route path={`${routes.levelRoot}/:levelId`} element={<LevelRoute />} />
+      <Route path={`${routes.levelRoot}/:levelId/recap`} element={<LevelRecap />} />
       <Route path="*" element={<Navigate to={routes.main} replace />} />
     </Routes>
   )

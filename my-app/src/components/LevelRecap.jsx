@@ -1,4 +1,12 @@
-export default function LevelRecap({ scores, setSiteState }) {
+import { useLocation, useNavigate } from 'react-router-dom'
+
+import { routes } from '@/lib/routes'
+
+export default function LevelRecap() {
+  const { state } = useLocation()
+  const navigate = useNavigate()
+  const scores = state?.scores ?? []
+
   const average = scores.length > 0
     ? Math.round(scores.reduce((sum, s) => sum + s.score, 0) / scores.length)
     : 0
@@ -12,7 +20,7 @@ export default function LevelRecap({ scores, setSiteState }) {
         ))}
       </ul>
       <p><strong>Average: {average} / 100</strong></p>
-      <button onClick={() => setSiteState("MainMenu")}>
+      <button onClick={() => navigate(routes.main)}>
         Main Menu
       </button>
     </div>

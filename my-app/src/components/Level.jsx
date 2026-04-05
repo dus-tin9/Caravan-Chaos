@@ -28,7 +28,7 @@ const initialCamels = levelData.camels.map(camel => ({
 }));
 
 
-export default function Level({setSiteState, setScores}) {
+export default function Level({ levelId }) {
 
   // Initialisiere States für Personen am Bahnhof
   const [people, setPeople] = useState(initialPeople);
@@ -64,8 +64,7 @@ export default function Level({setSiteState, setScores}) {
       />
 
       <Buttons
-        setSiteState={setSiteState}
-        setScores={setScores}
+        levelId={levelId}
         people={people}
         camels={camels}
       />
