@@ -1,5 +1,6 @@
 
 import Kamel from './Kamel.jsx'
+import { ScrollPanel } from 'primereact/scrollpanel';
 
 export default function Spielfeld({selectedPerson, setSelectedPerson, camels, setCamels, setPeople}){
 
@@ -55,16 +56,18 @@ export default function Spielfeld({selectedPerson, setSelectedPerson, camels, se
     };
 
     return(
-      <div className="Spielfeld">
-        {camels.map(camel => (
-            <Kamel
-                key={camel.id}
-                camelId={camel.id}
-                seats={camel.grid}
-                onSeatClick={handleSeatClick}
-                onSeatPersonClick={handleSeatPersonClick}
-            />
-        ))}
-      </div>
+      <ScrollPanel className="ScrollBarSpielfeld">
+        <div className="Spielfeld">
+          {camels.map(camel => (
+              <Kamel
+                  key={camel.id}
+                  camelId={camel.id}
+                  seats={camel.grid}
+                  onSeatClick={handleSeatClick}
+                  onSeatPersonClick={handleSeatPersonClick}
+              />
+          ))}
+        </div>
+      </ScrollPanel>
     );
 }

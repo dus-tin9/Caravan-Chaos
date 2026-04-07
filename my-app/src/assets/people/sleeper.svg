@@ -1,0 +1,24 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+  <!-- Haare -->
+  <rect x="24" y="8" width="16" height="8" fill="#3b2f2f"/>
+  <rect x="20" y="12" width="24" height="8" fill="#3b2f2f"/>
+
+  <!-- Kopf -->
+  <rect x="24" y="16" width="16" height="12" fill="#f2c094"/>
+
+  <!-- Körper -->
+  <rect x="22" y="28" width="20" height="16" fill="#4CAF50"/>
+
+  <!-- Beine -->
+  <rect x="24" y="44" width="6" height="12" fill="#333"/>
+  <rect x="34" y="44" width="6" height="12" fill="#333"/>
+
+  <!-- Augen -->
+  <rect x="28" y="20" width="3" height="1" fill="#000"/>
+  <rect x="33" y="20" width="3" height="1" fill="#000"/>
+
+  <!-- KLARE Z Z Z -->
+  <text x="44" y="10" font-size="8" font-family="monospace" fill="#000">Z</text>
+  <text x="49" y="6" font-size="7" font-family="monospace" fill="#000">Z</text>
+  <text x="53" y="3" font-size="6" font-family="monospace" fill="#000">Z</text>
+</svg>

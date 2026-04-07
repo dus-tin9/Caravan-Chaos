@@ -9,7 +9,7 @@ For neighbor rules, see the neighbor definition in [README.md](README.md).
 
 ## `schläfrig` (Sleepy)
 
-Person must be seated in the **first row** (`row 1`, `rowIndex 0`) which is the back of the camel.
+Person must be seated in the **first row** (`row 1`, top row of the grid).
 
 ```json
 { "name": "schläfrig" }

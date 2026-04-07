@@ -1,6 +1,8 @@
+import { getPersonImageUrl } from '@/lib/personImage'
+
 export default function Bahnhof_Display({person}){
 
-    const imageurl = `/src/assets/people/${person.name}.svg`
+    const imageurl = getPersonImageUrl(person)
 
     return(
         <div className="DisplayKarte">

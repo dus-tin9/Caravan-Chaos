@@ -80,15 +80,19 @@ h2{
 .Level{
   height: 100svh;
   width: 100vw;
+  position: relative;
+  overflow: hidden;
 
   display: grid;
   grid-template-columns: 4fr 1fr;
-  grid-template-areas: 
+  grid-template-areas:
     'splitter info';
 }
 
 .Splitter{
   grid-area: splitter;
+  height: 100%;
+  overflow: hidden;
 }
 
 .Bahnhof{
@@ -99,12 +103,19 @@ h2{
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+
+  background-color: #4e4540;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='82'><rect width='180' height='82' fill='%234e4540'/><rect x='2' y='2' width='58' height='38' rx='1' fill='%239a9189'/><rect x='62' y='2' width='46' height='38' rx='1' fill='%238a8078'/><rect x='110' y='2' width='68' height='38' rx='1' fill='%23a09288'/><rect x='2' y='42' width='38' height='38' rx='1' fill='%23878078'/><rect x='42' y='42' width='70' height='38' rx='1' fill='%23969088'/><rect x='114' y='42' width='64' height='38' rx='1' fill='%238d8480'/></svg>");
+  background-repeat: repeat;
+  box-shadow: inset 0 0 24px rgba(0,0,0,0.35);
 }
 
 .Mittelteil{
+  height: 100%;
+  overflow: hidden;
   display: grid;
-  grid-template-rows: 1fr 4fr;
-  grid-template-areas: 
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
     "buttons"
     "spielfeld";
 }
@@ -129,6 +140,14 @@ h2{
   gap: 1vw;
 }
 
+.Kamel {
+  border: 1px solid var(--camel);
+  border-radius: 10px;
+  padding: 8px 12px;
+  background-color: var(--card);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
 .Infofeld{
   grid-area: info;
   border: 2px solid yellow;
@@ -141,6 +160,12 @@ h2{
 .ScrollBarBahnhof{
   width: 100%;
   height: 90vh;
+}
+
+
+.ScrollBarSpielfeld{
+  width: 100%;
+  height: 100%;
 }
 
 .Personenliste{
@@ -164,10 +189,13 @@ h2{
 .DisplayKarte{
   height: 175px;
   border-radius: 5px;
-  border: 1px solid aqua;
+  border: 1px solid rgba(255,255,255,0.15);
+  background-color: rgba(0,0,0,0.5);
+  backdrop-filter: blur(2px);
+  color: #f0e8d8;
 
   display: grid;
-  grid-template-areas: 
+  grid-template-areas:
     'Bild Name'
     'Bild Infos';
   grid-template-columns: 1fr 2fr;
@@ -190,30 +218,40 @@ h2{
 }
 
 .Level .Sitze{
-  width: 40vw;
-  height: 60vh;
   align-self: center;
   justify-self: center;
-
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  justify-content: space-around;
-  align-content: space-around;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
+.Level .SitzeZeile {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+}
 
-.Sitz{
+.Level .SitzeLabel {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+}
+
+.Level .Sitz{
   width: 80px;
   height: 80px;
   border-radius: 5px;
   border: 2px solid aqua;
-  margin: 3vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.Sitz.besetzt{
+.Level .Sitz.besetzt{
   border-color: orange;
 }
 

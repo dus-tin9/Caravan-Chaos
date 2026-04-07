@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96">
+  <!-- Hintergrund (transparent) -->
+  
+  <!-- Körper (Sitzposition mit angewinkeltem Oberkörper) -->
+  <!-- Unterkörper/Beine -->
+  <rect x="35" y="55" width="26" height="18" rx="3" fill="#5B8C5A"/>
+  
+  <!-- Oberkörper (leicht nach vorne gelehnt) -->
+  <rect x="32" y="30" width="32" height="28" rx="4" fill="#6BAF5A"/>
+  
+  <!-- Arme (entspannt seitlich/vor dem Körper) -->
+  <!-- Linker Arm -->
+  <rect x="24" y="38" width="14" height="8" rx="3" fill="#FDBC6E"/>
+  <!-- Rechter Arm -->
+  <rect x="58" y="38" width="14" height="8" rx="3" fill="#FDBC6E"/>
+  
+  <!-- Hände -->
+  <circle cx="23" cy="42" r="4" fill="#FDBC6E"/>
+  <circle cx="73" cy="42" r="4" fill="#FDBC6E"/>
+  
+  <!-- Kopf -->
+  <circle cx="48" cy="24" r="14" fill="#FDBC6E"/>
+  
+  <!-- Haare (lockig/Stardew Valley Style) -->
+  <ellipse cx="48" cy="16" rx="16" ry="10" fill="#6B3A2A"/>
+  <ellipse cx="38" cy="20" rx="8" ry="10" fill="#6B3A2A"/>
+  <ellipse cx="58" cy="20" rx="8" ry="10" fill="#6B3A2A"/>
+  <ellipse cx="48" cy="12" rx="12" ry="7" fill="#6B3A2A"/>
+  
+  <!-- Augen (geschlossen – schlafen wollen) -->
+  <path d="M41 23 Q43 25 45 23" stroke="#333" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  <path d="M51 23 Q53 25 55 23" stroke="#333" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+  
+  <!-- Nase -->
+  <circle cx="48" cy="27" r="1.5" fill="#E8A85A"/>
+  
+  <!-- Mund (leichter Lächeln/entspannt) -->
+  <path d="M45 30 Q48 32 51 30" stroke="#C07040" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  
+  <!-- Wangen (Röte) -->
+  <circle cx="39" cy="27" r="3" fill="#FFB5B5" opacity="0.5"/>
+  <circle cx="57" cy="27" r="3" fill="#FFB5B5" opacity="0.5"/>
+  
+  <!-- Nackenkissen (hinter dem Nacken/Hals) -->
+  <ellipse cx="48" cy="35" rx="14" ry="5" fill="#8B7DB2"/>
+  <ellipse cx="48" cy="35" rx="13" ry="4" fill="#9B8DC2"/>
+  <!-- Kissenfalten -->
+  <line x1="41" y1="34" x2="41" y2="36" stroke="#7B6DA2" stroke-width="0.8"/>
+  <line x1="48" y1="33" x2="48" y2="37" stroke="#7B6DA2" stroke-width="0.8"/>
+  <line x1="55" y1="34" x2="55" y2="36" stroke="#7B6DA2" stroke-width="0.8"/>
+  
+  <!-- Zzz – Schlaf-Sprechblase -->
+  <text x="68" y="12" font-family="monospace, sans-serif" font-size="8" fill="#4A90D9" font-weight="bold">z</text>
+  <text x="74" y="6" font-family="monospace, sans-serif" font-size="10" fill="#4A90D9" font-weight="bold">z</text>
+  <text x="82" y="0" font-family="monospace, sans-serif" font-size="12" fill="#4A90D9" font-weight="bold">z</text>
+  
+  <!-- Kleine Details: Kragen am Oberkörper -->
+  <line x1="40" y1="30" x2="48" y2="36" stroke="#5A9A4A" stroke-width="1"/>
+  <line x1="56" y1="30" x2="48" y2="36" stroke="#5A9A4A" stroke-width="1"/>
+</svg>

@@ -1,0 +1,41 @@
+{
+    "id": 2,
+    "name": "Oasenstopp",
+    "camels": [
+        {
+            "id": 1,
+            "rows": 2,
+            "columns": 3
+        }
+    ],
+    "people": [
+        {
+            "id": 1,
+            "name": "Schlafmütze",
+            "needs": [
+                { "name": "schläfrig" }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Einsiedler",
+            "needs": [
+                { "name": "einsam" }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Zwilling1",
+            "needs": [
+                { "name": "bestie", "bestie": "Zwilling2" }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Zwilling2",
+            "needs": [
+                { "name": "bestie", "bestie": "Zwilling1" }
+            ]
+        }
+    ]
+}
