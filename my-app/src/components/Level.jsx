@@ -1,3 +1,5 @@
+import { PrimeReactProvider } from 'primereact/api';
+import { Splitter, SplitterPanel } from 'primereact/splitter';
 import { useEffect, useState } from "react";
 import Bahnhof from './Bahnhof.jsx'
 import Spielfeld from './Spielfeld.jsx'
@@ -54,32 +56,39 @@ export default function Level({ levelId }) {
     localStorage.setItem('camels', JSON.stringify(camels));
   }, [people, camels]);
 
+  return(    
+      <div className="Level">
+        <PrimeReactProvider>
+            <Splitter className="Splitter">
+                <SplitterPanel size={25} minSize={7}>
+                    <Bahnhof
+                    setSelectedPerson={setSelectedPerson}
+                    people={people}
+                    />
+                </SplitterPanel>
 
+                <SplitterPanel size={75} minSize={70} className="Mittelteil">
+                    <Buttons
+                        levelId={levelId}
+                        people={people}
+                        camels={camels}
+                    />
 
-  return(
-    <div className="Level">
-      <Bahnhof
-        setSelectedPerson={setSelectedPerson}
-        people={people}
-      />
+                    <Spielfeld
+                        selectedPerson={selectedPerson}
+                        setSelectedPerson={setSelectedPerson}
+                        camels={camels}
+                        setCamels={setCamels}
+                        setPeople={setPeople}
+                    />
+                </SplitterPanel>
+            </Splitter>
 
-      <Buttons
-        levelId={levelId}
-        people={people}
-        camels={camels}
-      />
+            <Infofeld
+            selectedPerson={selectedPerson}
+            />
 
-      <Spielfeld
-        selectedPerson={selectedPerson}
-        setSelectedPerson={setSelectedPerson}
-        camels={camels}
-        setCamels={setCamels}
-        setPeople={setPeople}
-      />
-
-      <Infofeld
-        selectedPerson={selectedPerson}
-      />
+        </PrimeReactProvider>
     </div>
   );
 }
