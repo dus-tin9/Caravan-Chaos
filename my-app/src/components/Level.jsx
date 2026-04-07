@@ -1,43 +1,61 @@
 import { useState } from "react";
 import { PrimeReactProvider } from 'primereact/api';
 import { Splitter, SplitterPanel } from 'primereact/splitter';
+import { useEffect, useState } from "react";
 import Bahnhof from './Bahnhof.jsx'
 import Spielfeld from './Spielfeld.jsx'
 import Infofeld from './Infofeld.jsx'
 import Buttons from './Buttons.jsx'
+import levelData from '../assets/Level/Level01.json'
 
-// Liste von Leuten am Bahnhof
-const initialPeople = [
-  { id: 1, name: "Person 1", seated: false, needs: [ "sleepy", "window"]},
-  { id: 2, name: "Person 2", seated: false, needs: [ "talkative" ] },
-  { id: 3, name: "Person 3", seated: false, needs: [] },
-  { id: 4, name: "Person 4", seated: false, needs: [ "stinky" ] },
-  { id: 5, name: "Person 5", seated: false, needs: [ "sleepy", "stinky" ] },
-  { id: 6, name: "Person 6", seated: false, needs: [ "talkative",  "window" ] },
-  ];
+// Liste von Leuten am Bahnhof aus Level01.json importieren
+const initialPeople = levelData.people.map(person => ({
+  id: person.id,
+  name: person.name,
+  needs: person.needs ?? []
+}));
 
 // Sitzgruppe als grid erzeugen
-const createSeatGrid = (rows, cols) =>
-    Array.from({ length: rows }, (_, rowIndex) =>
-        Array.from({ length: cols }, (_, colIndex) => ({
+const createSeatGrid = (camelId, rows, cols) =>
+  Array.from({ length: rows }, (_, rowIndex) =>
+    Array.from({ length: cols }, (_, colIndex) => ({
+      id: `${camelId}-${rowIndex}-${colIndex}`,
+      occupant: null,
+    }))
+  );
 
-            // Sitz besteht aus ID und Person auf Sitz
-            id: `${rowIndex}-${colIndex}`,
-            occupant: null,
+// Kamele aus Level-Daten erzeugen
+const initialCamels = levelData.camels.map(camel => ({
+  id: camel.id,
+  grid: createSeatGrid(camel.id, camel.rows, camel.columns)
+}));
 
-        }))
-    );
 
-
-export default function Level({setSiteState}) {
+export default function Level({ levelId }) {
 
   // Initialisiere States für Personen am Bahnhof
   const [people, setPeople] = useState(initialPeople);
-  // Sitzgruppe in der Mitte
-  const [seats, setSeats] = useState(createSeatGrid(4, 3));
-  // und Ausgewählte Person
+  // Kamele mit ihren Sitzgruppen
+  const [camels, setCamels] = useState(initialCamels);
+  // Ausgewählte Person
   const [selectedPerson, setSelectedPerson] = useState(null);
 
+  // Beim Laden der Komponente, versuche, Personen und Kamele aus localStorage zu laden
+  useEffect(() => {
+    const storedPeople = localStorage.getItem('people');
+    const storedCamels = localStorage.getItem('camels');
+
+    if (storedPeople && storedCamels) {
+      setPeople(JSON.parse(storedPeople));
+      setCamels(JSON.parse(storedCamels));
+    }
+  }, []);
+
+  // jedes Mal, wenn sich die Personen oder die Kamele ändern, speichere sie im localStorage
+  useEffect(() => {
+    localStorage.setItem('people', JSON.stringify(people));
+    localStorage.setItem('camels', JSON.stringify(camels));
+  }, [people, camels]);
 
   return(    
       <div className="Level">
@@ -76,5 +94,4 @@ export default function Level({setSiteState}) {
         </PrimeReactProvider>
     </div>
   );
-
 }

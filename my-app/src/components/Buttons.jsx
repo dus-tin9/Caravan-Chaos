@@ -1,25 +1,30 @@
-export default function Buttons({ setSiteState, people, setPeople, seats, setSeats}){
+import { useNavigate } from 'react-router-dom'
 
-    // Wenn alle Personen geseated dann spring zu level recap seite
-    function handleEndLevel(){
-        let unseated = people.filter( (person) => {return(!person.seated)});
-        if (unseated.length > 0) return;
-        else setSiteState("LevelRecap");
-    }
+import { routes } from '@/lib/routes'
+import { scoreLevel } from '../utils/scoring.js'
 
-    function handleMainMenu(){
-        setSiteState("MainMenu");
-    }
-    
-    return(
+export default function Buttons({ levelId, people, camels }) {
+  const navigate = useNavigate()
+
+  function handleEndLevel() {
+    const unseated = people.filter(person => !person.seated)
+    if (unseated.length > 0) return
+    const scores = scoreLevel(people, camels)
+    navigate(routes.levelRecap(levelId), { state: { scores } })
+  }
+
+  function handleMainMenu() {
+    navigate(routes.main)
+  }
+
+  return (
     <div className="Buttons">
-        <button onClick={handleMainMenu}>
-            Main Menu
-        </button>
-        <button onClick={handleEndLevel}>
-            End Level
-        </button>
+      <button onClick={handleMainMenu}>
+        Main Menu
+      </button>
+      <button onClick={handleEndLevel}>
+        End Level
+      </button>
     </div>
-    )
-
+  )
 }

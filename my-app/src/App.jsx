@@ -1,28 +1,36 @@
-import { useState } from 'react'
+import { Navigate, Route, Routes, useParams } from 'react-router-dom'
+
+import { DEFAULT_LEVEL_ID, routes } from '@/lib/routes'
 import Level from './components/Level'
+import LevelRecap from './components/LevelRecap'
+import MainMenu from './components/MainMenu'
+import SettingsPage from './components/Settings'
 
+function LevelRoute() {
+  const { levelId } = useParams()
+  const parsedLevelId = Number(levelId)
+  const isValidLevelId = Number.isInteger(parsedLevelId) && parsedLevelId > 0
 
-export default function App() {
-
-  const [SiteState, setSiteState] = useState("Level")
-
-  function currentSiteState(State){
-    switch(State){
-        case "Level":
-            return( <Level setSiteState={setSiteState}/> )
-        case "MainMenu":
-            return( <MainMenu setSiteState={setSiteState}/> )
-        case "LevelRecap":
-            return( <LevelRecap setSiteState={setSiteState}/> )
-        case "LevelAuswahl":
-            return( <LevelAuswahl setSiteState={setSiteState}/> )
-    }
+  if (!isValidLevelId) {
+    return <Navigate to={routes.levelById(DEFAULT_LEVEL_ID)} replace />
   }
 
+  return <Level key={parsedLevelId} levelId={parsedLevelId} />
+}
 
+export default function App() {
   return (
-    <div>
-        {currentSiteState(SiteState)}
-    </div>
+    <Routes>
+      <Route path="/" element={<Navigate to={routes.main} replace />} />
+      <Route path={routes.main} element={<MainMenu />} />
+      <Route path={routes.settings} element={<SettingsPage />} />
+      <Route
+        path={routes.levelRoot}
+        element={<Navigate to={routes.levelById(DEFAULT_LEVEL_ID)} replace />}
+      />
+      <Route path={`${routes.levelRoot}/:levelId`} element={<LevelRoute />} />
+      <Route path={`${routes.levelRoot}/:levelId/recap`} element={<LevelRecap />} />
+      <Route path="*" element={<Navigate to={routes.main} replace />} />
+    </Routes>
   )
 }
