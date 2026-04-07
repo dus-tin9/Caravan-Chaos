@@ -47,6 +47,7 @@ src/
         routes.js       # All route constants — use these for every navigate() call
         utils.js        # cn() helper (clsx + tailwind-merge)
         personImage.js  # Maps first need → SVG filename; getPersonImageUrl(person)
+        highscore.js    # Highscore helpers: saveHighscoreIfBetter, getAllHighscores, restoreHighscoreState
     utils/
         needScoring/    # One scorer per need type, returns fraction 0–1
         scoring.js      # scoreLevel(people, camels) → [{id, name, score}]
@@ -72,6 +73,31 @@ All routes are defined in `src/lib/routes.js`. Always import from there — neve
 - Adding a new JSON file is enough — no code changes required; it appears automatically in LevelSelect.
 - Each level's state is saved to localStorage with level-specific keys (`people_1`, `camels_1`, …).
 - The last played level is stored in localStorage under `lastPlayedLevel`.
+
+## localStorage Keys
+
+| Key | Content |
+|-----|---------|
+| `people_${levelId}` | Serialised people array for that level |
+| `camels_${levelId}` | Serialised camels array for that level |
+| `lastPlayedLevel` | ID of the last played level (used by MainMenu "Continue Journey") |
+| `highscore_${levelId}` | `{ levelId, total, max, scores, people, camels, date }` — best run for that level |
+
+## Highscore
+
+- Scoring uses **sum** (not average): `total = sum of all person scores`, `max = numberOfPeople × 100`.
+- `saveHighscoreIfBetter(levelId, scores, people, camels)` — saves if `total > stored.total`. Returns `{ isNew, total }`.
+- `restoreHighscoreState(hs)` — writes the highscore's `people`/`camels` back into the level's localStorage keys and sets `lastPlayedLevel`, then the caller navigates to the level.
+- LevelRecap shows a "Neuer Rekord!" badge when a new highscore is set.
+- Highscore page reads all `highscore_*` keys, sorted by levelId, each with a restore button.
+
+## Styling Conventions
+
+- Pages (MainMenu, LevelRecap, Highscore) share the same background pattern: radial-gradient + 3 decorative blur circles + gradient overlay + dot-grid overlay.
+- In-level components use CSS classes in `src/styling/index.css` (not Tailwind).
+- Bahnhof background: SVG data-URI cobblestone pattern embedded directly in CSS.
+- Kamel cards: `border: 1px solid var(--camel)`, `background-color: var(--card)`, subtle box-shadow.
+- Person cards (DisplayKarte): semi-transparent (`rgba(0,0,0,0.5)`) with `backdrop-filter: blur(2px)` so the Bahnhof texture shows through.
 
 ## Person Images
 - Defined in `src/lib/personImage.js` — `getPersonImageUrl(person)`.
