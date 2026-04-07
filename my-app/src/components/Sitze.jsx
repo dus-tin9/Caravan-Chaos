@@ -7,21 +7,24 @@ export default function Sitze({ camelId, seats, onSeatClick, onSeatPersonClick }
         <div className="Sitze">
             {Array.from({ length: numCols }, (_, colIndex) => (
                 <div key={colIndex} className="SitzeZeile">
-                    {seats.map((row, rowIndex) => (
-                        <div
-                            key={`${rowIndex}-${colIndex}`}
-                            onClick={(e) => {
-                                if (row[colIndex].occupant) {
-                                    e.stopPropagation();
-                                    onSeatPersonClick(row[colIndex].occupant);
-                                } else {
-                                    onSeatClick(camelId, rowIndex, colIndex);
-                                }
-                            }}
-                        >
-                            <Sitz occupant={row[colIndex].occupant} />
-                        </div>
-                    ))}
+                    {seats.map((row, rowIndex) => {
+                        const seat = row[colIndex];
+                        return (
+                            <div
+                                key={seat.id}
+                                onClick={(e) => {
+                                    if (seat.occupant) {
+                                        e.stopPropagation();
+                                        onSeatPersonClick(seat.occupant);
+                                    } else {
+                                        onSeatClick(camelId, rowIndex, colIndex);
+                                    }
+                                }}
+                            >
+                                <Sitz occupant={seat.occupant} />
+                            </div>
+                        );
+                    })}
                 </div>
             ))}
         </div>
