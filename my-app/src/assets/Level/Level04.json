@@ -1,0 +1,21 @@
+{
+    "id": 4,
+    "name": "Große Karawane",
+    "camels": [
+        { "id": 1,  "rows": 2, "columns": 2 },
+        { "id": 2,  "rows": 2, "columns": 2 },
+        { "id": 3,  "rows": 2, "columns": 2 },
+        { "id": 4,  "rows": 2, "columns": 2 },
+        { "id": 5,  "rows": 2, "columns": 2 },
+        { "id": 6,  "rows": 2, "columns": 2 },
+        { "id": 7,  "rows": 2, "columns": 2 },
+        { "id": 8,  "rows": 2, "columns": 2 },
+        { "id": 9,  "rows": 2, "columns": 2 },
+        { "id": 10, "rows": 2, "columns": 2 }
+    ],
+    "people": [
+        { "id": 1, "name": "Reisender1" },
+        { "id": 2, "name": "Reisender2" },
+        { "id": 3, "name": "Reisender3" }
+    ]
+}

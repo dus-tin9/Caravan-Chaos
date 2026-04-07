@@ -1,10 +1,11 @@
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 
 import { routes } from '@/lib/routes'
 
 export default function LevelRecap() {
   const { state } = useLocation()
   const navigate = useNavigate()
+  const { levelId } = useParams()
   const scores = state?.scores ?? []
 
   const average = scores.length > 0
@@ -20,6 +21,9 @@ export default function LevelRecap() {
         ))}
       </ul>
       <p><strong>Average: {average} / 100</strong></p>
+      <button onClick={() => navigate(routes.levelById(levelId))}>
+        Spielstand wiederherstellen
+      </button>
       <button onClick={() => navigate(routes.main)}>
         Main Menu
       </button>

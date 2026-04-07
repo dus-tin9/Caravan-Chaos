@@ -1,4 +1,4 @@
-import { Compass, Settings } from 'lucide-react'
+import { Compass, Map, Settings, Trophy } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
 import { Button } from '@/components/ui/button'
@@ -13,6 +13,7 @@ import {
 
 function MainMenu() {
     const navigate = useNavigate()
+    const lastPlayedLevel = Number(localStorage.getItem('lastPlayedLevel')) || DEFAULT_LEVEL_ID
 
     return (
         <main
@@ -40,10 +41,30 @@ function MainMenu() {
                     <Button
                         size='lg'
                         className='h-12 rounded-xl bg-primary text-primary-foreground shadow-lg shadow-foreground/20 backdrop-blur hover:bg-primary/85'
-                        onClick={() => navigate(routes.levelById(DEFAULT_LEVEL_ID))}
+                        onClick={() => navigate(routes.levelById(lastPlayedLevel))}
                     >
                         <Compass className='size-4' />
-                        Starte Reise
+                        Continue Journey
+                    </Button>
+
+                    <Button
+                        variant='outline'
+                        size='lg'
+                        className='h-12 rounded-xl border-border bg-background/70 text-foreground backdrop-blur hover:bg-card'
+                        onClick={() => navigate(routes.levelSelect)}
+                    >
+                        <Map className='size-4' />
+                        Level Auswahl
+                    </Button>
+
+                    <Button
+                        variant='outline'
+                        size='lg'
+                        className='h-12 rounded-xl border-border bg-background/70 text-foreground backdrop-blur hover:bg-card'
+                        onClick={() => navigate(routes.highscore)}
+                    >
+                        <Trophy className='size-4' />
+                        Highscore
                     </Button>
 
                     <Button

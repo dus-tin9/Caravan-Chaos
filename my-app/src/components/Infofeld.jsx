@@ -1,3 +1,5 @@
+import { getPersonImageUrl } from '@/lib/personImage'
+
 function formatNeed(need) {
   switch (need.name) {
     case 'schläfrig': return 'Schläfrig – muss ganz hinten sitzen'
@@ -19,14 +21,13 @@ export default function Infofeld({ selectedPerson }) {
     )
   }
 
-  const imageUrl = `/src/assets/people/${selectedPerson.name}.svg`
+  const imageUrl = getPersonImageUrl(selectedPerson)
 
   return (
     <div className="Infofeld">
       <img
         src={imageUrl}
         alt={selectedPerson.name}
-        onError={(e) => { e.target.src = '/src/assets/people/placeholder.svg' }}
         style={{ width: '100%', display: 'block' }}
       />
       <h3>{selectedPerson.name}</h3>
