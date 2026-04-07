@@ -70,19 +70,17 @@ export default function Level({ levelId }) {
 
                 <SplitterPanel size={75} minSize={70} className="Mittelteil">
                     <Buttons
-                    setSiteState={setSiteState}
-                    people={people}
-                    setPeople={setPeople}
-                    seats={seats}
-                    setSeats={setSeats}
+                        levelId={levelId}
+                        people={people}
+                        camels={camels}
                     />
 
                     <Spielfeld
-                    selectedPerson={selectedPerson}
-                    setSelectedPerson={setSelectedPerson}
-                    seats={seats}
-                    setSeats={setSeats}
-                    setPeople={setPeople}
+                        selectedPerson={selectedPerson}
+                        setSelectedPerson={setSelectedPerson}
+                        camels={camels}
+                        setCamels={setCamels}
+                        setPeople={setPeople}
                     />
                 </SplitterPanel>
             </Splitter>
