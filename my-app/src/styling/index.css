@@ -82,20 +82,31 @@ h2{
   width: 100vw;
 
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
-  grid-template-rows: 1fr 4fr;
+  grid-template-columns: 4fr 1fr;
   grid-template-areas: 
-      'bahnhof buttons info'
-      'bahnhof spielfeld info';
+    'splitter info';
+}
+
+.Splitter{
+  grid-area: splitter;
 }
 
 .Bahnhof{
-  grid-area: bahnhof;
-
   border: 2px solid red;
   border-radius: 8px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
 
+.Mittelteil{
   display: grid;
+  grid-template-rows: 1fr 4fr;
+  grid-template-areas: 
+    "buttons"
+    "spielfeld";
 }
 
 .Buttons{
@@ -114,7 +125,6 @@ h2{
   border: 2px solid green;
   border-radius: 8px;
 
-
   display: grid;
   gap: 1vw;
 }
@@ -128,6 +138,11 @@ h2{
   gap: 1vw;
 }
 
+.ScrollBarBahnhof{
+  width: 100%;
+  height: 90vh;
+}
+
 .Personenliste{
   align-self: center;
   justify-self: center;
@@ -136,7 +151,8 @@ h2{
   align-content: flex-end;
   justify-content: space-evenly; */
 
-
+  padding-top: 5px;
+  padding-bottom: 5px;
   display: grid;
   grid-template-columns: repeat( 1, 1fr);
   grid-template-rows: repeat( var(--personenAnz), 170px);
@@ -148,7 +164,7 @@ h2{
 .DisplayKarte{
   height: 175px;
   border-radius: 5px;
-  border: 2px solid aqua;
+  border: 1px solid aqua;
 
   display: grid;
   grid-template-areas: 
