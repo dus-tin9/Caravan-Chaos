@@ -1,0 +1,22 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+  <!-- Haare -->
+  <rect x="24" y="8" width="16" height="8" fill="#5d4037"/>
+
+  <!-- Kopf -->
+  <rect x="24" y="16" width="16" height="12" fill="#f2c094"/>
+
+  <!-- Körper -->
+  <rect x="22" y="28" width="20" height="16" fill="#607D8B"/>
+
+  <!-- Beine -->
+  <rect x="24" y="44" width="6" height="12" fill="#333"/>
+  <rect x="34" y="44" width="6" height="12" fill="#333"/>
+
+  <!-- Brille -->
+  <rect x="27" y="20" width="4" height="3" fill="none" stroke="#000"/>
+  <rect x="33" y="20" width="4" height="3" fill="none" stroke="#000"/>
+  <rect x="31" y="21" width="2" height="1" fill="#000"/>
+
+  <!-- Mund -->
+  <rect x="29" y="25" width="6" height="1" fill="#000"/>
+</svg>
