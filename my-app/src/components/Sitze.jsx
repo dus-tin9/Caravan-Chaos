@@ -1,24 +1,25 @@
 import Sitz from './Sitz.jsx';
 
 export default function Sitze({ camelId, seats, onSeatClick, onSeatPersonClick }) {
+    const numCols = seats[0]?.length ?? 0;
 
     return (
         <div className="Sitze">
-            {seats.map((row, rowIndex) => (
-                <div key={rowIndex}>
-                    {row.map((seat, colIndex) => (
+            {Array.from({ length: numCols }, (_, colIndex) => (
+                <div key={colIndex} className="SitzeZeile">
+                    {seats.map((row, rowIndex) => (
                         <div
-                            key={seat.id}
+                            key={`${rowIndex}-${colIndex}`}
                             onClick={(e) => {
-                                if (seat.occupant) {
+                                if (row[colIndex].occupant) {
                                     e.stopPropagation();
-                                    onSeatPersonClick(seat.occupant);
+                                    onSeatPersonClick(row[colIndex].occupant);
                                 } else {
                                     onSeatClick(camelId, rowIndex, colIndex);
                                 }
                             }}
                         >
-                            <Sitz occupant={seat.occupant} />
+                            <Sitz occupant={row[colIndex].occupant} />
                         </div>
                     ))}
                 </div>
