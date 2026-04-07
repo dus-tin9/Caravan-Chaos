@@ -1,4 +1,4 @@
-import { ArrowLeft, Trophy } from 'lucide-react'
+import { ArrowLeft, RotateCcw, Trophy } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
 import { Button } from '@/components/ui/button'
@@ -10,13 +10,20 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { routes } from '@/lib/routes'
+import { getAllHighscores, restoreHighscoreState } from '@/lib/highscore'
 
 export default function HighscorePage() {
   const navigate = useNavigate()
+  const highscores = getAllHighscores()
+
+  function handleRestore(hs) {
+    restoreHighscoreState(hs)
+    navigate(routes.levelById(hs.levelId))
+  }
 
   return (
     <main
-      className="relative flex min-h-screen w-full items-center justify-center px-4 py-10"
+      className="relative flex min-h-screen w-full items-center justify-center overflow-hidden px-4 py-10"
       style={{
         background:
           'radial-gradient(circle at top, var(--background) 0%, var(--card) 52%, var(--secondary) 100%)',
@@ -24,6 +31,8 @@ export default function HighscorePage() {
     >
       <div className="pointer-events-none absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/15 blur-3xl" />
       <div className="pointer-events-none absolute bottom-8 right-8 h-44 w-44 rounded-full bg-accent/25 blur-2xl" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-transparent via-foreground/5 to-transparent" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.14)_1px,transparent_1px)] [background-size:22px_22px] opacity-20 dark:opacity-10" />
 
       <Card className="relative z-10 w-full max-w-2xl border-border/60 bg-card/70 shadow-2xl shadow-foreground/10 backdrop-blur-xl">
         <CardHeader className="space-y-3">
@@ -36,10 +45,43 @@ export default function HighscorePage() {
           </CardDescription>
         </CardHeader>
 
-        <CardContent className="grid gap-6 pb-6">
-          <div className="rounded-xl border border-border/70 bg-background/65 p-6 text-center text-muted-foreground">
-            Noch keine Ergebnisse gespeichert.
-          </div>
+        <CardContent className="grid gap-4 pb-6">
+          {highscores.length === 0 ? (
+            <div className="rounded-xl border border-border/70 bg-background/65 p-6 text-center text-muted-foreground">
+              Noch keine Ergebnisse gespeichert.
+            </div>
+          ) : (
+            highscores.map(hs => (
+              <div
+                key={hs.levelId}
+                className="rounded-xl border border-border/50 bg-background/40 p-4"
+              >
+                <div className="mb-3 flex items-center justify-between">
+                  <span className="font-semibold text-foreground">Level {hs.levelId}</span>
+                  <span className="text-lg font-bold text-foreground">{hs.total} / {hs.max}</span>
+                </div>
+
+                <ul className="mb-3 divide-y divide-border/40">
+                  {hs.scores.map(s => (
+                    <li key={s.id} className="flex items-center justify-between py-1 text-sm">
+                      <span className="text-muted-foreground">{s.name}</span>
+                      <span className="font-medium text-foreground">{s.score} / 100</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full rounded-lg border-border bg-background/70 text-foreground backdrop-blur hover:bg-card"
+                  onClick={() => handleRestore(hs)}
+                >
+                  <RotateCcw className="size-3.5" />
+                  Spielstand wiederherstellen
+                </Button>
+              </div>
+            ))
+          )}
 
           <Button
             variant="secondary"

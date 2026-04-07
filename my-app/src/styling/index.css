@@ -138,6 +138,30 @@ h2{
 
   display: grid;
   gap: 1vw;
+  padding: 1vw;
+
+  background-color: #c8a96e;
+  background-image:
+    radial-gradient(circle, #b89458 1.5px, transparent 1.5px),
+    radial-gradient(circle, #d4b87a 1px,   transparent 1px),
+    radial-gradient(circle, #e2c98a 1.5px, transparent 1.5px),
+    radial-gradient(circle, #a07848 1px,   transparent 1px),
+    radial-gradient(circle, #c4a060 1px,   transparent 1px),
+    radial-gradient(circle, #ddc07c 2px,   transparent 2px);
+  background-size:
+    23px 23px,
+    17px 17px,
+    31px 31px,
+    19px 19px,
+    27px 27px,
+    41px 41px;
+  background-position:
+    0px   0px,
+    8px   11px,
+    14px  5px,
+    3px   18px,
+    20px  2px,
+    11px  22px;
 }
 
 .Kamel {

@@ -3,7 +3,7 @@
 A person can have zero or more needs defined in their `needs` array. All needs must
 be satisfied for a placement to be considered valid.
 
-For neighbor rules, see the neighbor definition in [README.md](README.md).
+For neighbor rules, see the neighbor definition in [LevelStructure.md](../Level/LevelStructure.md).
 
 ---
 

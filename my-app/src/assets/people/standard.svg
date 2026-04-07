@@ -1,0 +1,21 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+  <!-- Haare -->
+  <rect x="24" y="8" width="16" height="8" fill="#9e9e9e"/>
+
+  <!-- Kopf -->
+  <rect x="24" y="16" width="16" height="12" fill="#f2c094"/>
+
+  <!-- Körper (langweilig grau/blau) -->
+  <rect x="22" y="28" width="20" height="16" fill="#90a4ae"/>
+
+  <!-- Beine -->
+  <rect x="24" y="44" width="6" height="12" fill="#555"/>
+  <rect x="34" y="44" width="6" height="12" fill="#555"/>
+
+  <!-- Augen -->
+  <rect x="28" y="20" width="2" height="2" fill="#000"/>
+  <rect x="34" y="20" width="2" height="2" fill="#000"/>
+
+  <!-- neutraler Mund -->
+  <rect x="29" y="24" width="6" height="1" fill="#000"/>
+</svg>

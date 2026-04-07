@@ -2,7 +2,7 @@ import { getPersonImageUrl } from '@/lib/personImage'
 
 function formatNeed(need) {
   switch (need.name) {
-    case 'schläfrig': return 'Schläfrig – muss ganz hinten sitzen'
+    case 'schläfrig': return 'Schläfrig – muss in der obersten Reihe sitzen'
     case 'einsam':    return 'Einsam – kein Nachbar erlaubt'
     case 'gesellig':  return `Gesellig – mindestens ${need.anzahl} Nachbar(n)`
     case 'bestie':    return `Bestie von ${need.bestie}`
