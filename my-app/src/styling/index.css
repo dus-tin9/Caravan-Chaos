@@ -208,6 +208,15 @@ h2{
   gap: 4px;
 }
 
+.Level .SitzeLabel {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+}
 
 .Level .Sitz{
   width: 80px;

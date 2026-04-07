@@ -54,6 +54,7 @@ src/
 - All other needs are binary (fully met or 0).
 - Neighbors = orthogonal only (up/down/left/right, same camel only).
 - Scoring is calculated once when "End Level" is pressed, not live.
+- Grid coordinates: row 1 = top row, column 1 = leftmost column (1-indexed in JSON, 0-indexed internally).
 
 ## Important Notes
 - Level data format is documented in src/assets/Level/LevelStructure.md
