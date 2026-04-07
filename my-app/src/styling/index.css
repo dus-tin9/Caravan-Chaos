@@ -195,15 +195,17 @@ h2{
 }
 
 .Level .Sitze{
-  width: 40vw;
-  height: 60vh;
   align-self: center;
   justify-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
 
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  justify-content: space-around;
-  align-content: space-around;
+.SitzeZeile {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
 }
 
 
