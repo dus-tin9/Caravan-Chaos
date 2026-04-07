@@ -209,7 +209,7 @@ h2{
 }
 
 
-.Sitz{
+.Level .Sitz{
   width: 80px;
   height: 80px;
   border-radius: 5px;
@@ -219,7 +219,7 @@ h2{
   align-items: center;
 }
 
-.Sitz.besetzt{
+.Level .Sitz.besetzt{
   border-color: orange;
 }
 
