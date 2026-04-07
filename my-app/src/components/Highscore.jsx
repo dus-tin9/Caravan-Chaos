@@ -34,6 +34,15 @@ export default function HighscorePage() {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-transparent via-foreground/5 to-transparent" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.14)_1px,transparent_1px)] [background-size:22px_22px] opacity-20 dark:opacity-10" />
 
+      <Button
+        variant="secondary"
+        className="fixed left-4 top-4 z-50 h-10 gap-2 rounded-xl"
+        onClick={() => navigate(routes.main)}
+      >
+        <ArrowLeft className="size-4" />
+        Main Menu
+      </Button>
+
       <Card className="relative z-10 w-full max-w-2xl border-border/60 bg-card/70 shadow-2xl shadow-foreground/10 backdrop-blur-xl">
         <CardHeader className="space-y-3">
           <CardTitle className="flex items-center gap-2 text-3xl font-semibold text-foreground md:text-4xl">
@@ -83,14 +92,6 @@ export default function HighscorePage() {
             ))
           )}
 
-          <Button
-            variant="secondary"
-            className="h-11 gap-2 rounded-xl"
-            onClick={() => navigate(routes.main)}
-          >
-            <ArrowLeft className="size-4" />
-            Zurück zum Main Menu
-          </Button>
         </CardContent>
       </Card>
     </main>
