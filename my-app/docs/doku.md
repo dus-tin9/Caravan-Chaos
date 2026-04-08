@@ -168,15 +168,7 @@ Die Navigation zwischen Screens erfolgt über URL-basiertes Routing. Scores werd
 
 ### 6.1 Funktionsumfang des fertigen Spiels
 
-[TODO: Kurze Beschreibung des fertigen Spielstands zum Abgabezeitpunkt.]
 
-Das Spiel bietet zum Abgabezeitpunkt folgende Funktionalität:
-
-- **Hauptmenü** mit „Start Journey"-Button und Platzhalter für Einstellungen
-- **Levelansicht** mit [TODO: Anzahl] Kamelen und [TODO: Anzahl] Personen pro Level
-- **Sechs Bedürfnis-Typen** mit vollständiger Bewertungslogik
-- **Level-Abschlussscreen** mit Einzelpunktezahl und Durchschnitt
-- **28 Unit-Tests** für die gesamte Spiellogik (alle bestanden)
 
 ### 6.2 Screenshots
 
