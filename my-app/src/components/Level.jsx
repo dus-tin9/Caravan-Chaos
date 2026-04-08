@@ -1,10 +1,15 @@
-import { PrimeReactProvider } from 'primereact/api';
-import { Splitter, SplitterPanel } from 'primereact/splitter';
 import { useEffect, useState } from "react";
+import { AlertTriangle } from 'lucide-react'
 import Bahnhof from './Bahnhof.jsx'
 import Spielfeld from './Spielfeld.jsx'
 import Infofeld from './Infofeld.jsx'
 import Buttons from './Buttons.jsx'
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
 
 const levelModules = import.meta.glob('../assets/Level/Level*.json', { eager: true });
 
@@ -38,12 +43,9 @@ function buildInitialState(levelData) {
 
 export default function Level({ levelId }) {
   const levelData = getLevelData(levelId);
-
-  if (!levelData) {
-    return <div className="Level" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>Level {levelId} nicht gefunden.</div>;
-  }
-
-  const { people: initialPeople, camels: initialCamels } = buildInitialState(levelData);
+  const { people: initialPeople, camels: initialCamels } = buildInitialState(
+    levelData ?? { people: [], camels: [] }
+  );
 
   const peopleKey = `people_${levelId}`;
   const camelsKey = `camels_${levelId}`;
@@ -63,64 +65,80 @@ export default function Level({ levelId }) {
 
   // Letztes gespieltes Level merken
   useEffect(() => {
+    if (!levelData) return
     localStorage.setItem('lastPlayedLevel', levelId);
-  }, [levelId]);
+  }, [levelId, levelData]);
 
   // jedes Mal, wenn sich die Personen oder die Kamele ändern, speichere sie im localStorage
   useEffect(() => {
+    if (!levelData) return
     localStorage.setItem(peopleKey, JSON.stringify(people));
     localStorage.setItem(camelsKey, JSON.stringify(camels));
-  }, [people, camels]);
+  }, [people, camels, peopleKey, camelsKey, levelData]);
+
+  if (!levelData) {
+    return (
+      <main className="flex min-h-screen items-center justify-center px-4 py-10">
+        <Card className="w-full max-w-xl border-border/60 bg-card/70 shadow-xl shadow-foreground/10 backdrop-blur-xl">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2 text-foreground">
+              <AlertTriangle className="size-5" />
+              Level {levelId} nicht gefunden
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="text-sm text-muted-foreground">
+            Bitte waehle ein vorhandenes Level aus der Levelauswahl.
+          </CardContent>
+        </Card>
+      </main>
+    )
+  }
 
   return(
-      <div
-        className="Level"
-        style={{
-          background:
-            'radial-gradient(circle at top, var(--background) 0%, var(--card) 52%, var(--secondary) 100%)',
-        }}
-      >
-        {/* Dekorative Blur-Kreise */}
-        <div className='pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/20 blur-3xl' />
-        <div className='pointer-events-none absolute bottom-8 left-8 h-44 w-44 rounded-full bg-accent/25 blur-2xl' />
-        <div className='pointer-events-none absolute right-8 top-16 h-52 w-52 rounded-full bg-secondary/45 blur-3xl' />
-        {/* Overlays */}
-        <div className='pointer-events-none absolute inset-0 bg-gradient-to-br from-transparent via-foreground/5 to-transparent' />
-        <div className='pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.14)_1px,transparent_1px)] [background-size:22px_22px] opacity-20 dark:opacity-10' />
+    <main
+      className="relative min-h-screen w-full overflow-hidden px-4 py-4 md:px-6 md:py-6"
+      style={{
+        background:
+          'radial-gradient(circle at top, var(--background) 0%, var(--card) 52%, var(--secondary) 100%)',
+      }}
+    >
+      <div className='pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/20 blur-3xl' />
+      <div className='pointer-events-none absolute bottom-8 left-8 h-44 w-44 rounded-full bg-accent/25 blur-2xl' />
+      <div className='pointer-events-none absolute right-8 top-16 h-52 w-52 rounded-full bg-secondary/45 blur-3xl' />
+      <div className='pointer-events-none absolute inset-0 bg-gradient-to-br from-transparent via-foreground/5 to-transparent' />
+      <div className='pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.14)_1px,transparent_1px)] [background-size:22px_22px] opacity-20 dark:opacity-10' />
 
-        <PrimeReactProvider>
-            <Splitter className="Splitter">
-                <SplitterPanel size={25} minSize={7}>
-                    <Bahnhof
-                    setSelectedPerson={setSelectedPerson}
-                    people={people}
-                    />
-                </SplitterPanel>
+      <div className="relative z-10 mx-auto grid w-full max-w-[1500px] gap-4 md:grid-cols-[minmax(260px,1fr)_minmax(620px,2.2fr)_minmax(260px,1fr)] md:grid-rows-[auto_1fr]">
+        <Bahnhof
+          className="md:col-start-1 md:row-span-2"
+          setSelectedPerson={setSelectedPerson}
+          selectedPerson={selectedPerson}
+          people={people}
+        />
 
-                <SplitterPanel size={75} minSize={70} className="Mittelteil">
-                    <Buttons
-                        levelId={levelId}
-                        people={people}
-                        camels={camels}
-                        setPeople={setPeople}
-                        setCamels={setCamels}
-                    />
+        <Buttons
+          className="md:col-start-2 md:row-start-1"
+          levelId={levelId}
+          people={people}
+          camels={camels}
+          setPeople={setPeople}
+          setCamels={setCamels}
+        />
 
-                    <Spielfeld
-                        selectedPerson={selectedPerson}
-                        setSelectedPerson={setSelectedPerson}
-                        camels={camels}
-                        setCamels={setCamels}
-                        setPeople={setPeople}
-                    />
-                </SplitterPanel>
-            </Splitter>
+        <Spielfeld
+          className="md:col-start-2 md:row-start-2"
+          selectedPerson={selectedPerson}
+          setSelectedPerson={setSelectedPerson}
+          camels={camels}
+          setCamels={setCamels}
+          setPeople={setPeople}
+        />
 
-            <Infofeld
-            selectedPerson={selectedPerson}
-            />
-
-        </PrimeReactProvider>
-    </div>
+        <Infofeld
+          className="md:col-start-3 md:row-span-2"
+          selectedPerson={selectedPerson}
+        />
+      </div>
+    </main>
   );
 }
