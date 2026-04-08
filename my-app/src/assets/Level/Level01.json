@@ -83,8 +83,14 @@
             "name" : "Jan",
             "needs" : [
                 {
+                    
                     "name" : "hater",
                     "hated" : "Jeremy"
+                },
+                {
+                    
+                    "name" : "gesellig",
+                    "anzahl" : 2
                 }
             ]
         },
