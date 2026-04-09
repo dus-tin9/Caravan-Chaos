@@ -35,7 +35,7 @@ export default function LevelSelect() {
         <CardHeader className="space-y-3">
           <CardTitle className="flex items-center gap-2 text-3xl font-semibold text-foreground md:text-4xl">
             <Map className="size-6" />
-            Level Auswahl
+            Levelauswahl
           </CardTitle>
           <CardDescription className="text-base text-muted-foreground">
             Wähle deine nächste Reise.
@@ -64,7 +64,7 @@ export default function LevelSelect() {
             onClick={() => navigate(routes.main)}
           >
             <ArrowLeft className="size-4" />
-            Zurück zum Main Menu
+            Hauptmenü
           </Button>
         </CardContent>
       </Card>

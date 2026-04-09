@@ -47,7 +47,7 @@ export default function Buttons({ className, levelId, people, camels, setPeople,
             onClick={handleMainMenu}
           >
             <Home className='size-4' />
-            Main Menu
+            Hauptmenü
           </Button>
 
           <Button
@@ -56,7 +56,7 @@ export default function Buttons({ className, levelId, people, camels, setPeople,
             onClick={handleReset}
           >
             <RotateCcw className='size-4' />
-            Reset
+            Zurücksetzen
           </Button>
 
           <Button
@@ -66,7 +66,7 @@ export default function Buttons({ className, levelId, people, camels, setPeople,
             title={unseated > 0 ? `Noch ${unseated} Person(en) ohne Platz` : ''}
           >
             <Flag className='size-4' />
-            End Level
+            Level beenden
           </Button>
         </div>
       </CardContent>

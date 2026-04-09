@@ -40,7 +40,7 @@ export default function HighscorePage() {
         onClick={() => navigate(routes.main)}
       >
         <ArrowLeft className="size-4" />
-        Main Menu
+        Hauptmenü
       </Button>
 
       <Card className="relative z-10 w-full max-w-2xl border-border/60 bg-card/70 shadow-2xl shadow-foreground/10 backdrop-blur-xl">

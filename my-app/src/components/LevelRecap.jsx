@@ -57,7 +57,7 @@ export default function LevelRecap() {
         <CardHeader className='space-y-1'>
           <div className='flex items-center gap-3'>
             <CardTitle className='text-4xl font-semibold tracking-tight text-foreground md:text-5xl'>
-              Level Complete!
+              Die Karawane ist verreist!
             </CardTitle>
             {isNewHighscore && (
               <span className='flex items-center gap-1 rounded-full bg-primary px-3 py-1 text-sm font-semibold text-primary-foreground'>
@@ -85,7 +85,7 @@ export default function LevelRecap() {
             onClick={() => navigate(routes.levelById(levelId))}
           >
             <RotateCcw className='size-4' />
-            Spielstand wiederherstellen
+            Zurück zum Level
           </Button>
 
           <Button
@@ -95,7 +95,7 @@ export default function LevelRecap() {
             onClick={() => navigate(routes.main)}
           >
             <Home className='size-4' />
-            Main Menu
+            Hauptmenü
           </Button>
         </CardContent>
       </Card>
