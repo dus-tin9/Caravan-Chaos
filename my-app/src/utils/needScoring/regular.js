@@ -1,4 +1,4 @@
-export default function scoreRegular(need, placement, context) {
+export default function scoreRegular(need, placement) {
   if (!placement) return 0
   return (
     placement.camelId === need.camel &&

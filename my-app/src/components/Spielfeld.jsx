@@ -1,8 +1,11 @@
 
 import Kamel from './Kamel.jsx'
-import { ScrollPanel } from 'primereact/scrollpanel';
+import { Layers } from 'lucide-react'
 
-export default function Spielfeld({selectedPerson, setSelectedPerson, camels, setCamels, setPeople}){
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { cn } from '@/lib/utils'
+
+export default function Spielfeld({ className, selectedPerson, setSelectedPerson, camels, setCamels, setPeople }){
 
     // Person die bereits auf einem Sitz sitzt über alle Kamele hinweg entfernen
     const removePersonFromCamels = (prevCamels, personId) => {
@@ -55,19 +58,28 @@ export default function Spielfeld({selectedPerson, setSelectedPerson, camels, se
         setSelectedPerson(person);
     };
 
-    return(
-      <ScrollPanel className="ScrollBarSpielfeld">
-        <div className="Spielfeld">
-          {camels.map(camel => (
-              <Kamel
-                  key={camel.id}
-                  camelId={camel.id}
-                  seats={camel.grid}
-                  onSeatClick={handleSeatClick}
-                  onSeatPersonClick={handleSeatPersonClick}
-              />
-          ))}
-        </div>
-      </ScrollPanel>
-    );
+        return(
+            <Card className={cn('border-border/60 bg-card/70 shadow-xl shadow-foreground/10 backdrop-blur-xl', className)}>
+                <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-xl font-semibold text-foreground">
+                        <Layers className="size-5" />
+                        Spielfeld
+                    </CardTitle>
+                </CardHeader>
+
+                <CardContent className="max-h-[64vh] overflow-y-auto pb-6">
+                    <div className="grid gap-4 rounded-xl border border-border/70 bg-background/55 p-3">
+                        {camels.map(camel => (
+                            <Kamel
+                                key={camel.id}
+                                camelId={camel.id}
+                                seats={camel.grid}
+                                onSeatClick={handleSeatClick}
+                                onSeatPersonClick={handleSeatPersonClick}
+                            />
+                        ))}
+                    </div>
+                </CardContent>
+            </Card>
+        )
 }

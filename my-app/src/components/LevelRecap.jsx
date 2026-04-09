@@ -1,10 +1,10 @@
 import { RotateCcw, Home, Trophy } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo } from 'react'
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
 
 import { Button } from '@/components/ui/button'
 import { routes } from '@/lib/routes'
-import { saveHighscoreIfBetter, calcTotal } from '@/lib/highscore'
+import { saveHighscoreIfBetter, calcTotal, getHighscore } from '@/lib/highscore'
 import {
   Card,
   CardContent,
@@ -16,20 +16,30 @@ export default function LevelRecap() {
   const { state } = useLocation()
   const navigate = useNavigate()
   const { levelId } = useParams()
-  const scores = state?.scores ?? []
-  const people = state?.people ?? []
-  const camels = state?.camels ?? []
+  const stateScores = state?.scores
+  const statePeople = state?.people
+  const stateCamels = state?.camels
+
+  const scores = useMemo(() => stateScores ?? [], [stateScores])
+  const people = useMemo(() => statePeople ?? [], [statePeople])
+  const camels = useMemo(() => stateCamels ?? [], [stateCamels])
 
   const total = calcTotal(scores)
   const max = scores.length * 100
 
-  const [isNewHighscore, setIsNewHighscore] = useState(false)
+  const existingTotal = useMemo(() => {
+    if (!levelId || scores.length === 0) return null
+    const existing = getHighscore(Number(levelId))
+    return existing?.total ?? null
+  }, [levelId, scores.length])
+
+  const isNewHighscore =
+    scores.length > 0 && (existingTotal === null || total > existingTotal)
 
   useEffect(() => {
-    if (scores.length === 0) return
-    const { isNew } = saveHighscoreIfBetter(Number(levelId), scores, people, camels)
-    setIsNewHighscore(isNew)
-  }, [])
+    if (!levelId || scores.length === 0) return
+    saveHighscoreIfBetter(Number(levelId), scores, people, camels)
+  }, [levelId, scores, people, camels])
 
   return (
     <main
