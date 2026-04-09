@@ -44,7 +44,7 @@ function MainMenu() {
                         onClick={() => navigate(routes.levelById(lastPlayedLevel))}
                     >
                         <Compass className='size-4' />
-                        Continue Journey
+                        Reise fortsetzen
                     </Button>
 
                     <Button
