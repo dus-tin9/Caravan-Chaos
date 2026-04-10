@@ -56,12 +56,11 @@ export default function Buttons({ className, levelId, people, camels, setPeople,
 
           <Button
             variant='default'
-            size='lg'
-            className='h-12 rounded-xl'
+            className='h-11 rounded-xl'
             onClick={handleLevelSelect}
           >
             <Home className='size-4' />
-            Zur Levelauswahl
+            Levelauswahl
           </Button>
 
           <Button
