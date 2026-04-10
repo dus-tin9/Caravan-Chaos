@@ -80,7 +80,7 @@ export default function Buttons({ className, levelId, people, camels, setPeople,
             title={unseated > 0 ? `Noch ${unseated} Person(en) ohne Platz` : ''}
           >
             <Flag className='size-4' />
-            Level beenden
+            Level Beenden
           </Button>
         </div>
       </CardContent>

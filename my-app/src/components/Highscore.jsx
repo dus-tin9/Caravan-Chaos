@@ -86,7 +86,7 @@ export default function HighscorePage() {
                   onClick={() => handleRestore(hs)}
                 >
                   <RotateCcw className="size-3.5" />
-                  Spielstand laden
+                  Spielstand Laden
                 </Button>
               </div>
             ))
