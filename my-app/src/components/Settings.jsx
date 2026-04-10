@@ -51,7 +51,7 @@ export default function SettingsPage() {
             <p className="mb-3 text-sm font-medium text-foreground">Darstellung</p>
             <div className="flex items-center justify-between gap-3">
               <span className="text-sm text-muted-foreground">
-                Dark Mode ({theme === 'dark' ? 'aktiv' : 'inaktiv'})
+               {theme === 'dark' ? 'Dark' : 'Light'} Mode 
               </span>
               <Button
                 variant="outline"
