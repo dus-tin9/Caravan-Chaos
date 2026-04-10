@@ -1,4 +1,4 @@
-import { Home, RotateCcw, Flag } from 'lucide-react'
+import { Home, RotateCcw, Flag, List } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
 import { Button } from '@/components/ui/button'
@@ -58,7 +58,7 @@ export default function Buttons({ className, levelId, people, camels, setPeople,
             className='h-11 '
             onClick={handleLevelSelect}
           >
-            <Home className='size-4' />
+            <List className='size-4' />
             Levelauswahl
           </Button>
 

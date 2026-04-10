@@ -1,4 +1,4 @@
-import { Compass, Map, Settings, Trophy } from 'lucide-react'
+import { Compass, List, Settings, Trophy } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 
 import { Button } from '@/components/ui/button'
@@ -54,7 +54,7 @@ function MainMenu() {
                         className='h-12 '
                         onClick={() => navigate(routes.levelSelect)}
                     >
-                        <Map className='size-4' />
+                        <List className='size-4' />
                         Levelauswahl
                     </Button>
 

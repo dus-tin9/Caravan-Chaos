@@ -34,17 +34,17 @@ export default function HighscorePage() {
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-transparent via-foreground/5 to-transparent" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.14)_1px,transparent_1px)] [background-size:22px_22px] opacity-20 dark:opacity-10" />
 
-      <Button
-        variant="default"
-        className="fixed left-4 top-4 z-50 h-10 gap-2 "
-        onClick={() => navigate(routes.main)}
-      >
-        <ArrowLeft className="size-4" />
-        Hauptmenü
-      </Button>
 
       <Card variant="page" className="relative z-10 w-full max-w-2xl">
-        <CardHeader className="space-y-3">
+        <Button
+          variant="default"
+          className="absolute left-4 top-4 z-20 h-10 gap-2"
+          onClick={() => navigate(routes.main)}
+        >
+          <ArrowLeft className="size-4" />
+          Hauptmenü
+        </Button>
+        <CardHeader className="space-y-3 pt-16">
           <CardTitle className="flex items-center gap-2 text-3xl font-semibold text-foreground md:text-4xl">
             <Trophy className="size-6" />
             Highscore
