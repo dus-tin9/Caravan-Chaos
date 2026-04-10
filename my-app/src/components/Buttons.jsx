@@ -21,6 +21,10 @@ export default function Buttons({ className, levelId, people, camels, setPeople,
     navigate(routes.main)
   }
 
+  function handleLevelSelect() {
+    navigate(routes.levelSelect)
+  }
+
   function handleReset() {
     setPeople(prev => prev.map(p => ({ ...p, seated: false })))
     setCamels(prev => prev.map(camel => ({
@@ -48,6 +52,16 @@ export default function Buttons({ className, levelId, people, camels, setPeople,
           >
             <Home className='size-4' />
             Hauptmenü
+          </Button>
+
+          <Button
+            variant='outline'
+            size='lg'
+            className='h-12 rounded-xl border-border bg-background/70 text-foreground backdrop-blur hover:bg-card'
+            onClick={handleLevelSelect}
+          >
+            <Home className='size-4' />
+            Zur Levelauswahl
           </Button>
 
           <Button
