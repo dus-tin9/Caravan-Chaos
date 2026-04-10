@@ -89,8 +89,9 @@ export default function LevelRecap() {
 
           { Number(levelId) < MAXLEVEL ?
             <Button
+              variant='emphasize'
               size='lg'
-              className='h-12  bg-primary text-primary-foreground shadow-lg shadow-foreground/20 backdrop-blur hover:bg-primary/85'
+              className='h-12'
               onClick={handleNextLevel}
             >
               <StepForward className='size-4' />
