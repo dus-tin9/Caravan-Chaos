@@ -1,4 +1,4 @@
-import { RotateCcw, Home, Trophy } from 'lucide-react'
+import { RotateCcw, Home, Trophy, StepForward } from 'lucide-react'
 import { useEffect, useMemo } from 'react'
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
 
@@ -11,6 +11,8 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+
+const MAXLEVEL = 4
 
 export default function LevelRecap() {
   const { state } = useLocation()
@@ -40,6 +42,12 @@ export default function LevelRecap() {
     if (!levelId || scores.length === 0) return
     saveHighscoreIfBetter(Number(levelId), scores, people, camels)
   }, [levelId, scores, people, camels])
+
+  function handleNextLevel(){ 
+    const nextLevelNumber = Number(levelId) + 1
+    const nextLevelId = '' + nextLevelNumber
+    navigate(routes.levelById(nextLevelId))
+  }
 
   return (
     <main
@@ -78,6 +86,18 @@ export default function LevelRecap() {
               </li>
             ))}
           </ul>
+
+          { Number(levelId) < MAXLEVEL ?
+            <Button
+              size='lg'
+              className='h-12 rounded-xl bg-primary text-primary-foreground shadow-lg shadow-foreground/20 backdrop-blur hover:bg-primary/85'
+              onClick={handleNextLevel}
+            >
+              <StepForward className='size-4' />
+              Zum Nächsten Level
+            </Button>
+            : null
+          }
 
           <Button
             size='lg'
