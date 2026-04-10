@@ -54,9 +54,9 @@ export default function SettingsPage() {
                {theme === 'dark' ? 'Dark' : 'Light'} Mode 
               </span>
               <Button
-                variant="outline"
+                variant="toggle"
                 size="icon"
-                className="size-11 rounded-full border-border bg-card/80"
+                className="size-11 rounded-full"
                 onClick={toggleTheme}
               >
                 {isDark ? <Sun className="size-5" /> : <Moon className="size-5" />}
@@ -66,8 +66,8 @@ export default function SettingsPage() {
 
           <div className="grid gap-3 md:grid-cols-3">
             <Button
-              variant="outline"
-              className="h-11 justify-start gap-2 rounded-xl border-border bg-background/70"
+              variant="default"
+              className="h-11 justify-start gap-2 rounded-xl"
               onClick={() => alert('Sound-Optionen folgen bald.')}
             >
               <Volume2 className="size-4" />
@@ -75,8 +75,8 @@ export default function SettingsPage() {
             </Button>
 
             <Button
-              variant="outline"
-              className="h-11 justify-start gap-2 rounded-xl border-border bg-background/70"
+              variant="default"
+              className="h-11 justify-start gap-2 rounded-xl"
               onClick={() => alert('Gameplay-Hilfen folgen bald.')}
             >
               <CircleHelp className="size-4" />
@@ -84,8 +84,8 @@ export default function SettingsPage() {
             </Button>
 
             <Button
-              variant="outline"
-              className="h-11 justify-start gap-2 rounded-xl border-border bg-background/70"
+              variant="default"
+              className="h-11 justify-start gap-2 rounded-xl"
               onClick={() => alert('Spracheinstellungen folgen bald.')}
             >
               <Languages className="size-4" />
@@ -95,7 +95,7 @@ export default function SettingsPage() {
 
           <div>
             <Button
-              variant="secondary"
+              variant="default"
               className="h-11 gap-2 rounded-xl"
               onClick={() => navigate(routes.main)}
             >

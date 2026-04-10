@@ -39,8 +39,9 @@ function MainMenu() {
 
                 <CardContent className='grid gap-3 pb-6'>
                     <Button
+                        variant='emphasize'
                         size='lg'
-                        className='h-12 rounded-xl bg-primary text-primary-foreground shadow-lg shadow-foreground/20 backdrop-blur hover:bg-primary/85'
+                        className='h-12 rounded-xl'
                         onClick={() => navigate(routes.levelById(lastPlayedLevel))}
                     >
                         <Compass className='size-4' />
@@ -48,9 +49,9 @@ function MainMenu() {
                     </Button>
 
                     <Button
-                        variant='outline'
+                        variant='default'
                         size='lg'
-                        className='h-12 rounded-xl border-border bg-background/70 text-foreground backdrop-blur hover:bg-card'
+                        className='h-12 rounded-xl'
                         onClick={() => navigate(routes.levelSelect)}
                     >
                         <Map className='size-4' />
@@ -58,9 +59,9 @@ function MainMenu() {
                     </Button>
 
                     <Button
-                        variant='outline'
+                        variant='default'
                         size='lg'
-                        className='h-12 rounded-xl border-border bg-background/70 text-foreground backdrop-blur hover:bg-card'
+                        className='h-12 rounded-xl'
                         onClick={() => navigate(routes.highscore)}
                     >
                         <Trophy className='size-4' />
@@ -68,9 +69,9 @@ function MainMenu() {
                     </Button>
 
                     <Button
-                        variant='outline'
+                        variant='default'
                         size='lg'
-                        className='h-12 rounded-xl border-border bg-background/70 text-foreground backdrop-blur hover:bg-card'
+                        className='h-12 rounded-xl'
                         onClick={() => navigate(routes.settings)}
                     >
                         <Settings className='size-4' />

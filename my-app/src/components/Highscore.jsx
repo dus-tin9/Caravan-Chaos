@@ -35,7 +35,7 @@ export default function HighscorePage() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.14)_1px,transparent_1px)] [background-size:22px_22px] opacity-20 dark:opacity-10" />
 
       <Button
-        variant="secondary"
+        variant="default"
         className="fixed left-4 top-4 z-50 h-10 gap-2 rounded-xl"
         onClick={() => navigate(routes.main)}
       >
@@ -80,9 +80,9 @@ export default function HighscorePage() {
                 </ul>
 
                 <Button
-                  variant="outline"
+                  variant="default"
                   size="sm"
-                  className="w-full rounded-lg border-border bg-background/70 text-foreground backdrop-blur hover:bg-card"
+                  className="w-full rounded-lg"
                   onClick={() => handleRestore(hs)}
                 >
                   <RotateCcw className="size-3.5" />

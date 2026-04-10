@@ -46,9 +46,9 @@ export default function LevelSelect() {
           {levels.map(level => (
             <Button
               key={level.id}
-              variant="outline"
+              variant="default"
               size="lg"
-              className="h-14 justify-between rounded-xl border-border bg-background/70 text-foreground backdrop-blur hover:bg-card"
+              className="h-14 justify-between rounded-xl"
               onClick={() => navigate(routes.levelById(level.id))}
             >
               <span className="font-medium">{level.name}</span>
@@ -59,7 +59,7 @@ export default function LevelSelect() {
           ))}
 
           <Button
-            variant="secondary"
+            variant="default"
             className="mt-2 h-11 gap-2 rounded-xl"
             onClick={() => navigate(routes.main)}
           >

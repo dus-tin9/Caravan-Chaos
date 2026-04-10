@@ -46,8 +46,8 @@ export default function Buttons({ className, levelId, people, camels, setPeople,
 
         <div className="flex flex-wrap items-center gap-2">
           <Button
-            variant='outline'
-            className='h-11 rounded-xl border-border bg-background/70 text-foreground backdrop-blur hover:bg-card'
+            variant='default'
+            className='h-11 rounded-xl'
             onClick={handleMainMenu}
           >
             <Home className='size-4' />
@@ -55,9 +55,9 @@ export default function Buttons({ className, levelId, people, camels, setPeople,
           </Button>
 
           <Button
-            variant='outline'
+            variant='default'
             size='lg'
-            className='h-12 rounded-xl border-border bg-background/70 text-foreground backdrop-blur hover:bg-card'
+            className='h-12 rounded-xl'
             onClick={handleLevelSelect}
           >
             <Home className='size-4' />
@@ -65,8 +65,8 @@ export default function Buttons({ className, levelId, people, camels, setPeople,
           </Button>
 
           <Button
-            variant='outline'
-            className='h-11 rounded-xl border-border bg-background/70 text-foreground backdrop-blur hover:bg-card'
+            variant='default'
+            className='h-11 rounded-xl'
             onClick={handleReset}
           >
             <RotateCcw className='size-4' />
@@ -74,7 +74,8 @@ export default function Buttons({ className, levelId, people, camels, setPeople,
           </Button>
 
           <Button
-            className='h-11 rounded-xl bg-primary text-primary-foreground shadow-lg shadow-foreground/20 backdrop-blur hover:bg-primary/85 disabled:opacity-40'
+            variant='emphasize'
+            className='h-11 rounded-xl disabled:opacity-40'
             onClick={handleEndLevel}
             disabled={unseated > 0}
             title={unseated > 0 ? `Noch ${unseated} Person(en) ohne Platz` : ''}
