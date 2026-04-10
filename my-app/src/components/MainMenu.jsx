@@ -33,7 +33,7 @@ function MainMenu() {
                         Caravan Chaos
                     </CardTitle>
                     <CardDescription className='max-w-md text-base text-muted-foreground'>
-                        Finde den besten Platz in der Karawane und starte deine Reise durch das Durcheinander.
+                        Finde die besten Plätze für die Karawane und starte deine Reise durch das Durcheinander.
                     </CardDescription>
                 </CardHeader>
 
