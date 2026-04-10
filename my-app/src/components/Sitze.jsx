@@ -1,4 +1,5 @@
 import Sitz from './Sitz.jsx';
+import { Button } from '@/components/ui/button'
 
 export default function Sitze({ camelId, seats, onSeatClick, onSeatPersonClick }) {
     const columns = (seats[0]?.length ?? 0) + 1
@@ -26,10 +27,11 @@ export default function Sitze({ camelId, seats, onSeatClick, onSeatPersonClick }
                         r{rowIndex + 1}
                     </div>
                     {row.map((seat, colIndex) => (
-                        <button
+                        <Button
                             type="button"
+                            variant="person"
                             key={seat.id}
-                            className="rounded-xl border border-border/60 bg-card/65 p-1 text-left transition hover:bg-card focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/50"
+                            className="h-20 w-full rounded-xl p-1 text-left"
                             onClick={(e) => {
                                 if (seat.occupant) {
                                     e.stopPropagation();
@@ -40,7 +42,7 @@ export default function Sitze({ camelId, seats, onSeatClick, onSeatPersonClick }
                             }}
                         >
                             <Sitz occupant={seat.occupant} />
-                        </button>
+                        </Button>
                     ))}
                 </div>
             ))}

@@ -12,7 +12,7 @@ export default function Bahnhof_Display({ person, isSelected = false }){
                 'rounded-xl border bg-background/65 p-3 transition-all',
                 isSelected
                     ? 'border-primary/70 shadow-md shadow-primary/20'
-                    : 'border-border/70 hover:border-border hover:bg-background/80'
+                    : 'border-border/70'
             )}
         >
             <div className="grid grid-cols-[72px_1fr] items-start gap-3">

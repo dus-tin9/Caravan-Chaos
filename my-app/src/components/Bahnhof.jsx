@@ -1,6 +1,7 @@
 import { TrainFront } from 'lucide-react'
 
 import Bahnhof_Display from './Bahnhof_Display'
+import { Button } from '@/components/ui/button'
 import {
     Card,
     CardContent,
@@ -29,17 +30,18 @@ export default function Bahnhof({ className, setSelectedPerson, selectedPerson, 
                 <div className="max-h-[64vh] space-y-3 overflow-y-auto pr-1">
                     {waitingPeople.length > 0 ? (
                         waitingPeople.map(person => (
-                            <button
+                            <Button
                                 type="button"
+                                variant="person"
                                 key={person.id}
-                                className="block w-full rounded-xl text-left focus-visible:border-ring focus-visible:ring-2 focus-visible:ring-ring/50"
+                                className="h-auto w-full justify-start rounded-xl px-0 py-0 text-left"
                                 onClick={() => setSelectedPerson(person)}
                             >
                                 <Bahnhof_Display
                                     person={person}
                                     isSelected={selectedPerson?.id === person.id}
                                 />
-                            </button>
+                            </Button>
                         ))
                     ) : (
                         <p className="rounded-xl border border-border/70 bg-background/65 p-3 text-sm text-muted-foreground">
