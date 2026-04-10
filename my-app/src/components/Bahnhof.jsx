@@ -43,9 +43,9 @@ export default function Bahnhof({ className, setSelectedPerson, selectedPerson, 
                             </Button>
                         ))
                     ) : (
-                        <p className=" border border-border/70 bg-background/65 p-3 text-sm text-muted-foreground">
+                        <Card variant="inset" size="sm" className="p-3 text-sm text-muted-foreground">
                             Alle Personen sitzen bereits.
-                        </p>
+                        </Card>
                     )}
                 </div>
             </CardContent>

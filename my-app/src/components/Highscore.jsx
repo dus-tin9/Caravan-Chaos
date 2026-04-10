@@ -56,14 +56,16 @@ export default function HighscorePage() {
 
         <CardContent className="grid gap-4 pb-6">
           {highscores.length === 0 ? (
-            <div className=" border border-border/70 bg-background/65 p-6 text-center text-muted-foreground">
+            <Card variant="inset" size="sm" className="p-6 text-center text-muted-foreground">
               Noch keine Ergebnisse gespeichert.
-            </div>
+            </Card>
           ) : (
             highscores.map(hs => (
-              <div
+              <Card
+                variant="subtle"
+                size="sm"
                 key={hs.levelId}
-                className=" border border-border/50 bg-background/40 p-4"
+                className="gap-3 p-4"
               >
                 <div className="mb-3 flex items-center justify-between">
                   <span className="font-semibold text-foreground">Level {hs.levelId}</span>
@@ -88,7 +90,7 @@ export default function HighscorePage() {
                   <RotateCcw className="size-3.5" />
                   Spielstand Laden
                 </Button>
-              </div>
+              </Card>
             ))
           )}
 

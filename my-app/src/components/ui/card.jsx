@@ -14,6 +14,7 @@ const cardVariants = cva(
         page:
           "border border-border/60 bg-card/70 shadow-2xl shadow-foreground/10 backdrop-blur-xl",
         inset: "border border-border/70 bg-background/65",
+        subtle: "border border-border/50 bg-background/40",
       },
     },
     defaultVariants: {

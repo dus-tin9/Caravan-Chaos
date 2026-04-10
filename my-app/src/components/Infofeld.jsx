@@ -33,9 +33,9 @@ export default function Infofeld({ className, selectedPerson }) {
           <CardDescription>Details zur aktuell ausgewählten Person</CardDescription>
         </CardHeader>
         <CardContent>
-          <p className=" border border-border/70 bg-background/65 p-3 text-sm text-muted-foreground">
+          <Card variant="inset" size="sm" className="p-3 text-sm text-muted-foreground">
             Keine Person ausgewählt
-          </p>
+          </Card>
         </CardContent>
       </Card>
     )
@@ -54,7 +54,7 @@ export default function Infofeld({ className, selectedPerson }) {
       </CardHeader>
 
       <CardContent className="space-y-3 pb-6">
-        <div className=" border border-border/70 bg-background/65 p-3">
+        <Card variant="inset" size="sm" className="p-3">
           <div className="mb-2 flex items-center justify-center g border border-border/60 bg-card/70 p-2">
             <img
               src={imageUrl}
@@ -63,9 +63,9 @@ export default function Infofeld({ className, selectedPerson }) {
             />
           </div>
           <p className="text-sm font-semibold text-foreground">{selectedPerson.name}</p>
-        </div>
+        </Card>
 
-        <div className=" border border-border/70 bg-background/65 p-3">
+        <Card variant="inset" size="sm" className="p-3">
           {selectedPerson.needs.length > 0 ? (
             <ul className="space-y-1.5 text-sm text-muted-foreground">
               {selectedPerson.needs.map((need, index) => (
@@ -75,7 +75,7 @@ export default function Infofeld({ className, selectedPerson }) {
           ) : (
             <p className="text-sm text-muted-foreground">Keine Bedürfnisse</p>
           )}
-        </div>
+        </Card>
       </CardContent>
     </Card>
   )

@@ -47,7 +47,7 @@ export default function SettingsPage() {
         </CardHeader>
 
         <CardContent className="grid gap-6 pb-6">
-          <div className=" border border-border/70 bg-background/65 p-4">
+          <Card variant="inset" size="sm" className="gap-3 p-4">
             <p className="mb-3 text-sm font-medium text-foreground">Darstellung</p>
             <div className="flex items-center justify-between gap-3">
               <span className="text-sm text-muted-foreground">
@@ -62,7 +62,7 @@ export default function SettingsPage() {
                 {isDark ? <Sun className="size-5" /> : <Moon className="size-5" />}
               </Button>
             </div>
-          </div>
+          </Card>
 
           <div className="grid gap-3 md:grid-cols-3">
             <Button
