@@ -28,9 +28,11 @@
 
 *(optional, max. 0,5 Seiten)*
 
-Caravanen-Chaos ist ein browserbasiertes Rätselspiel, das im Rahmen der Lehrveranstaltung Software Design entwickelt wurde. Das Ziel des Projekts war es, die Grundlagen moderner Frontend-Entwicklung mit React praxisnah zu erlernen. Spieler platzieren Personen mit individuellen Bedürfnissen auf Kamelen mit verschiedenen Sitzplatzlayouts. Nach Abschluss eines Levels erhalten sie eine Bewertung, die widerspiegelt, wie gut die Bedürfnisse jeder Person erfüllt wurden.
+Die vorliegende Arbeit beschreibt Konzeption und Umsetzung des browserbasierten Rätselspiels Caravanen-Chaos, das im Rahmen der Lehrveranstaltung Software Design als praxisorientiertes Frontend-Projekt entwickelt wurde. Ziel war es, zentrale Konzepte moderner Webentwicklung mit React systematisch anzuwenden und dabei ein in sich geschlossenes, interaktives Anwendungsszenario zu realisieren. Das Spiel basiert auf einem datengetriebenen Ansatz: Level werden aus JSON-Dateien geladen, Personen mit individuellen Bedürfnissen auf Sitzplätze mehrerer Kamele verteilt und anschließend regelbasiert ausgewertet.
 
-[TODO: Nach Projektabschluss konkretisieren – Ergebnisse und Schlussfolgerungen kurz ergänzen.]
+Methodisch wurde eine komponentenorientierte Architektur mit klarer Trennung von Darstellung, Zustandsverwaltung und Domänenlogik umgesetzt. Die Bewertungslogik ist modular aufgebaut und bildet sechs Bedürfnis-Typen ab, die zu einer Gesamtbewertung pro Level aggregiert werden. Zusätzlich wurden Routing, Levelauswahl, Ergebnisansicht sowie persistente Speicherung von Spielständen und Highscores über localStorage implementiert. Zur Absicherung der Kernlogik wurden automatisierte Unit-Tests eingesetzt, die zum Abgabezeitpunkt vollständig erfolgreich durchliefen.
+
+Die Ergebnisse zeigen, dass ein funktionsfähiger und erweiterbarer Spielprototyp realisiert werden konnte, der den vollständigen Kernablauf von der Platzierung bis zur Auswertung abdeckt. Damit wurden die Lernziele in den Bereichen React-Komponentenmodell, clientseitiges Routing, testbare Logikstrukturen und zustandsbezogene Persistenz erreicht. Gleichzeitig liefert das Projekt eine belastbare Grundlage für weiterführende Ausbauschritte, insbesondere im Bereich Interaktion, Visualisierung und Funktionsumfang.
 
 ---
 
@@ -168,15 +170,7 @@ Die Navigation zwischen Screens erfolgt über URL-basiertes Routing. Scores werd
 
 ### 6.1 Funktionsumfang des fertigen Spiels
 
-[TODO: Kurze Beschreibung des fertigen Spielstands zum Abgabezeitpunkt.]
 
-Das Spiel bietet zum Abgabezeitpunkt folgende Funktionalität:
-
-- **Hauptmenü** mit „Start Journey"-Button und Platzhalter für Einstellungen
-- **Levelansicht** mit [TODO: Anzahl] Kamelen und [TODO: Anzahl] Personen pro Level
-- **Sechs Bedürfnis-Typen** mit vollständiger Bewertungslogik
-- **Level-Abschlussscreen** mit Einzelpunktezahl und Durchschnitt
-- **28 Unit-Tests** für die gesamte Spiellogik (alle bestanden)
 
 ### 6.2 Screenshots
 
