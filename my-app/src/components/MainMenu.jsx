@@ -23,9 +23,9 @@ function MainMenu() {
                     'radial-gradient(circle at top, var(--background) 0%, var(--card) 52%, var(--secondary) 100%)',
             }}
         >
-            <div className='pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/20 blur-3xl' />
-            <div className='pointer-events-none absolute bottom-8 left-8 h-44 w-44 rounded-full bg-accent/25 blur-2xl' />
-            <div className='pointer-events-none absolute right-8 top-16 h-52 w-52 rounded-full bg-secondary/45 blur-3xl' />
+            <div className='pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2  bg-primary/20 blur-3xl' />
+            <div className='pointer-events-none absolute bottom-8 left-8 h-44 w-44  bg-accent/25 blur-2xl' />
+            <div className='pointer-events-none absolute right-8 top-16 h-52 w-52  bg-secondary/45 blur-3xl' />
 
             <Card className='relative z-10 w-full max-w-xl border-border/60 bg-card/70 shadow-2xl shadow-foreground/10 backdrop-blur-xl'>
                 <CardHeader className='space-y-3'>
@@ -41,7 +41,7 @@ function MainMenu() {
                     <Button
                         variant='emphasize'
                         size='lg'
-                        className='h-12 rounded-xl'
+                        className='h-12 '
                         onClick={() => navigate(routes.levelById(lastPlayedLevel))}
                     >
                         <Compass className='size-4' />
@@ -51,7 +51,7 @@ function MainMenu() {
                     <Button
                         variant='default'
                         size='lg'
-                        className='h-12 rounded-xl'
+                        className='h-12 '
                         onClick={() => navigate(routes.levelSelect)}
                     >
                         <Map className='size-4' />
@@ -61,7 +61,7 @@ function MainMenu() {
                     <Button
                         variant='default'
                         size='lg'
-                        className='h-12 rounded-xl'
+                        className='h-12 '
                         onClick={() => navigate(routes.highscore)}
                     >
                         <Trophy className='size-4' />
@@ -71,7 +71,7 @@ function MainMenu() {
                     <Button
                         variant='default'
                         size='lg'
-                        className='h-12 rounded-xl'
+                        className='h-12 '
                         onClick={() => navigate(routes.settings)}
                     >
                         <Settings className='size-4' />

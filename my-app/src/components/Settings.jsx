@@ -32,8 +32,8 @@ export default function SettingsPage() {
           'radial-gradient(circle at top, var(--background) 0%, var(--card) 52%, var(--secondary) 100%)',
       }}
     >
-      <div className="pointer-events-none absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/15 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-8 left-8 h-44 w-44 rounded-full bg-accent/25 blur-2xl" />
+      <div className="pointer-events-none absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2  bg-primary/15 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-8 left-8 h-44 w-44  bg-accent/25 blur-2xl" />
 
       <Card className="relative z-10 w-full max-w-2xl border-border/60 bg-card/70 shadow-2xl shadow-foreground/10 backdrop-blur-xl">
         <CardHeader className="space-y-3">
@@ -47,7 +47,7 @@ export default function SettingsPage() {
         </CardHeader>
 
         <CardContent className="grid gap-6 pb-6">
-          <div className="rounded-xl border border-border/70 bg-background/65 p-4">
+          <div className=" border border-border/70 bg-background/65 p-4">
             <p className="mb-3 text-sm font-medium text-foreground">Darstellung</p>
             <div className="flex items-center justify-between gap-3">
               <span className="text-sm text-muted-foreground">
@@ -56,7 +56,7 @@ export default function SettingsPage() {
               <Button
                 variant="toggle"
                 size="icon"
-                className="size-11 rounded-full"
+                className="size-11 "
                 onClick={toggleTheme}
               >
                 {isDark ? <Sun className="size-5" /> : <Moon className="size-5" />}
@@ -67,7 +67,7 @@ export default function SettingsPage() {
           <div className="grid gap-3 md:grid-cols-3">
             <Button
               variant="default"
-              className="h-11 justify-start gap-2 rounded-xl"
+              className="h-11 justify-start gap-2 "
               onClick={() => alert('Sound-Optionen folgen bald.')}
             >
               <Volume2 className="size-4" />
@@ -76,7 +76,7 @@ export default function SettingsPage() {
 
             <Button
               variant="default"
-              className="h-11 justify-start gap-2 rounded-xl"
+              className="h-11 justify-start gap-2 "
               onClick={() => alert('Gameplay-Hilfen folgen bald.')}
             >
               <CircleHelp className="size-4" />
@@ -85,7 +85,7 @@ export default function SettingsPage() {
 
             <Button
               variant="default"
-              className="h-11 justify-start gap-2 rounded-xl"
+              className="h-11 justify-start gap-2 "
               onClick={() => alert('Spracheinstellungen folgen bald.')}
             >
               <Languages className="size-4" />
@@ -96,7 +96,7 @@ export default function SettingsPage() {
           <div>
             <Button
               variant="default"
-              className="h-11 gap-2 rounded-xl"
+              className="h-11 gap-2 "
               onClick={() => navigate(routes.main)}
             >
               <ArrowLeft className="size-4" />

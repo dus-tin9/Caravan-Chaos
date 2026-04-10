@@ -29,14 +29,14 @@ export default function HighscorePage() {
           'radial-gradient(circle at top, var(--background) 0%, var(--card) 52%, var(--secondary) 100%)',
       }}
     >
-      <div className="pointer-events-none absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/15 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-8 right-8 h-44 w-44 rounded-full bg-accent/25 blur-2xl" />
+      <div className="pointer-events-none absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2  bg-primary/15 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-8 right-8 h-44 w-44  bg-accent/25 blur-2xl" />
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-transparent via-foreground/5 to-transparent" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.14)_1px,transparent_1px)] [background-size:22px_22px] opacity-20 dark:opacity-10" />
 
       <Button
         variant="default"
-        className="fixed left-4 top-4 z-50 h-10 gap-2 rounded-xl"
+        className="fixed left-4 top-4 z-50 h-10 gap-2 "
         onClick={() => navigate(routes.main)}
       >
         <ArrowLeft className="size-4" />
@@ -56,14 +56,14 @@ export default function HighscorePage() {
 
         <CardContent className="grid gap-4 pb-6">
           {highscores.length === 0 ? (
-            <div className="rounded-xl border border-border/70 bg-background/65 p-6 text-center text-muted-foreground">
+            <div className=" border border-border/70 bg-background/65 p-6 text-center text-muted-foreground">
               Noch keine Ergebnisse gespeichert.
             </div>
           ) : (
             highscores.map(hs => (
               <div
                 key={hs.levelId}
-                className="rounded-xl border border-border/50 bg-background/40 p-4"
+                className=" border border-border/50 bg-background/40 p-4"
               >
                 <div className="mb-3 flex items-center justify-between">
                   <span className="font-semibold text-foreground">Level {hs.levelId}</span>
@@ -82,7 +82,7 @@ export default function HighscorePage() {
                 <Button
                   variant="default"
                   size="sm"
-                  className="w-full rounded-lg"
+                  className="w-full g"
                   onClick={() => handleRestore(hs)}
                 >
                   <RotateCcw className="size-3.5" />

@@ -34,7 +34,7 @@ export default function Bahnhof({ className, setSelectedPerson, selectedPerson, 
                                 type="button"
                                 variant="person"
                                 key={person.id}
-                                className="h-auto w-full justify-start rounded-xl px-0 py-0 text-left"
+                                className="h-auto w-full justify-start  px-0 py-0 text-left"
                                 onClick={() => setSelectedPerson(person)}
                             >
                                 <Bahnhof_Display
@@ -44,7 +44,7 @@ export default function Bahnhof({ className, setSelectedPerson, selectedPerson, 
                             </Button>
                         ))
                     ) : (
-                        <p className="rounded-xl border border-border/70 bg-background/65 p-3 text-sm text-muted-foreground">
+                        <p className=" border border-border/70 bg-background/65 p-3 text-sm text-muted-foreground">
                             Alle Personen sitzen bereits.
                         </p>
                     )}

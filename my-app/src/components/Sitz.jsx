@@ -10,7 +10,7 @@ export default function Sitz({occupant}) {
     return(
         <div
             className={cn(
-                'flex h-20 w-full items-center justify-center rounded-lg border bg-background/80 transition',
+                'flex h-20 w-full items-center justify-center g border bg-background/80 transition',
                 occupant
                     ? 'border-primary/70 shadow-sm shadow-primary/20'
                     : 'border-border/70'

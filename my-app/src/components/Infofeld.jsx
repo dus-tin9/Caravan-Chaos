@@ -31,11 +31,11 @@ export default function Infofeld({ className, selectedPerson }) {
             <CircleHelp className="size-5" />
             Infofeld
           </CardTitle>
-          <CardDescription>Details zur aktuell ausgewaehlten Person</CardDescription>
+          <CardDescription>Details zur aktuell ausgewählten Person</CardDescription>
         </CardHeader>
         <CardContent>
-          <p className="rounded-xl border border-border/70 bg-background/65 p-3 text-sm text-muted-foreground">
-            Keine Person ausgewaehlt
+          <p className=" border border-border/70 bg-background/65 p-3 text-sm text-muted-foreground">
+            Keine Person ausgewählt
           </p>
         </CardContent>
       </Card>
@@ -51,12 +51,12 @@ export default function Infofeld({ className, selectedPerson }) {
           <CircleHelp className="size-5" />
           Infofeld
         </CardTitle>
-        <CardDescription>Details zur aktuell ausgewaehlten Person</CardDescription>
+        <CardDescription>Details zur aktuell ausgewählten Person</CardDescription>
       </CardHeader>
 
       <CardContent className="space-y-3 pb-6">
-        <div className="rounded-xl border border-border/70 bg-background/65 p-3">
-          <div className="mb-2 flex items-center justify-center rounded-lg border border-border/60 bg-card/70 p-2">
+        <div className=" border border-border/70 bg-background/65 p-3">
+          <div className="mb-2 flex items-center justify-center g border border-border/60 bg-card/70 p-2">
             <img
               src={imageUrl}
               alt={selectedPerson.name}
@@ -66,7 +66,7 @@ export default function Infofeld({ className, selectedPerson }) {
           <p className="text-sm font-semibold text-foreground">{selectedPerson.name}</p>
         </div>
 
-        <div className="rounded-xl border border-border/70 bg-background/65 p-3">
+        <div className=" border border-border/70 bg-background/65 p-3">
           {selectedPerson.needs.length > 0 ? (
             <ul className="space-y-1.5 text-sm text-muted-foreground">
               {selectedPerson.needs.map((need, index) => (
@@ -74,7 +74,7 @@ export default function Infofeld({ className, selectedPerson }) {
               ))}
             </ul>
           ) : (
-            <p className="text-sm text-muted-foreground">Keine Beduerfnisse</p>
+            <p className="text-sm text-muted-foreground">Keine Bedürfnisse</p>
           )}
         </div>
       </CardContent>

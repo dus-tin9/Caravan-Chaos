@@ -47,7 +47,7 @@ export default function Buttons({ className, levelId, people, camels, setPeople,
         <div className="flex flex-wrap items-center gap-2">
           <Button
             variant='default'
-            className='h-11 rounded-xl'
+            className='h-11 '
             onClick={handleMainMenu}
           >
             <Home className='size-4' />
@@ -56,7 +56,7 @@ export default function Buttons({ className, levelId, people, camels, setPeople,
 
           <Button
             variant='default'
-            className='h-11 rounded-xl'
+            className='h-11 '
             onClick={handleLevelSelect}
           >
             <Home className='size-4' />
@@ -65,7 +65,7 @@ export default function Buttons({ className, levelId, people, camels, setPeople,
 
           <Button
             variant='default'
-            className='h-11 rounded-xl'
+            className='h-11 '
             onClick={handleReset}
           >
             <RotateCcw className='size-4' />
@@ -74,7 +74,7 @@ export default function Buttons({ className, levelId, people, camels, setPeople,
 
           <Button
             variant='emphasize'
-            className='h-11 rounded-xl disabled:opacity-40'
+            className='h-11  disabled:opacity-40'
             onClick={handleEndLevel}
             disabled={unseated > 0}
             title={unseated > 0 ? `Noch ${unseated} Person(en) ohne Platz` : ''}

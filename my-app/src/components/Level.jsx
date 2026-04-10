@@ -102,9 +102,9 @@ export default function Level({ levelId }) {
           'radial-gradient(circle at top, var(--background) 0%, var(--card) 52%, var(--secondary) 100%)',
       }}
     >
-      <div className='pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/20 blur-3xl' />
-      <div className='pointer-events-none absolute bottom-8 left-8 h-44 w-44 rounded-full bg-accent/25 blur-2xl' />
-      <div className='pointer-events-none absolute right-8 top-16 h-52 w-52 rounded-full bg-secondary/45 blur-3xl' />
+      <div className='pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2  bg-primary/20 blur-3xl' />
+      <div className='pointer-events-none absolute bottom-8 left-8 h-44 w-44  bg-accent/25 blur-2xl' />
+      <div className='pointer-events-none absolute right-8 top-16 h-52 w-52  bg-secondary/45 blur-3xl' />
       <div className='pointer-events-none absolute inset-0 bg-gradient-to-br from-transparent via-foreground/5 to-transparent' />
       <div className='pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.14)_1px,transparent_1px)] [background-size:22px_22px] opacity-20 dark:opacity-10' />
 

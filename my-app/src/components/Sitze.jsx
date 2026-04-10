@@ -31,7 +31,7 @@ export default function Sitze({ camelId, seats, onSeatClick, onSeatPersonClick }
                             type="button"
                             variant="person"
                             key={seat.id}
-                            className="h-20 w-full rounded-xl p-1 text-left"
+                            className="h-20 w-full  p-1 text-left"
                             onClick={(e) => {
                                 if (seat.occupant) {
                                     e.stopPropagation();

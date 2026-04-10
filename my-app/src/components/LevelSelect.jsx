@@ -28,8 +28,8 @@ export default function LevelSelect() {
           'radial-gradient(circle at top, var(--background) 0%, var(--card) 52%, var(--secondary) 100%)',
       }}
     >
-      <div className="pointer-events-none absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-primary/15 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-8 left-8 h-44 w-44 rounded-full bg-accent/25 blur-2xl" />
+      <div className="pointer-events-none absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2  bg-primary/15 blur-3xl" />
+      <div className="pointer-events-none absolute bottom-8 left-8 h-44 w-44  bg-accent/25 blur-2xl" />
 
       <Card className="relative z-10 w-full max-w-2xl border-border/60 bg-card/70 shadow-2xl shadow-foreground/10 backdrop-blur-xl">
         <CardHeader className="space-y-3">
@@ -48,7 +48,7 @@ export default function LevelSelect() {
               key={level.id}
               variant="default"
               size="lg"
-              className="h-14 justify-between rounded-xl"
+              className="h-14 justify-between "
               onClick={() => navigate(routes.levelById(level.id))}
             >
               <span className="font-medium">{level.name}</span>
@@ -60,7 +60,7 @@ export default function LevelSelect() {
 
           <Button
             variant="default"
-            className="mt-2 h-11 gap-2 rounded-xl"
+            className="mt-2 h-11 gap-2 "
             onClick={() => navigate(routes.main)}
           >
             <ArrowLeft className="size-4" />
