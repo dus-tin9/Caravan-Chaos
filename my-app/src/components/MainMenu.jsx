@@ -54,7 +54,7 @@ function MainMenu() {
                         onClick={() => navigate(routes.levelSelect)}
                     >
                         <Map className='size-4' />
-                        Level Auswahl
+                        Levelauswahl
                     </Button>
 
                     <Button

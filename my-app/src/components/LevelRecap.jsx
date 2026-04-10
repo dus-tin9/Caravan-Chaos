@@ -92,10 +92,20 @@ export default function LevelRecap() {
             variant='outline'
             size='lg'
             className='h-12 rounded-xl border-border bg-background/70 text-foreground backdrop-blur hover:bg-card'
+            onClick={() => navigate(routes.levelSelect)}
+          >
+            <Home className='size-4' />
+            Zur Levelauswahl
+          </Button>
+
+          <Button
+            variant='outline'
+            size='lg'
+            className='h-12 rounded-xl border-border bg-background/70 text-foreground backdrop-blur hover:bg-card'
             onClick={() => navigate(routes.main)}
           >
             <Home className='size-4' />
-            Main Menu
+            Zum Hauptmenü
           </Button>
         </CardContent>
       </Card>

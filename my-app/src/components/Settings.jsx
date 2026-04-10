@@ -39,7 +39,7 @@ export default function SettingsPage() {
         <CardHeader className="space-y-3">
           <CardTitle className="flex items-center gap-2 text-3xl font-semibold text-foreground md:text-4xl">
             <Settings2 className="size-6" />
-            Settings
+            Einstellungen
           </CardTitle>
           <CardDescription className="text-base text-muted-foreground">
             Passe Darstellung und Spieloptionen für deine Karawane an.
@@ -100,7 +100,7 @@ export default function SettingsPage() {
               onClick={() => navigate(routes.main)}
             >
               <ArrowLeft className="size-4" />
-              Zurück zum Main Menu
+              Hauptmenü
             </Button>
           </div>
         </CardContent>

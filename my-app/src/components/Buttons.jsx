@@ -21,6 +21,10 @@ export default function Buttons({ className, levelId, people, camels, setPeople,
     navigate(routes.main)
   }
 
+  function handleLevelSelect() {
+    navigate(routes.levelSelect)
+  }
+
   function handleReset() {
     setPeople(prev => prev.map(p => ({ ...p, seated: false })))
     setCamels(prev => prev.map(camel => ({
@@ -47,7 +51,17 @@ export default function Buttons({ className, levelId, people, camels, setPeople,
             onClick={handleMainMenu}
           >
             <Home className='size-4' />
-            Main Menu
+            Hauptmenü
+          </Button>
+
+          <Button
+            variant='outline'
+            size='lg'
+            className='h-12 rounded-xl border-border bg-background/70 text-foreground backdrop-blur hover:bg-card'
+            onClick={handleLevelSelect}
+          >
+            <Home className='size-4' />
+            Zur Levelauswahl
           </Button>
 
           <Button
@@ -56,7 +70,7 @@ export default function Buttons({ className, levelId, people, camels, setPeople,
             onClick={handleReset}
           >
             <RotateCcw className='size-4' />
-            Reset
+            Zurücksetzen
           </Button>
 
           <Button
@@ -66,7 +80,7 @@ export default function Buttons({ className, levelId, people, camels, setPeople,
             title={unseated > 0 ? `Noch ${unseated} Person(en) ohne Platz` : ''}
           >
             <Flag className='size-4' />
-            End Level
+            Level beenden
           </Button>
         </div>
       </CardContent>
