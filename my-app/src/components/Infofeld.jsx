@@ -12,13 +12,13 @@ import { cn } from '@/lib/utils'
 
 function formatNeed(need) {
   switch (need.name) {
-    case 'schläfrig': return 'Schläfrig – muss in der obersten Reihe sitzen'
-    case 'einsam':    return 'Einsam – kein Nachbar erlaubt'
-    case 'gesellig':  return `Gesellig – mindestens ${need.anzahl} Nachbar(n)`
+    case 'schläfrig': return 'Schläfrig – will in der letzten Reihe sitzen'
+    case 'einsam':    return 'Einsam – will keine direkten Nachbarn'
+    case 'gesellig':  return `Gesellig – fühlt sich nur mit mindestens ${need.anzahl} Nachbar(n) wohl`
     case 'bestie':    return `Bestie von ${need.bestie}`
-    case 'hater':     return `Hasst ${need.hated} – anderes Kamel`
-    case 'regular':   return `Fester Platz – Kamel ${need.camel}, Reihe ${need.row}, Spalte ${need.column}`
-    default:          return need.name
+    case 'hater':     return `Hasst ${need.hated} – will auf einem anderen Kamel als ${need.hated} sitzen`
+    case 'regular':   return `Stammplatz – Kamel ${need.camel}, Reihe ${need.row}, Spalte ${need.column}`
+    default:          return  need.name
   }
 }
 
