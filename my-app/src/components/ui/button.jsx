@@ -10,16 +10,18 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground [a]:hover:bg-primary/80",
-        outline:
-          "border-border bg-background hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
-        secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80 aria-expanded:bg-secondary aria-expanded:text-secondary-foreground",
-        ghost:
-          "hover:bg-muted hover:text-foreground aria-expanded:bg-muted aria-expanded:text-foreground dark:hover:bg-muted/50",
-        destructive:
-          "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
-        link: "text-primary underline-offset-4 hover:underline",
+        // Subtle navigation buttons: balanced in light mode, stronger feedback in dark mode.
+        default:
+          "border-border/75 bg-background/70 text-foreground shadow-sm backdrop-blur hover:bg-card/90 hover:shadow-md hover:shadow-foreground/15 dark:border-border dark:bg-input/30 dark:hover:border-border dark:hover:bg-accent/70 dark:hover:shadow-lg dark:hover:shadow-black/35",
+        // Primary call-to-action buttons with stronger elevation and emphasis.
+        emphasize:
+          "border-primary/55 bg-primary text-primary-foreground shadow-xl shadow-primary/35 backdrop-blur hover:border-white/75 hover:bg-primary/95 hover:brightness-105 hover:shadow-2xl hover:shadow-primary/45 dark:border-primary/65 dark:bg-primary dark:text-primary-foreground dark:shadow-lg dark:shadow-primary/35 dark:hover:border-primary/65 dark:hover:bg-primary dark:hover:shadow-lg dark:hover:shadow-primary/35",
+        // Minimal person interaction button: no frame, no card-like chrome.
+        person:
+          "border-transparent bg-transparent p-0 text-foreground shadow-none hover:opacity-90 hover:scale-[1.01]",
+        // Toggle controls (e.g. theme switch) with stable, compact emphasis.
+        toggle:
+          "border-border/80 bg-card/80 text-foreground shadow-sm backdrop-blur hover:bg-card hover:shadow-md dark:border-border dark:bg-input/40 dark:hover:bg-input/65",
       },
       size: {
         default:
