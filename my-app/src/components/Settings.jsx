@@ -35,7 +35,7 @@ export default function SettingsPage() {
       <div className="pointer-events-none absolute -top-20 left-1/2 h-72 w-72 -translate-x-1/2  bg-primary/15 blur-3xl" />
       <div className="pointer-events-none absolute bottom-8 left-8 h-44 w-44  bg-accent/25 blur-2xl" />
 
-      <Card className="relative z-10 w-full max-w-2xl border-border/60 bg-card/70 shadow-2xl shadow-foreground/10 backdrop-blur-xl">
+      <Card variant="page" className="relative z-10 w-full max-w-2xl">
         <CardHeader className="space-y-3">
           <CardTitle className="flex items-center gap-2 text-3xl font-semibold text-foreground md:text-4xl">
             <Settings2 className="size-6" />

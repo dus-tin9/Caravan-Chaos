@@ -43,7 +43,7 @@ export default function HighscorePage() {
         Hauptmenü
       </Button>
 
-      <Card className="relative z-10 w-full max-w-2xl border-border/60 bg-card/70 shadow-2xl shadow-foreground/10 backdrop-blur-xl">
+      <Card variant="page" className="relative z-10 w-full max-w-2xl">
         <CardHeader className="space-y-3">
           <CardTitle className="flex items-center gap-2 text-3xl font-semibold text-foreground md:text-4xl">
             <Trophy className="size-6" />

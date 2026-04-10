@@ -79,7 +79,7 @@ export default function Level({ levelId }) {
   if (!levelData) {
     return (
       <main className="flex min-h-screen items-center justify-center px-4 py-10">
-        <Card className="w-full max-w-xl border-border/60 bg-card/70 shadow-xl shadow-foreground/10 backdrop-blur-xl">
+        <Card variant="glass" className="w-full max-w-xl">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-foreground">
               <AlertTriangle className="size-5" />

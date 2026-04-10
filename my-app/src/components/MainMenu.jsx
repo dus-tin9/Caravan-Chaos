@@ -27,7 +27,7 @@ function MainMenu() {
             <div className='pointer-events-none absolute bottom-8 left-8 h-44 w-44  bg-accent/25 blur-2xl' />
             <div className='pointer-events-none absolute right-8 top-16 h-52 w-52  bg-secondary/45 blur-3xl' />
 
-            <Card className='relative z-10 w-full max-w-xl border-border/60 bg-card/70 shadow-2xl shadow-foreground/10 backdrop-blur-xl'>
+            <Card variant='page' className='relative z-10 w-full max-w-xl'>
                 <CardHeader className='space-y-3'>
                     <CardTitle className='text-4xl font-semibold tracking-tight text-foreground md:text-5xl'>
                         Caravan Chaos

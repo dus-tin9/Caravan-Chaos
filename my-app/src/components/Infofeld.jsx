@@ -8,7 +8,6 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
-import { cn } from '@/lib/utils'
 
 function formatNeed(need) {
   switch (need.name) {
@@ -25,7 +24,7 @@ function formatNeed(need) {
 export default function Infofeld({ className, selectedPerson }) {
   if (!selectedPerson) {
     return (
-      <Card className={cn('border-border/60 bg-card/70 shadow-xl shadow-foreground/10 backdrop-blur-xl', className)}>
+      <Card variant='glass' className={className}>
         <CardHeader className="space-y-2">
           <CardTitle className="flex items-center gap-2 text-xl font-semibold text-foreground">
             <CircleHelp className="size-5" />
@@ -45,7 +44,7 @@ export default function Infofeld({ className, selectedPerson }) {
   const imageUrl = getPersonImageUrl(selectedPerson)
 
   return (
-    <Card className={cn('border-border/60 bg-card/70 shadow-xl shadow-foreground/10 backdrop-blur-xl', className)}>
+    <Card variant='glass' className={className}>
       <CardHeader className="space-y-2">
         <CardTitle className="flex items-center gap-2 text-xl font-semibold text-foreground">
           <CircleHelp className="size-5" />

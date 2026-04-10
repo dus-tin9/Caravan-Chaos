@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom'
 
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
-import { cn } from '@/lib/utils'
 import { routes } from '@/lib/routes'
 import { scoreLevel } from '../utils/scoring.js'
 
@@ -36,7 +35,7 @@ export default function Buttons({ className, levelId, people, camels, setPeople,
   const unseated = people.filter(p => !p.seated).length
 
   return (
-    <Card className={cn('border-border/60 bg-card/70 shadow-xl shadow-foreground/10 backdrop-blur-xl', className)}>
+    <Card variant='glass' className={className}>
       <CardContent className="flex flex-wrap items-center justify-between gap-3 py-2">
         <p className="text-sm text-muted-foreground">
           {unseated > 0

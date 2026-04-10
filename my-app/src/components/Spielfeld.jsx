@@ -3,7 +3,6 @@ import Kamel from './Kamel.jsx'
 import { Layers } from 'lucide-react'
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { cn } from '@/lib/utils'
 
 export default function Spielfeld({ className, selectedPerson, setSelectedPerson, camels, setCamels, setPeople }){
 
@@ -59,7 +58,7 @@ export default function Spielfeld({ className, selectedPerson, setSelectedPerson
     };
 
         return(
-            <Card className={cn('border-border/60 bg-card/70 shadow-xl shadow-foreground/10 backdrop-blur-xl', className)}>
+            <Card variant='glass' className={className}>
                 <CardHeader>
                     <CardTitle className="flex items-center gap-2 text-xl font-semibold text-foreground">
                         <Layers className="size-5" />
