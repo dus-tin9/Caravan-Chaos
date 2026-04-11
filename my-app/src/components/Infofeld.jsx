@@ -14,9 +14,9 @@ function formatNeed(need) {
     case 'schläfrig': return 'Schläfrig – will in der letzten Reihe sitzen'
     case 'einsam':    return 'Einsam – will keine direkten Nachbarn'
     case 'gesellig':  return `Gesellig – fühlt sich nur mit mindestens ${need.anzahl} Nachbar(n) wohl`
-    case 'bestie':    return `Bestie von ${need.bestie}`
-    case 'hater':     return `Hasst ${need.hated} – will auf einem anderen Kamel als ${need.hated} sitzen`
-    case 'regular':   return `Stammplatz – Kamel ${need.camel}, Reihe ${need.row}, Spalte ${need.column}`
+    case 'Bestie':    return `Bestie von ${need.bestie}`
+    case 'Hater':     return `Hasst ${need.hated} – will auf einem anderen Kamel als ${need.hated} sitzen`
+    case 'Stammkunde':   return `Stammplatz – Kamel ${need.camel}, Reihe ${need.row}, Spalte ${need.column}`
     default:          return  need.name
   }
 }

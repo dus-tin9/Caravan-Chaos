@@ -63,7 +63,7 @@
             "name" : "Bestie1",
             "needs" : [
                 {
-                    "name" : "bestie",
+                    "name" : "Bestie",
                     "bestie" : "Bestie2"
                 }
             ]
@@ -73,7 +73,7 @@
             "name" : "Bestie2",
             "needs" : [
                 {
-                    "name" : "bestie",
+                    "name" : "Bestie",
                     "bestie" : "Bestie1"
                 }
             ]
@@ -84,7 +84,7 @@
             "needs" : [
                 {
                     
-                    "name" : "hater",
+                    "name" : "Hater",
                     "hated" : "Jeremy"
                 },
                 {
@@ -99,7 +99,7 @@
             "name" : "Regular",
             "needs" : [
                 {
-                    "name" : "regular",
+                    "name" : "Stammkunde",
                     "camel" : 1,
                     "row" : 1,
                     "column" : 1

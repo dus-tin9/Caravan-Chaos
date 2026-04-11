@@ -25,21 +25,21 @@
             "id": 2,
             "name": "Streiter",
             "needs": [
-                { "name": "hater", "hated": "Rivale" }
+                { "name": "Hater", "hated": "Rivale" }
             ]
         },
         {
             "id": 3,
             "name": "Rivale",
             "needs": [
-                { "name": "hater", "hated": "Streiter" }
+                { "name": "Hater", "hated": "Streiter" }
             ]
         },
         {
             "id": 4,
             "name": "Treffpunkt",
             "needs": [
-                { "name": "regular", "camel": 1, "row": 1, "column": 1 }
+                { "name": "Stammkunde", "camel": 1, "row": 1, "column": 1 }
             ]
         },
         {
