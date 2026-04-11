@@ -2,9 +2,9 @@ const needToImage = {
   schläfrig: 'sleeper',
   einsam:    'loner',
   gesellig:  'gesellig',
-  bestie:    'bestie',
-  hater:     'hater',
-  regular:   'regular',
+  Bestie:    'bestie',
+  Hater:     'hater',
+  Stammkunde:   'regular',
 }
 
 export function getPersonImageUrl(person) {

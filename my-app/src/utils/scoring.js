@@ -9,9 +9,9 @@ const scorers = {
   schläfrig: scoreSchläfrig,
   einsam:    scoreEinsam,
   gesellig:  scoreGesellschaft,
-  bestie:    scoreBestie,
-  hater:     scoreHater,
-  regular:   scoreRegular,
+  Bestie:    scoreBestie,
+  Hater:     scoreHater,
+  Stammkunde:   scoreRegular,
 }
 
 export function buildContext(camels) {
