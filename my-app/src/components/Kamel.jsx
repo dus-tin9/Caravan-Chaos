@@ -1,7 +1,7 @@
 import Sitze from './Sitze.jsx';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
-export default function Kamel({ camelId, seats, onSeatClick, onSeatPersonClick }) {
+export default function Kamel({ camelId, seats, onSeatClick, onSeatPersonClick , selectedPerson}) {
     return (
         <Card className="border-border/60 bg-background/70 shadow-md shadow-foreground/10">
             <CardHeader className="pb-1">
@@ -14,6 +14,7 @@ export default function Kamel({ camelId, seats, onSeatClick, onSeatPersonClick }
                 seats={seats}
                 onSeatClick={onSeatClick}
                 onSeatPersonClick={onSeatPersonClick}
+                selectedPerson={selectedPerson}
             />
             </CardContent>
         </Card>

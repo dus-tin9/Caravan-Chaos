@@ -1,7 +1,7 @@
 import Sitz from './Sitz.jsx';
 import { Button } from '@/components/ui/button'
 
-export default function Sitze({ camelId, seats, onSeatClick, onSeatPersonClick }) {
+export default function Sitze({ camelId, seats, onSeatClick, onSeatPersonClick , selectedPerson}) {
     const columns = (seats[0]?.length ?? 0) + 1
 
     return (
@@ -41,7 +41,7 @@ export default function Sitze({ camelId, seats, onSeatClick, onSeatPersonClick }
                                 }
                             }}
                         >
-                            <Sitz occupant={seat.occupant} />
+                            <Sitz occupant={seat.occupant} selectedPerson={selectedPerson} />
                         </Button>
                     ))}
                 </div>

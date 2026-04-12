@@ -96,7 +96,7 @@ export default function Level({ levelId }) {
 
   return(
     <main
-      className="relative min-h-screen w-full overflow-hidden px-4 py-4 md:px-6 md:py-6"
+      className="relative h-screen w-full overflow-hidden px-4 py-4 md:px-6 md:py-6"
       style={{
         background:
           'radial-gradient(circle at top, var(--background) 0%, var(--card) 52%, var(--secondary) 100%)',
@@ -108,7 +108,7 @@ export default function Level({ levelId }) {
       <div className='pointer-events-none absolute inset-0 bg-gradient-to-br from-transparent via-foreground/5 to-transparent' />
       <div className='pointer-events-none absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.14)_1px,transparent_1px)] [background-size:22px_22px] opacity-20 dark:opacity-10' />
 
-      <div className="relative z-10 mx-auto grid w-full gap-4 md:grid-cols-[minmax(260px,1fr)_minmax(620px,2.2fr)_minmax(260px,1fr)] md:grid-rows-[auto_1fr]">
+      <div className="relative z-10 mx-auto grid h-full w-full gap-4 md:grid-cols-[minmax(260px,1fr)_minmax(620px,2.2fr)_minmax(260px,1fr)] md:grid-rows-[auto_1fr]">
         <Bahnhof
           className="md:col-start-1 md:row-span-2"
           setSelectedPerson={setSelectedPerson}

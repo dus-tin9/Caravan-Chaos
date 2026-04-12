@@ -26,7 +26,7 @@ export default function Bahnhof({ className, setSelectedPerson, selectedPerson, 
             </CardHeader>
 
             <CardContent>
-                <div className="max-h-[64vh] space-y-3 overflow-y-auto pr-1">
+                <div className="max-h-[84vh] space-y-3 overflow-y-auto pr-1">
                     {waitingPeople.length > 0 ? (
                         waitingPeople.map(person => (
                             <Button

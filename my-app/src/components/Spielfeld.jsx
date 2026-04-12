@@ -66,7 +66,7 @@ export default function Spielfeld({ className, selectedPerson, setSelectedPerson
                     </CardTitle>
                 </CardHeader>
 
-                <CardContent className="max-h-[64vh] overflow-y-auto pb-6">
+                <CardContent className="max-h-[77vh] overflow-y-auto pb-6">
                     <div className="grid gap-4  border border-border/70 bg-background/55 p-3">
                         {camels.map(camel => (
                             <Kamel
@@ -75,6 +75,7 @@ export default function Spielfeld({ className, selectedPerson, setSelectedPerson
                                 seats={camel.grid}
                                 onSeatClick={handleSeatClick}
                                 onSeatPersonClick={handleSeatPersonClick}
+                                selectedPerson={selectedPerson}
                             />
                         ))}
                     </div>
