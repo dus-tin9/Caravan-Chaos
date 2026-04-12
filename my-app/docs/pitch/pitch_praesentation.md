@@ -155,6 +155,62 @@ Pro Folie: Titel, Stichpunkte, optionaler Sprechtext.
 
 ---
 
+## Folie 9a - Dark/Light: React-Logik (Switch)
+
+**Wie wird getoggelt?**
+- Theme zentral im `ThemeProvider`.
+- `toggleTheme()` wechselt `light`/`dark`.
+- `useEffect` setzt `.dark` und speichert in `localStorage`.
+
+**Codebeispiel (kurz):**
+```jsx
+const [theme, setTheme] = useState(getInitialTheme)
+
+useEffect(() => {
+	const isDark = theme === 'dark'
+	document.documentElement.classList.toggle('dark', isDark)
+	window.localStorage.setItem('caravan-theme', theme)
+}, [theme])
+
+const toggleTheme = () => {
+	setTheme((currentTheme) => (currentTheme === 'dark' ? 'light' : 'dark'))
+}
+```
+
+**Sprechtext (optional):**
+- Wichtig: Es wird kein neues CSS geladen, nur eine Klasse umgeschaltet.
+
+---
+
+## Folie 9b - Dark/Light: CSS/Tailwind-Reaktion
+
+**Wie aendert sich das Design?**
+- `:root` definiert Light-Token.
+- `.dark` ueberschreibt dieselben Token.
+- Tailwind (`bg-background`, `text-foreground`) nutzt die Token direkt.
+
+**Codebeispiel (kurz):**
+```css
+:root {
+	--background: #f5e6c8;
+	--foreground: #2b2b2b;
+}
+
+.dark {
+	--background: #2b2118;
+	--foreground: #f5e6c8;
+}
+
+body {
+	@apply bg-background text-foreground;
+}
+```
+
+**Sprechtext (optional):**
+- Theme-Wechsel = Token-Wechsel; Komponenten-Code bleibt gleich.
+
+---
+
 ## Folie 10 - Reflexion: Herausforderungen
 
 **Technische Herausforderungen:**
