@@ -11,7 +11,7 @@ export default function Bahnhof_Display({ person, isSelected = false }){
             className={cn(
                 ' border bg-background/65 p-3 transition-all',
                 isSelected
-                    ? 'border-primary/70 shadow-md shadow-primary/20'
+                    ? 'border-tertiary/70 shadow-md shadow-primary/20'
                     : 'border-border/70'
             )}
         >

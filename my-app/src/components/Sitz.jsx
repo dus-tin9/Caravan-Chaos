@@ -10,7 +10,7 @@ export default function Sitz({occupant, selectedPerson}) {
     function checkSelected(Sitzer){
         if(!selectedPerson) return 0
         if(Sitzer.id === selectedPerson.id) return 1
-        return
+        return 0
     }
 
     return(
