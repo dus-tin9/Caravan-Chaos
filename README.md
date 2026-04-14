@@ -13,7 +13,7 @@ Browserbasiertes Raetselspiel zur Platzierung von Personen auf Kamel-Sitzplätze
 
 ## Kurzbeschreibung
 
-In Caravan-Chaos werden Personen mit individuellen Bedürfnissen auf mehrere Kamele mit unterschiedlichen Sitzrastern verteilt. Nach dem Platzieren aller Personen wird das Level bewertet. Das Spiel speichert Spielstaende und Highscores lokal im Browser.
+In Caravan-Chaos werden Personen mit individuellen Bedürfnissen auf mehrere Kamele mit unterschiedlichen Sitzrastern verteilt. Nach dem Platzieren aller Personen wird das Level bewertet. Das Spiel speichert Spielstände und Highscores lokal im Browser.
 
 ## Kernfunktionen
 
