@@ -12,7 +12,7 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 
-const MAXLEVEL = 4
+const MAXLEVEL = 8
 
 export default function LevelRecap() {
   const { state } = useLocation()

@@ -1,41 +1,28 @@
 {
-    "id": 2,
-    "name": "Oasenstopp",
-    "camels": [
+    "id" : 2,
+    "name" : "Reise nach Jerusalem",
+    "camels" : [
         {
             "id": 1,
-            "rows": 2,
-            "columns": 3
+            "rows" : 2,
+            "columns" : 2
         }
+
     ],
-    "people": [
+    "people" : [
         {
-            "id": 1,
-            "name": "Schlafmütze",
-            "needs": [
-                { "name": "schläfrig" }
-            ]
-        },
-        {
-            "id": 2,
-            "name": "Einsiedler",
+            "id" : 1,
+            "name" : "Joachim",
             "needs": [
                 { "name": "einsam" }
             ]
         },
         {
-            "id": 3,
-            "name": "Zwilling1",
+            "id" : 2,
+            "name" : "Jürgen",
             "needs": [
-                { "name": "Bestie", "bestie": "Zwilling2" }
-            ]
-        },
-        {
-            "id": 4,
-            "name": "Zwilling2",
-            "needs": [
-                { "name": "Bestie", "bestie": "Zwilling1" }
-            ]
+                { "name": "schläfrig" }
+            ]            
         }
     ]
 }
