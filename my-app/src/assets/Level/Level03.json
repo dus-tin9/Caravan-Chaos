@@ -1,50 +1,40 @@
 {
-    "id": 3,
-    "name": "Rivalität in der Wüste",
-    "camels": [
+    "id" : 3,
+    "name" : "Die 18 bis nach Istanbul",
+    "camels" : [
         {
             "id": 1,
-            "rows": 2,
-            "columns": 2
+            "rows" : 2,
+            "columns" : 2
         },
         {
             "id": 2,
-            "rows": 2,
-            "columns": 2
+            "rows" : 2,
+            "columns" : 2
         }
     ],
-    "people": [
+    "people" : [
         {
-            "id": 1,
-            "name": "Nachtfalter",
+            "id" : 1,
+            "name" : "Miesepeter",
             "needs": [
-                { "name": "schläfrig" }
+                { "name": "Hater", "hated": "Paul" }
             ]
         },
         {
-            "id": 2,
-            "name": "Streiter",
+            "id" : 2,
+            "name" : "Paul",
             "needs": [
-                { "name": "Hater", "hated": "Rivale" }
+                { "name": "gesellig" , "anzahl": 2}
             ]
         },
         {
-            "id": 3,
-            "name": "Rivale",
-            "needs": [
-                { "name": "Hater", "hated": "Streiter" }
-            ]
+            "id" : 3,
+            "name" : "Larry"
         },
         {
-            "id": 4,
-            "name": "Treffpunkt",
-            "needs": [
-                { "name": "Stammkunde", "camel": 1, "row": 1, "column": 1 }
-            ]
-        },
-        {
-            "id": 5,
-            "name": "Wanderer"
+            "id" : 4,
+            "name" : "Ali"
         }
     ]
 }

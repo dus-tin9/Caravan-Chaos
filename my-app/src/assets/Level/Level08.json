@@ -1,0 +1,90 @@
+{
+    "id": 8,
+    "name": "Zum Orient und noch viel weiter",
+    "camels": [
+        {
+            "id": 1,
+            "rows": 2,
+            "columns": 5
+        },
+        {
+            "id": 2,
+            "rows": 1,
+            "columns": 3
+        }
+
+    ],
+    "people": [
+        {
+            "id": 1,
+            "name": "Max",
+            "needs": [
+                { "name": "Bestie", "bestie": "Moritz" }               
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Moritz",
+            "needs": [
+                { "name": "Bestie", "bestie": "Max" }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Ash",
+            "needs": [
+                { "name": "gesellig", "anzahl": 3}
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Brock",
+            "needs": [
+                { "name": "einsam"},
+                { "name": "schläfrig"}
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Ben",
+            "needs": [
+                { "name": "gesellig", "anzahl": 2}
+            ]            
+        },
+        {
+            "id": 6,
+            "name": "Manuel",
+            "needs": [
+                { "name": "Stammkunde", "camel": 1, "row": 2, "column": 3}
+            ] 
+        },
+        {
+            "id": 7,
+            "name": "Pete",
+            "needs": [
+                { "name": "Stammkunde", "camel": 2, "row": 1, "column": 3 },
+                { "name": "einsam"}
+            ] 
+        },
+        {
+            "id": 8,
+            "name": "Mario",
+            "needs": [
+                { "name": "Hater", "hated": "Luigi"}
+            ]        
+        },
+        {
+            "id": 9,
+            "name": "Luigi",
+            "needs": [
+                { "name": "Hater", "hated": "Mario"},
+                { "name": "schläfrig"}
+            ]         
+        },
+        {
+            "id": 10,
+            "name": "Barbara"
+        }
+
+    ]
+}

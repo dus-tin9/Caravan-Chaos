@@ -1,0 +1,58 @@
+{
+    "id": 6,
+    "name": "Der Platz wird eng",
+    "camels": [
+        {
+            "id": 1,
+            "rows": 3,
+            "columns": 4
+        }
+
+    ],
+    "people": [
+        {
+            "id": 1,
+            "name": "Mister Cool",
+            "needs": [
+                { "name": "gesellig", "anzahl": 3 },
+                { "name": "Stammkunde", "camel": 1, "row": 2, "column": 2 }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Hannah",
+            "needs": [
+                { "name": "Bestie", "bestie": "Montana" }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Montana",
+            "needs": [
+                { "name": "Bestie", "bestie": "Hannah" }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Mike",
+            "needs": [
+                { "name": "einsam" }
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Dandy",
+            "needs": [
+                { "name": "schläfrig" }
+            ]
+        },
+        {
+            "id": 6,
+            "name": "Jolly"
+        },
+        {
+            "id": 7,
+            "name": "Annabel"
+        }
+    ]
+}
