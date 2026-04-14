@@ -127,6 +127,8 @@ export default function Level({ levelId }) {
 
         <Spielfeld
           className="md:col-start-2 md:row-start-2"
+          levelId={levelData.id ?? levelId}
+          levelName={levelData.name}
           selectedPerson={selectedPerson}
           setSelectedPerson={setSelectedPerson}
           camels={camels}

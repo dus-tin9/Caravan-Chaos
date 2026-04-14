@@ -4,7 +4,7 @@ import { Layers } from 'lucide-react'
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 
-export default function Spielfeld({ className, selectedPerson, setSelectedPerson, camels, setCamels, setPeople }){
+export default function Spielfeld({ className, levelId, levelName, selectedPerson, setSelectedPerson, camels, setCamels, setPeople }){
 
     // Person die bereits auf einem Sitz sitzt über alle Kamele hinweg entfernen
     const removePersonFromCamels = (prevCamels, personId) => {
@@ -57,12 +57,18 @@ export default function Spielfeld({ className, selectedPerson, setSelectedPerson
         setSelectedPerson(person);
     };
 
+    const safeLevelId = levelId ?? '?'
+    const normalizedLevelName = typeof levelName === 'string' ? levelName.trim() : ''
+    const spielfeldTitle = normalizedLevelName
+        ? `Level ${safeLevelId} · ${normalizedLevelName}`
+        : `Level ${safeLevelId}`
+
         return(
             <Card variant='glass' className={className}>
                 <CardHeader>
                     <CardTitle className="flex items-center gap-2 text-xl font-semibold text-foreground">
-                        <Layers className="size-5" />
-                        Spielfeld
+                        <Layers className="size-5 shrink-0" />
+                        <span className="min-w-0 truncate" title={spielfeldTitle}>{spielfeldTitle}</span>
                     </CardTitle>
                 </CardHeader>
 
