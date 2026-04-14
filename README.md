@@ -4,10 +4,10 @@ Browserbasiertes Raetselspiel zur Platzierung von Personen auf Kamel-Sitzplätze
 
 ## Projektkontext
 
-- Universität: Technische Hochschule Ostwestfalen Lippe
+- Technische Hochschule Ostwestfalen Lippe
 - Modul: Software Design
 - Team: M, J, J, D
-- Dozent: Prof. Dr. Ing. Rainer Rasche
+- Dozent: Prof. Dr.-Ing. Rainer Rasche
 - Abgabe/Präsentation: 13.04.2026
 - Projektstatus: MVP
 
