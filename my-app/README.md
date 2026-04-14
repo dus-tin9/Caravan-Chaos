@@ -70,6 +70,21 @@ npm run lint     # ESLint
 - /highscore
 - /settings
 
+## Levelübersicht
+
+Aktuell sind 8 Level in den JSON-Dateien unter src/assets/Level hinterlegt.
+
+| Level | Name | Kamele | Personen |
+|---|---|---:|---:|
+| 1 | Die Reise beginnt | 1 | 4 |
+| 2 | Reise nach Jerusalem | 1 | 2 |
+| 3 | Die 18 bis nach Istanbul | 2 | 4 |
+| 4 | Oasenstopp | 1 | 4 |
+| 5 | Rivalität in der Wüste | 2 | 5 |
+| 6 | Der Platz wird eng | 1 | 7 |
+| 7 | Reihum | 2 | 8 |
+| 8 | Zum Orient und noch viel weiter | 2 | 10 |
+
 ## Spiel- und Scoringlogik (Kurzfassung)
 
 - Jede Person erhält am Ende einen Score zwischen 0 und 100.
